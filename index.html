@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026中国高净值人群统计与财富管理指南｜数据画像·财富阶梯·路径与工具</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f5f6f5;
+    --surface: #fdfdfc;
+    --surface-2: #f0f1ef;
+    --ink: #1b2129;
+    --ink-2: #4a535e;
+    --muted: #878d94;
+    --line: #e2e3de;
+    --line-strong: #c9cbc4;
+    --brand: #1d3a5f;
+    --brand-soft: #e8edf3;
+    --brand-ink: #16304f;
+    --gold: #9a7a24;
+    --gold-strong: #7f6316;
+    --gold-soft: #f4eeda;
+    --vermilion: #a83b2c;
+    --good: #0ca30c;
+    --s1: #2a78d6;  /* 图表分类色1 蓝 */
+    --s2: #eb6834;  /* 图表分类色2 橙 */
+    --s3: #1baf7a;  /* 图表分类色3 青绿 */
+    --seq-400: #3987e5;
+    --seq-550: #1c5cab;
+    --seq-650: #104281;
+    --grid: #e1e0d9;
+    --shadow: 0 1px 2px rgba(20,28,40,.05), 0 6px 20px rgba(20,28,40,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --bg: #0f1216;
+      --surface: #171b21;
+      --surface-2: #1e232a;
+      --ink: #edeeea;
+      --ink-2: #b6bcc3;
+      --muted: #848a91;
+      --line: #2a2f36;
+      --line-strong: #3a404a;
+      --brand: #7fa8d6;
+      --brand-soft: #1c2836;
+      --brand-ink: #a9c6e6;
+      --gold: #cfa94e;
+      --gold-strong: #dfc077;
+      --gold-soft: #2a2414;
+      --vermilion: #d96a5a;
+      --good: #0ca30c;
+      --s1: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --seq-400: #3987e5;
+      --seq-550: #5598e7;
+      --seq-650: #86b6ef;
+      --grid: #2c2c2a;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f1216;
+    --surface: #171b21;
+    --surface-2: #1e232a;
+    --ink: #edeeea;
+    --ink-2: #b6bcc3;
+    --muted: #848a91;
+    --line: #2a2f36;
+    --line-strong: #3a404a;
+    --brand: #7fa8d6;
+    --brand-soft: #1c2836;
+    --brand-ink: #a9c6e6;
+    --gold: #cfa94e;
+    --gold-strong: #dfc077;
+    --gold-soft: #2a2414;
+    --vermilion: #d96a5a;
+    --good: #0ca30c;
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --seq-400: #3987e5;
+    --seq-550: #5598e7;
+    --seq-650: #86b6ef;
+    --grid: #2c2c2a;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f5f6f5;
+    --surface: #fdfdfc;
+    --surface-2: #f0f1ef;
+    --ink: #1b2129;
+    --ink-2: #4a535e;
+    --muted: #878d94;
+    --line: #e2e3de;
+    --line-strong: #c9cbc4;
+    --brand: #1d3a5f;
+    --brand-soft: #e8edf3;
+    --brand-ink: #16304f;
+    --gold: #9a7a24;
+    --gold-strong: #7f6316;
+    --gold-soft: #f4eeda;
+    --vermilion: #a83b2c;
+    --good: #0ca30c;
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --seq-400: #3987e5;
+    --seq-550: #1c5cab;
+    --seq-650: #104281;
+    --grid: #e1e0d9;
+    --shadow: 0 1px 2px rgba(20,28,40,.05), 0 6px 20px rgba(20,28,40,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .serif {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  }
+
+  a { color: var(--brand); }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  /* ── 顶部导航 ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; gap: 20px; height: 56px;
+  }
+  .brand-mark {
+    display: flex; align-items: baseline; gap: 8px; white-space: nowrap;
+    font-weight: 700; letter-spacing: .02em;
+  }
+  .brand-mark .seal {
+    display: inline-grid; place-items: center;
+    width: 26px; height: 26px; border-radius: 4px;
+    background: var(--brand); color: #fff;
+    font-size: 13px; font-weight: 700; align-self: center;
+  }
+  :root[data-theme="dark"] .brand-mark .seal { color: #0f1216; }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .brand-mark .seal { color: #0f1216; }
+  }
+  .brand-mark small { color: var(--muted); font-weight: 400; font-size: 12px; }
+  .chapter-nav {
+    display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none;
+    font-size: 13.5px;
+  }
+  .chapter-nav::-webkit-scrollbar { display: none; }
+  .chapter-nav a {
+    color: var(--ink-2); text-decoration: none; white-space: nowrap;
+    padding: 6px 10px; border-radius: 6px;
+  }
+  .chapter-nav a:hover { background: var(--surface-2); color: var(--ink); }
+
+  /* ── 版心 ── */
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 760px; }
+
+  /* ── Hero ── */
+  .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+  .hero .eyebrow {
+    font-size: 13px; letter-spacing: .18em; color: var(--gold);
+    font-weight: 600; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.3; margin: 0 0 18px; text-wrap: balance;
+    color: var(--ink); font-weight: 700;
+  }
+  .hero h1 .accent { color: var(--brand); }
+  .hero .lede { color: var(--ink-2); max-width: 68ch; margin: 0 0 8px; }
+  .hero .meta { font-size: 13px; color: var(--muted); }
+
+  .stat-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin: 32px 0 8px;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 20px 16px;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .label { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; }
+  .stat-card .value {
+    font-size: 32px; font-weight: 700; line-height: 1.15;
+    color: var(--brand); letter-spacing: -.01em;
+  }
+  .stat-card .value .unit { font-size: 16px; font-weight: 600; color: var(--ink-2); margin-left: 2px; }
+  .stat-card .src { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* ── 章节 ── */
+  section.chapter { padding: 52px 0 8px; }
+  .chapter-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: .14em; color: var(--gold);
+    font-weight: 600; margin-bottom: 10px;
+  }
+  .chapter-eyebrow::before {
+    content: ""; width: 26px; height: 2px; background: var(--gold);
+  }
+  h2 {
+    font-size: clamp(22px, 3vw, 30px); line-height: 1.35;
+    margin: 0 0 14px; text-wrap: balance; font-weight: 700;
+  }
+  h3 { font-size: 18px; margin: 30px 0 10px; font-weight: 700; }
+  p { margin: 0 0 14px; max-width: 72ch; color: var(--ink-2); }
+  p strong, li strong { color: var(--ink); }
+  ul, ol { margin: 0 0 16px; padding-left: 1.4em; color: var(--ink-2); }
+  li { margin-bottom: 6px; }
+
+  .note {
+    font-size: 13.5px; color: var(--muted);
+    border-left: 3px solid var(--line-strong);
+    padding: 2px 0 2px 12px; margin: 14px 0 18px; max-width: 70ch;
+  }
+
+  /* ── 表格 ── */
+  .table-scroll { overflow-x: auto; margin: 18px 0 22px; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 520px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden;
+    font-size: 14.5px;
+  }
+  caption {
+    caption-side: top; text-align: left; font-weight: 700;
+    font-size: 15px; color: var(--ink); padding: 0 2px 10px;
+  }
+  th, td { padding: 10px 14px; text-align: left; border-top: 1px solid var(--line); }
+  thead th {
+    background: var(--surface-2); border-top: none;
+    font-size: 13px; color: var(--ink-2); letter-spacing: .04em; font-weight: 600;
+  }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:hover { background: var(--brand-soft); }
+  td .tag {
+    display: inline-block; font-size: 12px; padding: 1px 8px;
+    border-radius: 99px; background: var(--surface-2); color: var(--ink-2);
+  }
+
+  /* ── 图表 ── */
+  .fig {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 20px 22px 16px; margin: 20px 0 24px;
+    box-shadow: var(--shadow);
+  }
+  .fig .fig-title { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .fig .fig-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .fig .fig-src { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  /* 纵向条形图 */
+  .colchart {
+    display: flex; align-items: flex-end; gap: 4%;
+    height: 220px; padding: 0 4px;
+    border-bottom: 1px solid var(--line-strong);
+    background: repeating-linear-gradient(to top, transparent 0 54px, var(--grid) 54px 55px);
+  }
+  .colchart .col {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: flex-end; align-items: center; height: 100%;
+    position: relative; cursor: default;
+  }
+  .colchart .bar {
+    width: 100%; max-width: 46px;
+    background: var(--seq-550);
+    border-radius: 4px 4px 0 0;
+  }
+  .colchart .col:last-child .bar { background: var(--seq-650); }
+  .colchart .col .tip {
+    position: absolute; bottom: calc(100% + 2px); left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink); color: var(--bg);
+    font-size: 12px; padding: 3px 9px; border-radius: 6px;
+    white-space: nowrap; opacity: 0; pointer-events: none;
+    transition: opacity .12s; font-variant-numeric: tabular-nums;
+  }
+  .colchart .col:hover .tip, .colchart .col:focus-visible .tip { opacity: 1; }
+  .colchart .col .end-label {
+    position: absolute; bottom: 100%; margin-bottom: 3px;
+    font-size: 12.5px; font-weight: 700; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .colchart-x {
+    display: flex; gap: 4%; padding: 6px 4px 0;
+    font-size: 12px; color: var(--muted);
+  }
+  .colchart-x span { flex: 1; text-align: center; font-variant-numeric: tabular-nums; }
+
+  /* 横向条形图 */
+  .rowchart { display: grid; gap: 9px; }
+  .rowchart .row {
+    display: grid; grid-template-columns: 5.5em 1fr 5em;
+    align-items: center; gap: 10px; font-size: 13.5px;
+  }
+  .rowchart .row .name { color: var(--ink-2); text-align: right; }
+  .rowchart .row .track { background: var(--surface-2); border-radius: 4px; height: 16px; }
+  .rowchart .row .fill {
+    height: 100%; border-radius: 4px 4px 4px 4px; background: var(--seq-550); min-width: 3px;
+    border-radius: 0 4px 4px 0;
+  }
+  .rowchart .row .val {
+    font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600;
+  }
+
+  /* 堆叠条 */
+  .stackbar { display: flex; height: 34px; border-radius: 6px; overflow: hidden; gap: 2px; }
+  .stackbar .seg { position: relative; cursor: default; }
+  .stackbar .seg .tip {
+    position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+    background: var(--ink); color: var(--bg); font-size: 12px;
+    padding: 3px 9px; border-radius: 6px; white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: opacity .12s;
+  }
+  .stackbar .seg:hover .tip { opacity: 1; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 11px; height: 11px; border-radius: 3px; }
+
+  /* ── 卡片组 ── */
+  .card-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 18px 0 22px;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 20px;
+  }
+  .card h4 { margin: 0 0 8px; font-size: 15.5px; }
+  .card p { font-size: 14px; margin-bottom: 8px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card .kicker {
+    font-size: 12px; letter-spacing: .1em; color: var(--gold);
+    font-weight: 600; margin-bottom: 6px;
+  }
+
+  /* 误区 */
+  .myth { border-left: 3px solid var(--vermilion); }
+  .myth .x { color: var(--vermilion); font-weight: 700; }
+  .myth .ok { color: var(--good); font-weight: 700; }
+
+  /* 行动清单 */
+  .checklist { list-style: none; padding: 0; margin: 14px 0 20px; }
+  .checklist li {
+    position: relative; padding-left: 30px; margin-bottom: 10px;
+    color: var(--ink-2); max-width: 70ch;
+  }
+  .checklist li::before {
+    content: "✓"; position: absolute; left: 0; top: 1px;
+    width: 20px; height: 20px; border-radius: 5px;
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 13px; font-weight: 700;
+    display: grid; place-items: center;
+  }
+
+  /* ── 计算器 ── */
+  .tool-grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    margin: 20px 0 26px;
+  }
+  .tool {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 20px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+  }
+  .tool h4 { margin: 0 0 4px; font-size: 16px; }
+  .tool .tool-sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .tool label { font-size: 13px; color: var(--ink-2); display: block; margin: 8px 0 3px; }
+  .tool input {
+    width: 100%; padding: 8px 10px; font-size: 14px;
+    border: 1px solid var(--line-strong); border-radius: 6px;
+    background: var(--bg); color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .tool button {
+    margin-top: 14px; padding: 9px 14px; font-size: 14px; font-weight: 600;
+    border: none; border-radius: 7px; cursor: pointer;
+    background: var(--brand); color: #fff;
+  }
+  :root[data-theme="dark"] .tool button { color: #0f1216; }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .tool button { color: #0f1216; }
+  }
+  .tool button:hover { filter: brightness(1.08); }
+  .tool .result {
+    margin-top: 14px; padding: 12px 14px; border-radius: 8px;
+    background: var(--gold-soft); color: var(--ink);
+    font-size: 14px; min-height: 20px;
+  }
+  .tool .result b { color: var(--gold-strong); font-size: 18px; font-variant-numeric: tabular-nums; }
+
+  /* ── 页脚 ── */
+  footer {
+    margin-top: 64px; border-top: 1px solid var(--line);
+    background: var(--surface); padding: 40px 0 48px;
+    font-size: 13.5px; color: var(--ink-2);
+  }
+  footer h5 { margin: 0 0 10px; font-size: 14px; color: var(--ink); }
+  .foot-grid {
+    display: grid; gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 6px; }
+  .disclaimer {
+    margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--muted); line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark serif">
+      <span class="seal">富</span>
+      <span>中国财富管理指南</span>
+      <small>数据 · 路径 · 工具</small>
+    </div>
+    <nav class="chapter-nav" aria-label="章节导航">
+      <a href="#huaxiang">数据画像</a>
+      <a href="#jieti">财富阶梯</a>
+      <a href="#hangye">职业行业</a>
+      <a href="#chengshi">城市分布</a>
+      <a href="#daiji">代际传承</a>
+      <a href="#xinli">心理目标</a>
+      <a href="#xingwei">行为特征</a>
+      <a href="#lujing">路径策略</a>
+      <a href="#shijianxian">时间线</a>
+      <a href="#wuqu">常见误区</a>
+      <a href="#qingdan">行动清单</a>
+      <a href="#gongju">计算工具</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ═══════════ Hero ═══════════ -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow serif">2026 数据指南 · 中国篇</div>
+      <h1 class="serif">中国高净值人群统计：<br><span class="accent">数据画像、财富阶梯与积累路径</span></h1>
+      <p class="lede">基于招商银行-贝恩《中国私人财富报告》、胡润研究院、中国人民银行与瑞银全球财富报告等公开数据，系统梳理中国高净值人群的规模、结构、地域分布、行为特征与可参考的财富积累路径，并附三款可直接使用的计算工具。</p>
+      <p class="meta">数据口径以各报告最新可得年份为准（多为 2022–2023 年发布数据）；标注「约」的为公开数据整理估算。本页仅供教育参考，不构成投资建议。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">高净值人群（可投资资产 &gt; 1000 万元）</div>
+          <div class="value">约 316<span class="unit">万人</span></div>
+          <div class="src">招行-贝恩《中国私人财富报告》，2022 年底</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">个人可投资资产总规模</div>
+          <div class="value">约 278<span class="unit">万亿元</span></div>
+          <div class="src">招行-贝恩，2022 年底</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">千万人民币资产「高净值家庭」</div>
+          <div class="value">约 208<span class="unit">万户</span></div>
+          <div class="src">胡润研究院《胡润财富报告》</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">美元百万富翁人数（全球第二）</div>
+          <div class="value">约 623<span class="unit">万人</span></div>
+          <div class="src">瑞银《全球财富报告 2023》</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 第一章 ═══════════ -->
+  <section class="chapter" id="huaxiang">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第一章 · 核心数据画像</div>
+      <h2 class="serif">中国高净值人群有多少？增长有多快？</h2>
+      <p>按招行-贝恩口径（个人可投资资产超过 1000 万元人民币），中国高净值人群从 2008 年的约 30 万人增长到 2022 年的约 316 万人，<strong>14 年增长超过 10 倍</strong>，年均复合增速约 18%。这是全球主要经济体中最快的财富人群扩张速度之一。</p>
+
+      <div class="fig">
+        <div class="fig-title">中国高净值人群数量增长（2008–2022）</div>
+        <div class="fig-sub">个人可投资资产超过 1000 万元人民币，单位：万人（悬停查看数值）</div>
+        <div class="colchart" role="img" aria-label="柱状图：中国高净值人群从2008年30万人增长到2022年316万人">
+          <div class="col" tabindex="0"><span class="tip">2008 年 · 约 30 万人</span><div class="bar" style="height:9.5%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2010 年 · 约 50 万人</span><div class="bar" style="height:15.8%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2012 年 · 约 71 万人</span><div class="bar" style="height:22.5%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2014 年 · 约 104 万人</span><div class="bar" style="height:32.9%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2016 年 · 约 158 万人</span><div class="bar" style="height:50%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2018 年 · 约 197 万人</span><div class="bar" style="height:62.3%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2020 年 · 约 262 万人</span><div class="bar" style="height:82.9%"></div></div>
+          <div class="col" tabindex="0"><span class="tip">2022 年 · 约 316 万人</span><span class="end-label">316</span><div class="bar" style="height:100%"></div></div>
+        </div>
+        <div class="colchart-x">
+          <span>2008</span><span>2010</span><span>2012</span><span>2014</span><span>2016</span><span>2018</span><span>2020</span><span>2022</span>
+        </div>
+        <div class="fig-src">数据来源：招商银行-贝恩公司《中国私人财富报告》历年数据整理</div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <caption>总量与结构概览</caption>
+          <thead>
+            <tr><th>指标</th><th class="num">数值</th><th>口径与来源</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>高净值人群数量</td><td class="num">约 316 万人</td><td>可投资资产 &gt;1000 万元，招行-贝恩（2022）</td></tr>
+            <tr><td>高净值人群持有的可投资资产</td><td class="num">约 101 万亿元</td><td>约占全国总量三分之一，招行-贝恩（2022）</td></tr>
+            <tr><td>全国个人可投资资产总规模</td><td class="num">约 278 万亿元</td><td>招行-贝恩（2022）</td></tr>
+            <tr><td>高净值人群人均可投资资产</td><td class="num">约 3200 万元</td><td>整理估算（101 万亿 ÷ 316 万人）</td></tr>
+            <tr><td>40 岁以下高净值人群占比</td><td class="num">约 42%</td><td>招行-贝恩（2021），呈年轻化趋势</td></tr>
+            <tr><td>美元口径百万富翁</td><td class="num">约 623 万人</td><td>净资产 &gt;100 万美元，瑞银（2023），仅次于美国</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">与美国「88% 白手起家」的统计相呼应：中国高净值人群绝大多数为改革开放后的<strong>第一代财富创造者</strong>，继承财富占比显著低于欧美成熟市场——这也意味着未来 10–20 年将迎来中国历史上第一轮大规模财富代际传承。</div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第二章 ═══════════ -->
+  <section class="chapter" id="jieti">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第二章 · 财富阶梯</div>
+      <h2 class="serif">从富裕家庭到超高净值：中国的财富分层</h2>
+      <p>胡润研究院按家庭总财富（含自住房产等）划分出四级阶梯。注意此口径与招行-贝恩的「可投资资产」不同——包含房产后门槛更容易达到，因此家庭数量更多。</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>中国财富家庭阶梯（家庭总财富口径）</caption>
+          <thead>
+            <tr><th>层级</th><th class="num">门槛</th><th class="num">家庭数量</th><th>直观理解</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>富裕家庭</td><td class="num">600 万元</td><td class="num">约 514 万户</td><td>约占全国家庭的 1%</td></tr>
+            <tr><td>高净值家庭</td><td class="num">1000 万元</td><td class="num">约 208 万户</td><td>约每 240 个家庭中 1 户</td></tr>
+            <tr><td>超高净值家庭</td><td class="num">1 亿元</td><td class="num">约 13.8 万户</td><td>以企业主为绝对主体</td></tr>
+            <tr><td>国际超高净值家庭</td><td class="num">3000 万美元</td><td class="num">约 9 万户</td><td>具备全球资产配置需求</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">数据来源：胡润研究院《胡润财富报告》（2023 年发布，数值为约数）。</div>
+
+      <h3>普通家庭的资产结构：房产占了六成</h3>
+      <p>中国人民银行 2019 年城镇居民家庭资产负债调查显示，城镇家庭户均总资产约 317.9 万元，但结构高度集中于房产——<strong>住房占家庭总资产的 59.1%</strong>，金融资产仅约 20.4%。这是中国家庭与高净值人群在资产结构上最大的分野。</p>
+
+      <div class="fig">
+        <div class="fig-title">中国城镇家庭资产构成</div>
+        <div class="fig-sub">占家庭总资产比重（悬停查看数值）</div>
+        <div class="stackbar" role="img" aria-label="堆叠条：住房59.1%，其他实物资产20.5%，金融资产20.4%">
+          <div class="seg" style="flex:59.1; background:var(--s1)"><span class="tip">住房资产 · 59.1%</span></div>
+          <div class="seg" style="flex:20.5; background:var(--s2)"><span class="tip">商铺、汽车等其他实物资产 · 20.5%</span></div>
+          <div class="seg" style="flex:20.4; background:var(--s3)"><span class="tip">金融资产 · 20.4%</span></div>
+        </div>
+        <div class="legend">
+          <span class="key"><span class="swatch" style="background:var(--s1)"></span>住房资产 59.1%</span>
+          <span class="key"><span class="swatch" style="background:var(--s2)"></span>其他实物资产 20.5%</span>
+          <span class="key"><span class="swatch" style="background:var(--s3)"></span>金融资产 20.4%</span>
+        </div>
+        <div class="fig-src">数据来源：中国人民银行《2019 年中国城镇居民家庭资产负债情况调查》</div>
+      </div>
+
+      <div class="note">对比参考：美国家庭金融资产占比普遍超过 60%。资产结构从「房产独大」走向「金融资产 + 房产均衡」，是多数中国家庭财富管理的第一课。</div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第三章 ═══════════ -->
+  <section class="chapter" id="hangye">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第三章 · 职业与行业</div>
+      <h2 class="serif">财富从哪里来：职业构成与行业赛道</h2>
+      <p>胡润研究院对千万资产高净值人群的构成分析显示，<strong>企业主始终是绝对主力</strong>，但过去十年最大的变化是「金领」（大型企业高管与专业人士）占比持续上升——股权激励让打工者第一次系统性地分享到了企业成长红利。</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>千万资产高净值人群职业构成</caption>
+          <thead>
+            <tr><th>人群类型</th><th class="num">占比</th><th>财富特征</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>企业主</td><td class="num">约 60%</td><td>企业资产占大头，现金及有价证券约占两成</td></tr>
+            <tr><td>金领（高管/专业人士）</td><td class="num">约 20%</td><td>工资、分红与股权激励，现金流稳定</td></tr>
+            <tr><td>职业投资人（炒房者）</td><td class="num">约 10%</td><td>投资性房产为主，受地产周期影响大</td></tr>
+            <tr><td>职业股民</td><td class="num">约 10%</td><td>证券投资为主，波动性最高</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">数据来源：胡润研究院《胡润财富报告》高净值人群构成划分（约数）。</div>
+
+      <h3>新财富的行业分布</h3>
+      <ul>
+        <li><strong>科技与互联网</strong>：新一代高净值人群的最大来源，董监高、中层与专业人士借助股权/期权在公司上市中完成原始积累。</li>
+        <li><strong>新能源与高端制造</strong>：近年 IPO 造富最集中的赛道，产业链上下游（电池、光伏、汽车零部件）催生大量新晋企业主。</li>
+        <li><strong>生物医药与硬科技</strong>：科创板设立后，科学家创业者与核心技术人员成为新增高净值群体。</li>
+        <li><strong>金融与专业服务</strong>：基金、券商、律所、咨询的资深从业者，是「金领」类别的核心构成。</li>
+        <li><strong>传统制造与外贸</strong>：珠三角、长三角庞大的「隐形冠军」企业主群体，是存量财富的基石。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第四章 ═══════════ -->
+  <section class="chapter" id="chengshi">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第四章 · 城市与区域分布</div>
+      <h2 class="serif">高净值家庭集中在哪些城市？</h2>
+      <p>中国的财富地理高度集中：<strong>北京、上海、香港、深圳、广州</strong>五城聚集了全国最大比例的千万资产家庭；从区域看，粤港澳大湾区、长三角、京津冀三大城市群构成了财富的「铁三角」。</p>
+
+      <div class="fig">
+        <div class="fig-title">千万资产高净值家庭最多的城市</div>
+        <div class="fig-sub">单位：万户（约数）</div>
+        <div class="rowchart" role="img" aria-label="横向条形图：北京约30万户居首，其后为上海、香港、深圳、广州、杭州、宁波、佛山、天津、苏州">
+          <div class="row"><span class="name">北京</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">≈30.0</span></div>
+          <div class="row"><span class="name">上海</span><span class="track"><span class="fill" style="width:88%"></span></span><span class="val">≈26.4</span></div>
+          <div class="row"><span class="name">香港</span><span class="track"><span class="fill" style="width:71%"></span></span><span class="val">≈21.3</span></div>
+          <div class="row"><span class="name">深圳</span><span class="track"><span class="fill" style="width:26%"></span></span><span class="val">≈7.9</span></div>
+          <div class="row"><span class="name">广州</span><span class="track"><span class="fill" style="width:24%"></span></span><span class="val">≈7.3</span></div>
+          <div class="row"><span class="name">杭州</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="val">≈5.2</span></div>
+          <div class="row"><span class="name">宁波</span><span class="track"><span class="fill" style="width:13%"></span></span><span class="val">≈3.9</span></div>
+          <div class="row"><span class="name">佛山</span><span class="track"><span class="fill" style="width:12%"></span></span><span class="val">≈3.5</span></div>
+          <div class="row"><span class="name">天津</span><span class="track"><span class="fill" style="width:11%"></span></span><span class="val">≈3.2</span></div>
+          <div class="row"><span class="name">苏州</span><span class="track"><span class="fill" style="width:10%"></span></span><span class="val">≈3.0</span></div>
+        </div>
+        <div class="fig-src">数据来源：胡润研究院《胡润财富报告》分城市数据整理（约数）</div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="kicker serif">区域格局 · 一</div>
+          <h4>粤港澳大湾区</h4>
+          <p>深圳的科技股权财富 + 广佛的制造业企业主 + 香港的国际金融与离岸配置，是财富「创造 + 管理」链条最完整的区域。</p>
+        </div>
+        <div class="card">
+          <div class="kicker serif">区域格局 · 二</div>
+          <h4>长三角</h4>
+          <p>上海的金融金领与外企高管、杭州的互联网与电商、苏锡甬的民营制造业，构成数量最庞大的高净值家庭群体。</p>
+        </div>
+        <div class="card">
+          <div class="kicker serif">区域格局 · 三</div>
+          <h4>京津冀</h4>
+          <p>北京以总部经济、TMT 与金融监管资源聚集了单城最多的千万资产家庭，央企高管与专业人士占比高。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第五章 ═══════════ -->
+  <section class="chapter" id="daiji">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第五章 · 代际与传承</div>
+      <h2 class="serif">中国历史上第一轮大规模财富交接</h2>
+      <p>与美国「婴儿潮持有 58% 财富」的格局不同，中国的财富集中在<strong>50 后至 70 后的第一代创业者</strong>手中，而他们正集中步入退休与传承窗口期。</p>
+      <ul>
+        <li><strong>传承规模</strong>：据招行-贝恩与多家机构估算，未来 10 年内中国将有约 <strong>18–20 万亿元</strong>财富进入代际传承程序，30 年维度的传承规模以数十万亿计。</li>
+        <li><strong>一代企业家老龄化</strong>：A 股上市公司实控人中 55 岁以上占比过半，「交接班」成为民营企业的普遍议题。</li>
+        <li><strong>二代分化</strong>：接班实业、转型投资（家族办公室）、专业经理人代管三条路径并存。</li>
+        <li><strong>工具升级</strong>：家族信托、保险金信托、遗嘱与赠与安排的使用率快速上升——招行-贝恩调研显示「财富传承」已进入高净值人群财富目标的前三位。</li>
+        <li><strong>年轻化的另一面</strong>：40 岁以下高净值人群占比约四成，新经济股权造富让「一代」与「新贵」并存，两代人风险偏好差异显著。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第六章 ═══════════ -->
+  <section class="chapter" id="xinli">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第六章 · 心理与目标</div>
+      <h2 class="serif">从「创富」到「守富」：目标函数的转变</h2>
+      <p>招行-贝恩历年调研中最重要的趋势性发现：高净值人群的首要财富目标已从早年的「创造更多财富」，转变为<strong>「保证财富安全」与「财富传承」</strong>——安全与确定性取代了高收益，成为第一诉求。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h4>安全感并不随财富自动增长</h4>
+          <p>与美国「仅 36% 的百万富翁自觉富有」类似，中国高净值人群普遍存在「财富焦虑」：对市场波动、行业政策、企业经营连续性的担忧，使多数人自评「守富能力有待提高」。</p>
+        </div>
+        <div class="card">
+          <h4>从个人理财到全盘规划</h4>
+          <p>调研显示高净值人群对<strong>税务筹划、法律架构、子女教育、身份与跨境安排</strong>的综合需求显著上升，单纯的产品收益比较退居其次。</p>
+        </div>
+        <div class="card">
+          <h4>专业机构渗透率上升</h4>
+          <p>私人银行、家族办公室与独立理财顾问的使用率持续提高；但与成熟市场相比，中国家庭「自己做决策」的比例仍然偏高。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第七章 ═══════════ -->
+  <section class="chapter" id="xingwei">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第七章 · 共同特征与行为</div>
+      <h2 class="serif">高储蓄、重配置：可复制的行为清单</h2>
+
+      <div class="table-scroll">
+        <table>
+          <caption>储蓄与消费行为</caption>
+          <thead>
+            <tr><th>行为指标</th><th>观察</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>国民储蓄率</td><td>中国长期在 <span class="tag">40% 上下</span>，居全球主要经济体前列（世界银行口径）</td></tr>
+            <tr><td>家庭储蓄习惯</td><td>高净值家庭普遍保持收入的 30%–50% 用于储蓄与投资</td></tr>
+            <tr><td>记账与预算</td><td>多数受访高净值人士有明确的年度收支与资产盘点习惯</td></tr>
+            <tr><td>消费克制</td><td>第一代创富者消费率显著低于同财富水平的欧美家庭</td></tr>
+            <tr><td>负债使用</td><td>善用低息房贷/经营贷杠杆，但控制总负债率（城镇家庭负债参与率 56.5%，央行 2019）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <caption>投资行为特征</caption>
+          <thead>
+            <tr><th>行为</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>长期持有核心资产</td><td>企业股权与核心城市房产平均持有周期以十年计</td></tr>
+            <tr><td>分散化趋势</td><td>从「存款 + 房产」两件套，转向股、债、保险、私募、海外资产的多元组合</td></tr>
+            <tr><td>重视确定性收益</td><td>存款、国债、年金与增额寿险配置比例近年明显上升</td></tr>
+            <tr><td>股权意识觉醒</td><td>新一代高净值人群把股权激励与基金定投作为主要金融资产积累方式</td></tr>
+            <tr><td>跨境配置起步</td><td>QDII、港股通、香港保险等渠道使用率上升，但整体海外配置比例仍低于成熟市场</td></tr>
+            <tr><td>专业委托增加</td><td>私行、信托、家办渗透率上升，「自己炒股」占比逐年下降</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第八章 ═══════════ -->
+  <section class="chapter" id="lujing">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第八章 · 中国特色路径</div>
+      <h2 class="serif">三条主流的千万资产路径</h2>
+      <p>对应美国指南中的「RSU 路径 / 房产杠杆 / 企业主路径」，中国语境下的三条主流路径如下——它们不是互斥的，多数高净值家庭是两条以上路径的叠加。</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="kicker serif">路径 一</div>
+          <h4>新经济股权路径（金领）</h4>
+          <p>进入高成长行业头部公司，以 <strong>工资高储蓄 + 股权激励（期权/RSU）</strong> 双轮积累。参考量级：一线大厂资深岗位年薪 60–150 万元，上市/回购兑现的股权是从「百万」跨越到「千万」的关键变量。</p>
+          <p>关键动作：理解行权与解禁规则、集中度控制（单一公司股票及时分散）、留意个税筹划窗口。</p>
+        </div>
+        <div class="card">
+          <div class="kicker serif">路径 二</div>
+          <h4>核心资产 + 长期复利路径</h4>
+          <p>普通高收入家庭最可复制的路径：<strong>核心城市自住房打底 + 每月固定比例投入指数基金/养老账户</strong>，靠 20–30 年复利完成积累（见第九章测算）。</p>
+          <p>关键动作：储蓄率优先于收益率；用好个人养老金账户（每年 1.2 万元税前抵扣）与低成本指数工具。</p>
+        </div>
+        <div class="card">
+          <div class="kicker serif">路径 三</div>
+          <h4>企业经营路径（企业主）</h4>
+          <p>约六成高净值人群的来源。企业价值是主体，但风险也最集中——<strong>「企业资产」与「家庭资产」的防火墙</strong>（有限责任、合规分红、保险与信托隔离）决定了财富能否穿越经营周期。</p>
+          <p>关键动作：规范财务与股权架构、提前规划接班与退出（并购/上市）、避免无限连带担保。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第九章 ═══════════ -->
+  <section class="chapter" id="shijianxian">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第九章 · 时间线参考</div>
+      <h2 class="serif">通往千万可投资资产需要多少年？</h2>
+      <p>以下测算假设家庭税后年收入 60 万元、投资年化收益 6%（长期均衡假设，非承诺收益），目标为 1000 万元可投资资产。结论与美国数据一致：<strong>储蓄率比收益率更能决定到达时间</strong>。</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>不同储蓄率下的「千万之路」（测算值）</caption>
+          <thead>
+            <tr><th class="num">储蓄率</th><th class="num">每年投入</th><th class="num">所需年限</th><th>直观感受</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">10%</td><td class="num">6 万元</td><td class="num">约 41 年</td><td>几乎需要整个职业生涯</td></tr>
+            <tr><td class="num">20%</td><td class="num">12 万元</td><td class="num">约 31 年</td><td>30 岁开始，60 岁前达成</td></tr>
+            <tr><td class="num">30%</td><td class="num">18 万元</td><td class="num">约 25 年</td><td>多数双职工家庭的可行区间</td></tr>
+            <tr><td class="num">40%</td><td class="num">24 万元</td><td class="num">约 22 年</td><td>高储蓄家庭的典型速度</td></tr>
+            <tr><td class="num">50%</td><td class="num">30 万元</td><td class="num">约 19 年</td><td>接近「FIRE」式极限储蓄</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <caption>复利增长模拟：不同起点 + 每年定投 12 万元，年化 6%（测算值）</caption>
+          <thead>
+            <tr><th class="num">起始本金</th><th class="num">10 年后</th><th class="num">20 年后</th><th class="num">30 年后</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">50 万元</td><td class="num">约 248 万</td><td class="num">约 602 万</td><td class="num">约 1236 万</td></tr>
+            <tr><td class="num">100 万元</td><td class="num">约 337 万</td><td class="num">约 762 万</td><td class="num">约 1523 万</td></tr>
+            <tr><td class="num">200 万元</td><td class="num">约 516 万</td><td class="num">约 1083 万</td><td class="num">约 2097 万</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">所有测算为教育性演示，采用固定年化 6% 的简化假设，未考虑通胀、税费与市场波动；实际结果可能显著不同。可用<a href="#gongju">下方复利计算器</a>按自己的参数重算。</div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第十章 ═══════════ -->
+  <section class="chapter" id="wuqu">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第十章 · 常见误区</div>
+      <h2 class="serif">六个流传最广的财富误解</h2>
+      <div class="card-grid">
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「有几套房就是财务自由」</h4>
+          <p><span class="ok">✓ 事实</span>房产占比过高意味着流动性差、集中度风险大。千万「纸面身家」与千万「可投资资产」是两回事，后者才决定抗风险能力与现金流。</p>
+        </div>
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「钱放银行最安全」</h4>
+          <p><span class="ok">✓ 事实</span>存款名义上安全，但长期跑不赢通胀就是确定性的购买力缩水。安全的正确定义是「与目标匹配的组合」，而不是单一资产。</p>
+        </div>
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「理财就是挑收益最高的产品」</h4>
+          <p><span class="ok">✓ 事实</span>资管新规打破刚兑后，「高收益 + 保本」不再存在。收益永远与风险同源，先定资产配置，再选产品。</p>
+        </div>
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「保险是骗人的 / 没用的」</h4>
+          <p><span class="ok">✓ 事实</span>保障型保险解决的是「小概率、大损失」问题，是家庭资产负债表的地基；高净值人群的保单与保险金信托使用率反而最高。</p>
+        </div>
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「传承是有钱人的事，立遗嘱不吉利」</h4>
+          <p><span class="ok">✓ 事实</span>没有安排的传承 = 法定继承 + 潜在纠纷。遗嘱、保单指定受益人、赠与安排是任何有房产家庭都用得上的基础工具。</p>
+        </div>
+        <div class="card myth">
+          <h4><span class="x">✕ 误区</span>「等我钱多了再开始规划」</h4>
+          <p><span class="ok">✓ 事实</span>复利的核心变量是时间。第九章的测算显示：晚开始 10 年，往往需要把储蓄率提高一倍才能追平。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 第十一章 ═══════════ -->
+  <section class="chapter" id="qingdan">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">第十一章 · 行动清单</div>
+      <h2 class="serif">对照与加速：现在可以做的十件事</h2>
+
+      <h3>财务健康对照</h3>
+      <ul class="checklist">
+        <li>盘点净资产：列出全部资产（房产、存款、投资、公积金）与负债，得到真实的家庭净资产数字（可用下方计算器）。</li>
+        <li>检查资产结构：房产占比是否超过 70%？金融资产是否只有活期与理财？</li>
+        <li>建立 6–12 个月支出的应急现金池，与投资资金隔离。</li>
+        <li>检查保障缺口：重疾、医疗、定期寿险的保额是否覆盖负债与家庭责任。</li>
+        <li>确认储蓄率：税后收入的储蓄与投资比例是否达到 20% 以上。</li>
+      </ul>
+
+      <h3>加速策略</h3>
+      <ul class="checklist">
+        <li>把储蓄自动化：发薪日自动划转定投，先储蓄后消费。</li>
+        <li>用满税优账户：个人养老金（年 1.2 万元抵扣）、企业年金、公积金的可用额度。</li>
+        <li>投资主线放在低成本、可长期持有的宽基工具上，个股与另类资产控制在总盘子的小比例。</li>
+        <li>每年做一次家庭资产年检：再平衡、盘点集中度（单一公司/单一城市/单一币种）。</li>
+        <li>提前 10 年思考传承与教育资金安排：遗嘱、受益人指定、教育金专户。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ 计算工具 ═══════════ -->
+  <section class="chapter" id="gongju">
+    <div class="wrap">
+      <div class="chapter-eyebrow serif">附录 · 计算工具</div>
+      <h2 class="serif">三个常用计算器</h2>
+      <p>与正文测算同一套公式，输入你自己的数字即可。单位统一为「万元」，结果仅供教育参考。</p>
+
+      <div class="tool-grid">
+        <!-- 净资产计算器 -->
+        <div class="tool">
+          <h4>净资产计算器</h4>
+          <div class="tool-sub">资产合计 − 负债合计 = 家庭净资产</div>
+          <label for="nw-house">房产市值（万元）</label>
+          <input id="nw-house" type="number" value="300" min="0">
+          <label for="nw-fin">金融资产：存款/基金/股票（万元）</label>
+          <input id="nw-fin" type="number" value="80" min="0">
+          <label for="nw-other">其他资产：公积金/车辆等（万元）</label>
+          <input id="nw-other" type="number" value="30" min="0">
+          <label for="nw-debt">负债合计：房贷/其他贷款（万元）</label>
+          <input id="nw-debt" type="number" value="150" min="0">
+          <button type="button" id="nw-btn">计算净资产</button>
+          <div class="result" id="nw-out" aria-live="polite">输入数字后点击计算</div>
+        </div>
+
+        <!-- 复利计算器 -->
+        <div class="tool">
+          <h4>复利计算器</h4>
+          <div class="tool-sub">初始本金 + 每月定投，按年复利滚动</div>
+          <label for="cp-p0">初始本金（万元）</label>
+          <input id="cp-p0" type="number" value="50" min="0">
+          <label for="cp-m">每月定投（万元）</label>
+          <input id="cp-m" type="number" value="1" min="0" step="0.1">
+          <label for="cp-r">预期年化收益率（%）</label>
+          <input id="cp-r" type="number" value="6" min="0" max="30" step="0.5">
+          <label for="cp-n">投资年限（年）</label>
+          <input id="cp-n" type="number" value="20" min="1" max="60">
+          <button type="button" id="cp-btn">计算终值</button>
+          <div class="result" id="cp-out" aria-live="polite">输入数字后点击计算</div>
+        </div>
+
+        <!-- 退休计算器 -->
+        <div class="tool">
+          <h4>退休储蓄计算器</h4>
+          <div class="tool-sub">测算退休时点资产，并与目标需求对照</div>
+          <label for="rt-age">当前年龄</label>
+          <input id="rt-age" type="number" value="32" min="16" max="70">
+          <label for="rt-ret">计划退休年龄</label>
+          <input id="rt-ret" type="number" value="60" min="35" max="80">
+          <label for="rt-p0">当前可投资资产（万元）</label>
+          <input id="rt-p0" type="number" value="60" min="0">
+          <label for="rt-m">每月储蓄投资（万元）</label>
+          <input id="rt-m" type="number" value="1" min="0" step="0.1">
+          <label for="rt-spend">退休后每年期望支出（万元）</label>
+          <input id="rt-spend" type="number" value="24" min="1">
+          <button type="button" id="rt-btn">计算退休资产</button>
+          <div class="result" id="rt-out" aria-live="polite">输入数字后点击计算</div>
+        </div>
+      </div>
+      <div class="note">复利与退休测算默认年化 6%、退休需求按 3.5% 提取率折算为目标资产（= 年支出 ÷ 3.5%），均为简化教育模型，不考虑通胀、税费与波动，不构成任何投资建议。</div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════ 页脚 ═══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>关于本页</h5>
+        <p style="font-size:13.5px">本页为参考「美国高净值财务指南」内容结构制作的中国版数据指南演示页，面向对中国财富管理感兴趣的读者，聚合公开报告数据并提供教育性测算工具。</p>
+      </div>
+      <div>
+        <h5>数据来源</h5>
+        <ul>
+          <li>招商银行 × 贝恩公司《中国私人财富报告》</li>
+          <li>胡润研究院《胡润财富报告》</li>
+          <li>中国人民银行《城镇居民家庭资产负债情况调查（2019）》</li>
+          <li>瑞银集团《全球财富报告 2023》</li>
+          <li>国家统计局及其他公开资料</li>
+        </ul>
+      </div>
+      <div>
+        <h5>章节速览</h5>
+        <ul>
+          <li><a href="#huaxiang">数据画像</a> · <a href="#jieti">财富阶梯</a> · <a href="#hangye">职业行业</a></li>
+          <li><a href="#chengshi">城市分布</a> · <a href="#daiji">代际传承</a> · <a href="#xinli">心理目标</a></li>
+          <li><a href="#xingwei">行为特征</a> · <a href="#lujing">路径策略</a> · <a href="#shijianxian">时间线</a></li>
+          <li><a href="#wuqu">常见误区</a> · <a href="#qingdan">行动清单</a> · <a href="#gongju">计算工具</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      免责声明：本页面所有内容仅供教育与研究参考，不构成任何投资、税务、法律或保险建议。数据来自公开报告，口径与年份各异，标注「约」的数值为整理估算，可能与最新数据存在差异；所有测算基于简化假设，不代表任何真实收益承诺。做出任何财务决策前，请咨询持牌专业人士。<br>
+      Disclaimer: All content on this page is for educational reference only and does not constitute investment, tax, legal, or insurance advice. Figures are compiled from public reports and simplified models; consult licensed professionals before making financial decisions.
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var fmt = function (n) {
+      return n.toLocaleString('zh-CN', { maximumFractionDigits: 1 });
+    };
+    var num = function (id) {
+      var v = parseFloat(document.getElementById(id).value);
+      return isFinite(v) ? v : 0;
+    };
+
+    /* 净资产 */
+    document.getElementById('nw-btn').addEventListener('click', function () {
+      var assets = num('nw-house') + num('nw-fin') + num('nw-other');
+      var debt = num('nw-debt');
+      var net = assets - debt;
+      var band;
+      if (net >= 10000) band = '已达到亿元「超高净值家庭」量级（胡润口径）';
+      else if (net >= 1000) band = '已达到千万「高净值家庭」量级（胡润口径，含房产）';
+      else if (net >= 600) band = '已达到 600 万「富裕家庭」量级（胡润口径，含房产）';
+      else band = '距 600 万「富裕家庭」门槛还差 ' + fmt(600 - net) + ' 万元';
+      document.getElementById('nw-out').innerHTML =
+        '家庭净资产：<b>' + fmt(net) + ' 万元</b><br>' + band +
+        '（资产 ' + fmt(assets) + ' 万 − 负债 ' + fmt(debt) + ' 万）';
+    });
+
+    /* 复利：年末追加每年定投总额，按年复利 */
+    var compound = function (p0, monthly, ratePct, years) {
+      var r = ratePct / 100;
+      var annual = monthly * 12;
+      var fv = p0 * Math.pow(1 + r, years);
+      if (r > 0) fv += annual * (Math.pow(1 + r, years) - 1) / r;
+      else fv += annual * years;
+      return fv;
+    };
+
+    document.getElementById('cp-btn').addEventListener('click', function () {
+      var p0 = num('cp-p0'), m = num('cp-m'), r = num('cp-r'), n = num('cp-n');
+      var fv = compound(p0, m, r, n);
+      var invested = p0 + m * 12 * n;
+      document.getElementById('cp-out').innerHTML =
+        n + ' 年后终值：<b>' + fmt(fv) + ' 万元</b><br>累计投入 ' + fmt(invested) +
+        ' 万，复利增值 ' + fmt(fv - invested) + ' 万';
+    });
+
+    /* 退休 */
+    document.getElementById('rt-btn').addEventListener('click', function () {
+      var age = num('rt-age'), ret = num('rt-ret');
+      var years = ret - age;
+      var out = document.getElementById('rt-out');
+      if (years <= 0) {
+        out.textContent = '退休年龄需大于当前年龄';
+        return;
+      }
+      var fv = compound(num('rt-p0'), num('rt-m'), 6, years);
+      var target = num('rt-spend') / 0.035;
+      var pct = Math.min(999, Math.round(fv / target * 100));
+      out.innerHTML =
+        ret + ' 岁时预计资产：<b>' + fmt(fv) + ' 万元</b><br>' +
+        '按 3.5% 提取率，支撑每年 ' + fmt(num('rt-spend')) + ' 万支出约需 ' +
+        fmt(target) + ' 万，目前进度约 ' + pct + '%';
+    });
+  })();
+</script>
+</body>
+</html>

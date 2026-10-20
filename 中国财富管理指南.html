@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国财富管理指南｜高净人群（可投资资产100万+）的税务·股权·投资·养老·传承频道站</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f5f6f5;
+    --surface: #fdfdfc;
+    --surface-2: #f0f1ef;
+    --ink: #1b2129;
+    --ink-2: #4a535e;
+    --muted: #878d94;
+    --line: #e2e3de;
+    --line-strong: #c9cbc4;
+    --brand: #1d3a5f;
+    --brand-soft: #e8edf3;
+    --gold: #9a7a24;
+    --gold-strong: #7f6316;
+    --gold-soft: #f4eeda;
+    --vermilion: #a83b2c;
+    --good: #0ca30c;
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --seq-300: #6da7ec;
+    --seq-400: #3987e5;
+    --seq-500: #256abf;
+    --seq-550: #1c5cab;
+    --seq-650: #104281;
+    --grid: #e1e0d9;
+    --shadow: 0 1px 2px rgba(20,28,40,.05), 0 6px 20px rgba(20,28,40,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --bg: #0f1216; --surface: #171b21; --surface-2: #1e232a;
+      --ink: #edeeea; --ink-2: #b6bcc3; --muted: #848a91;
+      --line: #2a2f36; --line-strong: #3a404a;
+      --brand: #7fa8d6; --brand-soft: #1c2836;
+      --gold: #cfa94e; --gold-strong: #dfc077; --gold-soft: #2a2414;
+      --vermilion: #d96a5a; --good: #0ca30c;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+      --seq-300: #86b6ef; --seq-400: #3987e5; --seq-500: #5598e7; --seq-550: #5598e7; --seq-650: #86b6ef;
+      --grid: #2c2c2a;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f1216; --surface: #171b21; --surface-2: #1e232a;
+    --ink: #edeeea; --ink-2: #b6bcc3; --muted: #848a91;
+    --line: #2a2f36; --line-strong: #3a404a;
+    --brand: #7fa8d6; --brand-soft: #1c2836;
+    --gold: #cfa94e; --gold-strong: #dfc077; --gold-soft: #2a2414;
+    --vermilion: #d96a5a; --good: #0ca30c;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --seq-300: #86b6ef; --seq-400: #3987e5; --seq-500: #5598e7; --seq-550: #5598e7; --seq-650: #86b6ef;
+    --grid: #2c2c2a;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f5f6f5; --surface: #fdfdfc; --surface-2: #f0f1ef;
+    --ink: #1b2129; --ink-2: #4a535e; --muted: #878d94;
+    --line: #e2e3de; --line-strong: #c9cbc4;
+    --brand: #1d3a5f; --brand-soft: #e8edf3;
+    --gold: #9a7a24; --gold-strong: #7f6316; --gold-soft: #f4eeda;
+    --vermilion: #a83b2c; --good: #0ca30c;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+    --seq-300: #6da7ec; --seq-400: #3987e5; --seq-500: #256abf; --seq-550: #1c5cab; --seq-650: #104281;
+    --grid: #e1e0d9;
+    --shadow: 0 1px 2px rgba(20,28,40,.05), 0 6px 20px rgba(20,28,40,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+    font-size: 16px; line-height: 1.75;
+  }
+  .serif { font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif; }
+  a { color: var(--brand); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--brand); outline-offset: 2px;
+  }
+
+  /* ── 顶部 ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1120px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; gap: 18px; height: 56px;
+  }
+  .brand-mark {
+    display: flex; align-items: center; gap: 8px; white-space: nowrap;
+    font-weight: 700; letter-spacing: .02em; cursor: pointer; text-decoration: none; color: var(--ink);
+  }
+  .brand-mark .seal {
+    display: inline-grid; place-items: center;
+    width: 26px; height: 26px; border-radius: 4px;
+    background: var(--brand); color: var(--bg);
+    font-size: 13px; font-weight: 700;
+  }
+  .channel-nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; font-size: 14px; }
+  .channel-nav::-webkit-scrollbar { display: none; }
+  .channel-nav a {
+    color: var(--ink-2); text-decoration: none; white-space: nowrap;
+    padding: 5px 11px; border-radius: 6px;
+  }
+  .channel-nav a:hover { background: var(--surface-2); color: var(--ink); }
+  .channel-nav a.active { background: var(--brand); color: var(--bg); font-weight: 600; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── 路由页面 ── */
+  .route { display: none; }
+  .route.active { display: block; animation: fadein .25s ease; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* ── 页面头部 ── */
+  .page-head { padding: 44px 0 10px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .18em; color: var(--gold);
+    font-weight: 600; margin-bottom: 10px;
+  }
+  h1 {
+    font-size: clamp(26px, 4vw, 40px); line-height: 1.3;
+    margin: 0 0 14px; text-wrap: balance; font-weight: 700;
+  }
+  h1 .accent { color: var(--brand); }
+  .lede { color: var(--ink-2); max-width: 70ch; margin: 0 0 6px; }
+  .meta { font-size: 13px; color: var(--muted); }
+
+  h2 { font-size: clamp(20px, 2.6vw, 27px); line-height: 1.35; margin: 40px 0 12px; text-wrap: balance; font-weight: 700; }
+  h3 { font-size: 17.5px; margin: 26px 0 10px; font-weight: 700; }
+  p { margin: 0 0 13px; max-width: 74ch; color: var(--ink-2); }
+  p strong, li strong { color: var(--ink); }
+  ul, ol { margin: 0 0 15px; padding-left: 1.4em; color: var(--ink-2); }
+  li { margin-bottom: 6px; }
+  section { padding-bottom: 8px; }
+
+  .note {
+    font-size: 13.5px; color: var(--muted);
+    border-left: 3px solid var(--line-strong);
+    padding: 2px 0 2px 12px; margin: 14px 0 18px; max-width: 72ch;
+  }
+  .policy-tag {
+    display: inline-block; font-size: 12px; padding: 1px 9px; border-radius: 99px;
+    background: var(--gold-soft); color: var(--gold-strong); font-weight: 600;
+    vertical-align: 2px; margin-left: 6px;
+  }
+
+  /* ── 数据卡 ── */
+  .stat-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin: 28px 0 8px;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 20px 16px; box-shadow: var(--shadow);
+  }
+  .stat-card .label { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; }
+  .stat-card .value { font-size: 30px; font-weight: 700; line-height: 1.15; color: var(--brand); }
+  .stat-card .value .unit { font-size: 15px; font-weight: 600; color: var(--ink-2); margin-left: 2px; }
+  .stat-card .src { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* ── 表格 ── */
+  .table-scroll { overflow-x: auto; margin: 16px 0 20px; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 540px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; font-size: 14.5px;
+  }
+  caption { caption-side: top; text-align: left; font-weight: 700; font-size: 15px; color: var(--ink); padding: 0 2px 10px; }
+  th, td { padding: 9px 14px; text-align: left; border-top: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--surface-2); border-top: none; font-size: 13px; color: var(--ink-2); letter-spacing: .04em; font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr:hover { background: var(--brand-soft); }
+
+  /* ── 图表 ── */
+  .fig {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 20px 22px 16px; margin: 18px 0 22px; box-shadow: var(--shadow);
+  }
+  .fig .fig-title { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .fig .fig-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .fig .fig-src { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  .colchart {
+    display: flex; align-items: flex-end; gap: 4%; height: 210px; padding: 0 4px;
+    border-bottom: 1px solid var(--line-strong);
+    background: repeating-linear-gradient(to top, transparent 0 51px, var(--grid) 51px 52px);
+  }
+  .colchart .col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; position: relative; cursor: default; }
+  .colchart .bar { width: 100%; max-width: 46px; background: var(--seq-550); border-radius: 4px 4px 0 0; }
+  .colchart .col:last-child .bar { background: var(--seq-650); }
+  .tip {
+    position: absolute; bottom: calc(100% + 3px); left: 50%; transform: translateX(-50%);
+    background: var(--ink); color: var(--bg); font-size: 12px; padding: 3px 9px; border-radius: 6px;
+    white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .12s;
+    font-variant-numeric: tabular-nums; z-index: 5;
+  }
+  .colchart .col:hover .tip, .colchart .col:focus-visible .tip { opacity: 1; }
+  .colchart .col .end-label { position: absolute; bottom: 100%; margin-bottom: 3px; font-size: 12.5px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .colchart-x { display: flex; gap: 4%; padding: 6px 4px 0; font-size: 12px; color: var(--muted); }
+  .colchart-x span { flex: 1; text-align: center; font-variant-numeric: tabular-nums; }
+
+  .rowchart { display: grid; gap: 9px; }
+  .rowchart .row { display: grid; grid-template-columns: 5.5em 1fr 5em; align-items: center; gap: 10px; font-size: 13.5px; }
+  .rowchart .row .name { color: var(--ink-2); text-align: right; }
+  .rowchart .row .track { background: var(--surface-2); border-radius: 4px; height: 16px; }
+  .rowchart .row .fill { height: 100%; background: var(--seq-550); min-width: 3px; border-radius: 0 4px 4px 0; }
+  .rowchart .row .val { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+  /* 财富金字塔 */
+  .pyramid { display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 10px 0 6px; }
+  .pyramid .tier {
+    position: relative; height: 46px; border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 600; cursor: default;
+    text-shadow: 0 1px 2px rgba(0,0,0,.35); white-space: nowrap;
+  }
+  .pyramid .tier:hover .tip { opacity: 1; }
+
+  /* ── 卡片 ── */
+  .card-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin: 16px 0 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+  .card h4 { margin: 0 0 8px; font-size: 15.5px; }
+  .card p { font-size: 14px; margin-bottom: 8px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card .kicker { font-size: 12px; letter-spacing: .1em; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+  .card.link-card { cursor: pointer; transition: border-color .15s, transform .15s; text-decoration: none; display: block; color: inherit; }
+  .card.link-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+  .card.link-card .go { color: var(--brand); font-size: 13px; font-weight: 600; }
+  .myth { border-left: 3px solid var(--vermilion); }
+  .myth .x { color: var(--vermilion); font-weight: 700; }
+  .myth .ok { color: var(--good); font-weight: 700; }
+
+  /* ── 折叠 FAQ ── */
+  details.faq {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 9px;
+    padding: 0 18px; margin-bottom: 10px; max-width: 860px;
+  }
+  details.faq summary {
+    cursor: pointer; font-weight: 600; font-size: 15px; color: var(--ink);
+    padding: 13px 0; list-style: none; position: relative; padding-right: 30px;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after {
+    content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+    color: var(--gold); font-size: 20px; font-weight: 400;
+  }
+  details.faq[open] summary::after { content: "−"; }
+  details.faq .faq-body { padding: 0 0 14px; font-size: 14.5px; color: var(--ink-2); }
+  details.faq .faq-body p { margin-bottom: 8px; }
+
+  /* ── 计算器 ── */
+  .tool-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 18px 0 24px; }
+  .tool {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  }
+  .tool h4 { margin: 0 0 4px; font-size: 16px; }
+  .tool .tool-sub { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .tool label { font-size: 13px; color: var(--ink-2); display: block; margin: 8px 0 3px; }
+  .tool input, .tool select {
+    width: 100%; padding: 8px 10px; font-size: 14px;
+    border: 1px solid var(--line-strong); border-radius: 6px;
+    background: var(--bg); color: var(--ink); font-variant-numeric: tabular-nums;
+  }
+  .tool input[type="range"] { padding: 0; accent-color: var(--brand); }
+  .tool button {
+    margin-top: 14px; padding: 9px 14px; font-size: 14px; font-weight: 600;
+    border: none; border-radius: 7px; cursor: pointer; background: var(--brand); color: var(--bg);
+  }
+  .tool button:hover { filter: brightness(1.08); }
+  .tool .result {
+    margin-top: 14px; padding: 12px 14px; border-radius: 8px;
+    background: var(--gold-soft); color: var(--ink); font-size: 14px; min-height: 20px;
+  }
+  .tool .result b { color: var(--gold-strong); font-size: 17px; font-variant-numeric: tabular-nums; }
+  .tool .result .sub-line { font-size: 13px; color: var(--ink-2); }
+  .tool .inline2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .slider-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+  .slider-row .sl-label { width: 6.5em; font-size: 13px; color: var(--ink-2); flex-shrink: 0; }
+  .slider-row output { width: 3.2em; text-align: right; font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* 自测 */
+  .quiz-q { background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 14px 18px; margin-bottom: 10px; max-width: 860px; }
+  .quiz-q .q-text { font-weight: 600; font-size: 14.5px; margin-bottom: 8px; }
+  .quiz-q .opts { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); }
+  .quiz-q .opts label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; margin: 0; }
+  .quiz-q input[type="radio"] { accent-color: var(--brand); }
+
+  /* 清单 */
+  .icheck { list-style: none; padding: 0; margin: 14px 0 8px; max-width: 860px; }
+  .icheck li {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 10px 15px; margin-bottom: 8px;
+  }
+  .icheck label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-size: 14.5px; color: var(--ink-2); }
+  .icheck input { accent-color: var(--brand); margin-top: 5px; flex-shrink: 0; }
+  .progress-wrap { max-width: 860px; margin: 12px 0 20px; }
+  .progress-track { background: var(--surface-2); border-radius: 99px; height: 12px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--gold); border-radius: 99px; width: 0%; transition: width .3s; }
+  .progress-label { font-size: 13px; color: var(--ink-2); margin-top: 5px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 11px; height: 11px; border-radius: 3px; }
+
+  /* ── 家庭保障规划器 ── */
+  .form-grid { display: grid; gap: 2px 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 4px; }
+  .budget-line {
+    margin-top: 14px; padding: 12px 14px; border-radius: 8px;
+    background: var(--gold-soft); color: var(--ink); font-size: 14px;
+    display: flex; flex-wrap: wrap; gap: 6px 20px;
+  }
+  .budget-line .ok { color: var(--good); font-weight: 700; }
+  .budget-line .bad { color: var(--vermilion); font-weight: 700; }
+
+  /* ── 产品库 ── */
+  .prod-list { display: grid; gap: 10px; margin: 16px 0 12px; }
+  .prod {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px;
+  }
+  .prod .name { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+  .prod .meta { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+  .prod a {
+    white-space: nowrap; justify-self: end; font-size: 13px; font-weight: 600; text-decoration: none;
+    color: var(--gold-strong); border: 1px solid var(--gold); border-radius: 7px; padding: 7px 16px;
+  }
+  .prod a:hover { background: var(--gold); color: var(--bg); }
+  @media (max-width: 520px) {
+    .prod { grid-template-columns: 1fr; }
+    .prod a { justify-self: start; }
+  }
+
+  /* ── 页脚 ── */
+  footer { margin-top: 56px; border-top: 1px solid var(--line); background: var(--surface); padding: 38px 0 46px; font-size: 13.5px; color: var(--ink-2); }
+  footer h5 { margin: 0 0 10px; font-size: 14px; color: var(--ink); }
+  .foot-grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 6px; }
+  .disclaimer { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mark serif" href="#/">
+      <span class="seal">富</span>
+      <span>中国财富管理指南</span>
+    </a>
+    <nav class="channel-nav" aria-label="频道导航">
+      <a href="#/" data-route="home">总览</a>
+      <a href="#/tax" data-route="tax">税务</a>
+      <a href="#/equity" data-route="equity">股权薪酬</a>
+      <a href="#/invest" data-route="invest">投资</a>
+      <a href="#/retire" data-route="retire">退休养老</a>
+      <a href="#/property" data-route="property">房地产</a>
+      <a href="#/legacy" data-route="legacy">财富传承</a>
+      <a href="#/insurance" data-route="insurance">保险</a>
+      <a href="#/education" data-route="education">教育规划</a>
+      <a href="#/tools" data-route="tools">🧮 工具库</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ════════════════════ 总览 ════════════════════ -->
+<section class="route" id="route-home">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">2026 · 中国高净人群财务指南</div>
+      <h1 class="serif">写给可投资资产 <span class="accent">100 万+</span> 家庭的<br>中国财富管理全景指南</h1>
+      <p class="lede">对标海外高净值财务指南的内容框架，结合中国税制、社保、房产、继承与保险制度，覆盖税务、股权薪酬、投资、养老、房地产、传承、保险与教育规划八大频道，并提供 13 个交互计算工具。</p>
+      <p class="meta">本站口径：<strong>高净人群 = 个人/家庭可投资资产 ≥ 100 万元人民币</strong>（不含自住房产）。行业报告常用 1000 万门槛，本站按大众富裕人群实际需求放宽至 100 万。数据来自公开报告（多为 2022–2023 年发布），「约」为整理估算；内容仅供教育参考，不构成投资建议。</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">可投资资产 ≥ 100 万人群</div>
+        <div class="value">约 3–5 千<span class="unit">万人</span></div>
+        <div class="src">多家机构大众富裕层数据整理估算</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">可投资资产 ≥ 1000 万人群</div>
+        <div class="value">约 316<span class="unit">万人</span></div>
+        <div class="src">招行-贝恩《中国私人财富报告》，2022</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">个人可投资资产总规模</div>
+        <div class="value">约 278<span class="unit">万亿元</span></div>
+        <div class="src">招行-贝恩，2022</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">美元百万富翁（全球第二）</div>
+        <div class="value">约 623<span class="unit">万人</span></div>
+        <div class="src">瑞银《全球财富报告 2023》</div>
+      </div>
+    </div>
+
+    <h2 class="serif">中国财富金字塔</h2>
+    <p>从 100 万可投资资产到亿元家庭，每上一层，人数大约缩减一个数量级。把鼠标悬停在每一层查看口径与数据来源。</p>
+    <div class="fig">
+      <div class="pyramid" role="img" aria-label="财富金字塔：可投资资产100万以上约3至5千万人；600万总资产家庭约514万户；1000万可投资资产约316万人；亿元资产家庭约13.8万户">
+        <div class="tier" style="width:min(24%,180px); background:var(--seq-650)"><span class="tip">胡润口径 · 家庭总财富 ≥1 亿元 · 约 13.8 万户</span>亿元 · 约13.8万户</div>
+        <div class="tier" style="width:min(44%,330px); background:var(--seq-550)"><span class="tip">招行-贝恩口径 · 可投资资产 ≥1000 万 · 约 316 万人</span>千万 · 约316万人</div>
+        <div class="tier" style="width:min(66%,500px); background:var(--seq-400)"><span class="tip">胡润口径 · 家庭总财富 ≥600 万 · 约 514 万户</span>600万家庭 · 约514万户</div>
+        <div class="tier" style="width:min(88%,680px); background:var(--seq-300)"><span class="tip">本站口径 · 可投资资产 ≥100 万 · 整理估算 3000–5000 万人</span>100万+ · 约3–5千万人（本站口径）</div>
+      </div>
+      <div class="fig-src">来源：招行-贝恩、胡润研究院公开数据及整理估算；各层口径不同，不可直接相除。</div>
+    </div>
+
+    <h2 class="serif">高净值人群的增长曲线</h2>
+    <div class="fig">
+      <div class="fig-title">中国高净值人群数量增长（2008–2022）</div>
+      <div class="fig-sub">可投资资产超 1000 万元人民币，单位：万人（悬停查看数值）</div>
+      <div class="colchart" role="img" aria-label="柱状图：中国高净值人群从2008年30万人增长到2022年316万人">
+        <div class="col" tabindex="0"><span class="tip">2008 年 · 约 30 万人</span><div class="bar" style="height:9.5%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2010 年 · 约 50 万人</span><div class="bar" style="height:15.8%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2012 年 · 约 71 万人</span><div class="bar" style="height:22.5%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2014 年 · 约 104 万人</span><div class="bar" style="height:32.9%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2016 年 · 约 158 万人</span><div class="bar" style="height:50%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2018 年 · 约 197 万人</span><div class="bar" style="height:62.3%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2020 年 · 约 262 万人</span><div class="bar" style="height:82.9%"></div></div>
+        <div class="col" tabindex="0"><span class="tip">2022 年 · 约 316 万人</span><span class="end-label">316</span><div class="bar" style="height:100%"></div></div>
+      </div>
+      <div class="colchart-x"><span>2008</span><span>2010</span><span>2012</span><span>2014</span><span>2016</span><span>2018</span><span>2020</span><span>2022</span></div>
+      <div class="fig-src">数据来源：招商银行-贝恩公司《中国私人财富报告》历年数据整理</div>
+    </div>
+
+    <h2 class="serif">财富都在哪些城市？</h2>
+    <div class="fig">
+      <div class="fig-title">千万资产高净值家庭最多的城市</div>
+      <div class="fig-sub">单位：万户（约数）</div>
+      <div class="rowchart" role="img" aria-label="横向条形图：北京约30万户居首，其后为上海、香港、深圳、广州、杭州、宁波、佛山、天津、苏州">
+        <div class="row"><span class="name">北京</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">≈30.0</span></div>
+        <div class="row"><span class="name">上海</span><span class="track"><span class="fill" style="width:88%"></span></span><span class="val">≈26.4</span></div>
+        <div class="row"><span class="name">香港</span><span class="track"><span class="fill" style="width:71%"></span></span><span class="val">≈21.3</span></div>
+        <div class="row"><span class="name">深圳</span><span class="track"><span class="fill" style="width:26%"></span></span><span class="val">≈7.9</span></div>
+        <div class="row"><span class="name">广州</span><span class="track"><span class="fill" style="width:24%"></span></span><span class="val">≈7.3</span></div>
+        <div class="row"><span class="name">杭州</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="val">≈5.2</span></div>
+        <div class="row"><span class="name">宁波</span><span class="track"><span class="fill" style="width:13%"></span></span><span class="val">≈3.9</span></div>
+        <div class="row"><span class="name">佛山</span><span class="track"><span class="fill" style="width:12%"></span></span><span class="val">≈3.5</span></div>
+        <div class="row"><span class="name">天津</span><span class="track"><span class="fill" style="width:11%"></span></span><span class="val">≈3.2</span></div>
+        <div class="row"><span class="name">苏州</span><span class="track"><span class="fill" style="width:10%"></span></span><span class="val">≈3.0</span></div>
+      </div>
+      <div class="fig-src">数据来源：胡润研究院《胡润财富报告》分城市数据整理（约数）</div>
+    </div>
+
+    <h2 class="serif">钱从哪里来：职业构成</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>千万资产高净值人群职业构成（胡润口径，约数）</caption>
+        <thead><tr><th>人群类型</th><th class="num">占比</th><th>对应频道</th></tr></thead>
+        <tbody>
+          <tr><td>企业主</td><td class="num">约 60%</td><td><a href="#/tax">税务</a> · <a href="#/legacy">财富传承</a></td></tr>
+          <tr><td>金领（高管/专业人士）</td><td class="num">约 20%</td><td><a href="#/equity">股权薪酬</a> · <a href="#/retire">退休养老</a></td></tr>
+          <tr><td>职业投资人（房产）</td><td class="num">约 10%</td><td><a href="#/property">房地产</a></td></tr>
+          <tr><td>职业股民</td><td class="num">约 10%</td><td><a href="#/invest">投资</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">八大频道导航</h2>
+    <div class="card-grid">
+      <a class="card link-card" href="#/tax"><div class="kicker serif">频道 01</div><h4>税务筹划</h4><p>个税税率表、专项附加扣除、年终奖计税、CRS 与境外所得。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/equity"><div class="kicker serif">频道 02</div><h4>股权薪酬</h4><p>RSU / 期权 / 限制性股票，归属、行权与单独计税规则。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/invest"><div class="kicker serif">频道 03</div><h4>投资理财</h4><p>「四笔钱」框架、工具对比、资产配置模拟器与定投复利。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/retire"><div class="kicker serif">频道 04</div><h4>退休养老</h4><p>养老三支柱、个人养老金税优、延迟退休与退休测算。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/property"><div class="kicker serif">频道 05</div><h4>房地产</h4><p>房贷计算、等额本息 vs 等额本金、租售比与置换策略。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/legacy"><div class="kicker serif">频道 06</div><h4>财富传承</h4><p>民法典继承规则、遗嘱六种形式、家族信托与保险金信托。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/insurance"><div class="kicker serif">频道 07</div><h4>保险保障</h4><p>四大基础险种、家庭保障智能规划器与产品库、增额终身寿。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/education"><div class="kicker serif">频道 08</div><h4>教育规划</h4><p>体制内/国际/留学三条路线的成本与教育金测算。</p><p class="go">进入频道 →</p></a>
+    </div>
+
+    <h2 class="serif">财务健康自测（8 题）</h2>
+    <p>用 2 分钟回答 8 个问题，得到你的家庭财务健康评分与改进建议。</p>
+    <div id="quiz">
+      <div class="quiz-q"><div class="q-text">1. 你是否清楚知道家庭当前的净资产数字（资产减负债）？</div><div class="opts"><label><input type="radio" name="q1" value="2">清楚，定期盘点</label><label><input type="radio" name="q1" value="1">大概知道</label><label><input type="radio" name="q1" value="0">没算过</label></div></div>
+      <div class="quiz-q"><div class="q-text">2. 是否有覆盖 6 个月以上家庭支出的应急现金？</div><div class="opts"><label><input type="radio" name="q2" value="2">有，单独存放</label><label><input type="radio" name="q2" value="1">有一些，不足 6 个月</label><label><input type="radio" name="q2" value="0">基本没有</label></div></div>
+      <div class="quiz-q"><div class="q-text">3. 税后收入中用于储蓄和投资的比例？</div><div class="opts"><label><input type="radio" name="q3" value="2">≥ 30%</label><label><input type="radio" name="q3" value="1">10%–30%</label><label><input type="radio" name="q3" value="0">&lt; 10%</label></div></div>
+      <div class="quiz-q"><div class="q-text">4. 房产（含自住）占家庭总资产的比例？</div><div class="opts"><label><input type="radio" name="q4" value="2">&lt; 60%</label><label><input type="radio" name="q4" value="1">60%–80%</label><label><input type="radio" name="q4" value="0">&gt; 80%</label></div></div>
+      <div class="quiz-q"><div class="q-text">5. 家庭经济支柱是否配置了重疾险和定期寿险？</div><div class="opts"><label><input type="radio" name="q5" value="2">都有，保额充足</label><label><input type="radio" name="q5" value="1">有部分</label><label><input type="radio" name="q5" value="0">只有社保/没有</label></div></div>
+      <div class="quiz-q"><div class="q-text">6. 金融资产是否分散在 3 类以上（存款、债基、股票/指数、保险年金等）？</div><div class="opts"><label><input type="radio" name="q6" value="2">是，有明确配置</label><label><input type="radio" name="q6" value="1">2 类左右</label><label><input type="radio" name="q6" value="0">集中在 1 类</label></div></div>
+      <div class="quiz-q"><div class="q-text">7. 是否用过个税专项附加扣除、个人养老金等税收优惠？</div><div class="opts"><label><input type="radio" name="q7" value="2">都在用</label><label><input type="radio" name="q7" value="1">用了一部分</label><label><input type="radio" name="q7" value="0">没研究过</label></div></div>
+      <div class="quiz-q"><div class="q-text">8. 是否做过任何传承安排（遗嘱、保单受益人指定等）？</div><div class="opts"><label><input type="radio" name="q8" value="2">有正式安排</label><label><input type="radio" name="q8" value="1">想过，未落实</label><label><input type="radio" name="q8" value="0">从未考虑</label></div></div>
+      <div class="tool" style="max-width:860px">
+        <button type="button" id="quiz-btn">查看我的评分</button>
+        <div class="result" id="quiz-out" aria-live="polite">回答完 8 题后点击查看</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ 税务 ════════════════════ -->
+<section class="route" id="route-tax">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 01 · 税务筹划</div>
+      <h1 class="serif">中国个税与高净家庭税务地图</h1>
+      <p class="lede">对标美国站的联邦税/州税频道：中国的核心是<strong>综合所得个税、专项附加扣除、年终奖与股权激励的单独计税</strong>，以及正在收紧的境外所得申报（CRS）。</p>
+    </div>
+
+    <h2 class="serif">综合所得税率表（工资薪金等）</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>个人所得税·综合所得年度税率表（居民个人）</caption>
+        <thead><tr><th class="num">级数</th><th>全年应纳税所得额</th><th class="num">税率</th><th class="num">速算扣除数</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>不超过 36,000 元</td><td class="num">3%</td><td class="num">0</td></tr>
+          <tr><td class="num">2</td><td>36,000 – 144,000 元</td><td class="num">10%</td><td class="num">2,520</td></tr>
+          <tr><td class="num">3</td><td>144,000 – 300,000 元</td><td class="num">20%</td><td class="num">16,920</td></tr>
+          <tr><td class="num">4</td><td>300,000 – 420,000 元</td><td class="num">25%</td><td class="num">31,920</td></tr>
+          <tr><td class="num">5</td><td>420,000 – 660,000 元</td><td class="num">30%</td><td class="num">52,920</td></tr>
+          <tr><td class="num">6</td><td>660,000 – 960,000 元</td><td class="num">35%</td><td class="num">85,920</td></tr>
+          <tr><td class="num">7</td><td>超过 960,000 元</td><td class="num">45%</td><td class="num">181,920</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">应纳税所得额 = 年收入 − 6 万元基本减除 − 三险一金（个人部分）− 专项附加扣除 − 其他扣除。</div>
+
+    <h2 class="serif">七项专项附加扣除：先把该省的省掉</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>专项附加扣除标准（2023 年提标后）</caption>
+        <thead><tr><th>项目</th><th class="num">扣除标准</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>子女教育</td><td class="num">2,000 元/月/孩</td><td>3 岁至全日制学历教育结束，可父母分摊</td></tr>
+          <tr><td>3 岁以下婴幼儿照护</td><td class="num">2,000 元/月/孩</td><td>与子女教育衔接</td></tr>
+          <tr><td>赡养老人</td><td class="num">3,000 元/月</td><td>独生子女全额；非独生分摊，每人不超 1,500</td></tr>
+          <tr><td>住房贷款利息</td><td class="num">1,000 元/月</td><td>首套房贷，最长 240 个月，与租金二选一</td></tr>
+          <tr><td>住房租金</td><td class="num">800–1,500 元/月</td><td>按城市档位，与房贷利息二选一</td></tr>
+          <tr><td>继续教育</td><td class="num">400 元/月 或 3,600 元/年</td><td>学历教育按月，职业资格取证当年一次性</td></tr>
+          <tr><td>大病医疗</td><td class="num">最高 80,000 元/年</td><td>医保内自付超 1.5 万部分，汇算清缴时扣</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">高净家庭最关心的五个税务话题</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">话题 一</div><h4>年终奖单独计税<span class="policy-tag">延续至 2027 底</span></h4><p>全年一次性奖金可不并入综合所得、单独按月度税率表计税。两种方式孰优取决于收入结构——用下方计算器直接对比。</p></div>
+      <div class="card"><div class="kicker serif">话题 二</div><h4>股权激励单独计税<span class="policy-tag">延续至 2027 底</span></h4><p>上市公司股权激励（RSU/期权等）单独按综合所得税率表计税，不并入当年工资。详见<a href="#/equity">股权薪酬频道</a>。</p></div>
+      <div class="card"><div class="kicker serif">话题 三</div><h4>个人养老金税优</h4><p>每年 12,000 元缴费可税前扣除（EET 模式），领取时按 3% 计税。边际税率越高越划算，详见<a href="#/retire">退休养老频道</a>。</p></div>
+      <div class="card"><div class="kicker serif">话题 四</div><h4>境外所得与 CRS</h4><p>中国已加入 CRS 金融账户信息自动交换；居民个人境外利息、股息、转让所得均需年度汇算申报，近年追缴案例明显增多。跨境配置务必合规先行。</p></div>
+      <div class="card"><div class="kicker serif">话题 五</div><h4>经营所得与核定征收收紧</h4><p>个独/合伙企业「核定征收」空间大幅收窄，明星网红补税案例频出。企业主应回归<strong>合规分红 + 工资薪金</strong>的正规路径，提前做好架构设计。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 个税计算器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>年度综合所得个税计算器</h4>
+        <div class="tool-sub">按年度汇算口径估算，单位：元</div>
+        <label for="tax-salary">年税前工资收入（元）</label>
+        <input id="tax-salary" type="number" value="400000" min="0">
+        <label for="tax-sb">三险一金个人缴纳合计（元/年）</label>
+        <input id="tax-sb" type="number" value="45000" min="0">
+        <label for="tax-ded">专项附加扣除合计（元/年）</label>
+        <input id="tax-ded" type="number" value="36000" min="0">
+        <button type="button" id="tax-btn">计算个税</button>
+        <div class="result" id="tax-out" aria-live="polite">输入后点击计算</div>
+      </div>
+      <div class="tool">
+        <h4>年终奖：单独计税 vs 并入综合所得</h4>
+        <div class="tool-sub">自动对比两种方式，告诉你哪种更省</div>
+        <label for="bonus-amt">年终奖金额（元）</label>
+        <input id="bonus-amt" type="number" value="100000" min="0">
+        <label for="bonus-taxable">除年终奖外的全年应纳税所得额（元）<br><small style="color:var(--muted)">= 工资 − 6万 − 三险一金 − 专项附加，可先用左侧计算器得出</small></label>
+        <input id="bonus-taxable" type="number" value="259000" min="-500000">
+        <button type="button" id="bonus-btn">对比两种计税</button>
+        <div class="result" id="bonus-out" aria-live="polite">输入后点击对比</div>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>房子卖掉要交哪些税？</summary><div class="faq-body"><p>卖方主要涉及增值税（不满 2 年按 5% 全额；满 2 年普通住宅免征）与个人所得税（据实 20% 差额或核定 1%–2%；满五唯一免征）。买方缴契税 1%–3%。各地执行细则不同，交易前以当地政策为准。</p></div></details>
+    <details class="faq"><summary>中国有资本利得税吗？卖股票、卖基金要交税吗？</summary><div class="faq-body"><p>个人转让境内上市公司股票的差价所得目前暂免个人所得税；公募基金买卖差价同样暂免。但注意：转让<strong>境外</strong>上市股票（美股、港股直接持仓）属于财产转让所得，按 20% 申报纳税；限售股转让也需缴纳 20%。</p></div></details>
+    <details class="faq"><summary>每年 3–6 月的个税汇算清缴是什么？不办会怎样？</summary><div class="faq-body"><p>年度汇算是把全年综合所得合并算账、多退少补。需要补税超过 400 元而不办理的，可能面临滞纳金与信用影响；有退税的不领等于白送。建议每年 3 月在「个人所得税」App 上完成。</p></div></details>
+    <details class="faq"><summary>中国会开征遗产税和房产税吗？</summary><div class="faq-body"><p>遗产税目前<strong>没有开征</strong>，也没有公布立法时间表；房产税在上海、重庆有试点，全国扩围多次讨论但暂缓。规划上建议「按现行规则办事，为制度变化留余地」——这正是保险与信托等工具的价值，详见<a href="#/legacy">财富传承频道</a>。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 股权薪酬 ════════════════════ -->
+<section class="route" id="route-equity">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 02 · 股权薪酬</div>
+      <h1 class="serif">RSU、期权与限制性股票：<br>新一代高净人群的发动机</h1>
+      <p class="lede">对标美国站的 RSU/ISO/ESPP 频道：中国互联网大厂、科创板公司普遍使用股权激励，它是「金领」从百万迈向千万的关键变量——也是最容易在税务和集中度上踩坑的资产。</p>
+    </div>
+
+    <h2 class="serif">三种主流工具对比</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>常见股权激励工具（中国语境）</caption>
+        <thead><tr><th>工具</th><th>机制</th><th>常见场景</th><th>核心风险</th></tr></thead>
+        <tbody>
+          <tr><td>RSU 限制性股票单位</td><td>按归属（vest）时点股价免费获得股票</td><td>已上市互联网/中概/港股公司</td><td>归属即计税，股价回撤「纸面富贵」</td></tr>
+          <tr><td>股票期权 Options</td><td>以约定行权价购股，赚取价差</td><td>未上市创业公司、科创企业</td><td>流动性差；上市失败可能归零</td></tr>
+          <tr><td>限制性股票（A 股）</td><td>折价授予，分批解除限售</td><td>A 股上市公司高管与核心员工</td><td>解禁窗口、减持新规限制多</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">从授予到落袋的五个时点</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">① 授予 Grant</div><p>签署协议，确定数量、行权价与归属计划（常见 4 年、每年 25%）。此时通常不产生纳税义务。</p></div>
+      <div class="card"><div class="kicker serif">② 归属 Vest</div><p>RSU 归属当日按市价确认「工资薪金所得」，产生纳税义务——<strong>即使你一股没卖</strong>。</p></div>
+      <div class="card"><div class="kicker serif">③ 计税</div><p>上市公司股权激励可单独按综合所得税率表计税，不并入当年工资<span class="policy-tag">延续至 2027 底</span>。多次归属需合并累计计算。</p></div>
+      <div class="card"><div class="kicker serif">④ 卖出</div><p>境内上市股票转让差价暂免个税；<strong>境外上市</strong>（美股/港股）卖出增值部分属财产转让所得，按 20% 申报。</p></div>
+      <div class="card"><div class="kicker serif">⑤ 再配置</div><p>把集中于单一公司的头寸逐步换成组合——你的工资、职业与股票已经绑定在同一家公司，风险三重叠加。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 RSU 归属税负估算器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>RSU 归属收益与个税估算</h4>
+        <div class="tool-sub">按上市公司股权激励单独计税（综合所得年度税率表）简化估算</div>
+        <div class="inline2">
+          <div><label for="rsu-shares">本年归属股数</label><input id="rsu-shares" type="number" value="800" min="0"></div>
+          <div><label for="rsu-price">归属日股价</label><input id="rsu-price" type="number" value="120" min="0" step="0.01"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="rsu-cur">计价货币</label><select id="rsu-cur"><option value="1">人民币</option><option value="7.1">美元（按 7.1 折算）</option><option value="0.91">港币（按 0.91 折算）</option></select></div>
+          <div><label for="rsu-strike">行权价（期权填，RSU 填 0）</label><input id="rsu-strike" type="number" value="0" min="0" step="0.01"></div>
+        </div>
+        <button type="button" id="rsu-btn">估算税负</button>
+        <div class="result" id="rsu-out" aria-live="polite">输入后点击估算</div>
+      </div>
+      <div class="card myth" style="align-self:start">
+        <h4><span class="x">✕ 高频误区</span>「归属了先不卖，不用交税」</h4>
+        <p><span class="ok">✓ 事实</span>RSU 归属当日即产生纳税义务，与是否卖出无关。很多人归属后股价腰斩，税却按归属日高价算——必要时「归属即卖出」缴税部分，是控制风险的常见做法。</p>
+        <p><span class="ok">✓ 提醒</span>汇率、外汇额度（每人每年 5 万美元便利化额度）与资金回境路径要提前规划，走正规渠道。</p>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>未上市公司的期权值多少钱？</summary><div class="faq-body"><p>在可交易之前，把它当成「彩票 + 奖金」而非资产：谈薪时不要用期权面值抵扣现金工资的等额部分；关注行权价、回购条款、离职后行权窗口期这三个决定性细节。</p></div></details>
+    <details class="faq"><summary>中概股员工的股票怎么变现回国内？</summary><div class="faq-body"><p>通过券商卖出后走银行正规渠道结汇入境，保留完税与来源凭证。切勿使用地下钱庄等非法渠道——外汇违规的成本远高于省下的手续费。具体操作以银行与外管局要求为准。</p></div></details>
+    <details class="faq"><summary>股权激励的税是公司代扣还是自己申报？</summary><div class="faq-body"><p>境内任职受雇的，公司通常代扣代缴；持有境外公司股票、或公司未代扣的情形需自行在年度汇算申报。拿到归属通知时先确认代扣情况，避免漏报。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 投资 ════════════════════ -->
+<section class="route" id="route-invest">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 03 · 投资理财</div>
+      <h1 class="serif">资管新规之后：<br>用「四笔钱」重建家庭投资框架</h1>
+      <p class="lede">刚性兑付已成历史，「高收益 + 保本」不复存在。100 万+ 家庭的投资问题不是「买哪只产品」，而是<strong>先分账户、再配资产、最后选工具</strong>。</p>
+    </div>
+
+    <h2 class="serif">四笔钱框架</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">第一笔 · 活钱</div><h4>3–6 个月支出</h4><p>货币基金、活期存款。目标是随取随用，不追求收益。</p></div>
+      <div class="card"><div class="kicker serif">第二笔 · 稳健钱</div><h4>1–3 年要用的钱</h4><p>定期存款、国债、纯债基金、同业存单指数基金。求稳，接受 2%–3.5% 区间。</p></div>
+      <div class="card"><div class="kicker serif">第三笔 · 长期钱</div><h4>5 年以上不动的钱</h4><p>宽基指数（沪深300、中证500、标普/纳指 QDII）、偏股基金定投。承受波动换取长期回报。</p></div>
+      <div class="card"><div class="kicker serif">第四笔 · 保障钱</div><h4>兜底的钱</h4><p>重疾/医疗/定寿保费，以及锁定利率的年金与增额寿。详见<a href="#/insurance">保险频道</a>。</p></div>
+    </div>
+
+    <h2 class="serif">主流工具一览</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>常见投资工具对比（参考区间为历史经验，非预测）</caption>
+        <thead><tr><th>工具</th><th class="num">流动性</th><th class="num">风险</th><th>长期收益参考</th><th>适合的「笔」</th></tr></thead>
+        <tbody>
+          <tr><td>货币基金 / 活期</td><td class="num">极高</td><td class="num">极低</td><td>1%–2%</td><td>活钱</td></tr>
+          <tr><td>定存 / 国债</td><td class="num">中</td><td class="num">极低</td><td>1.5%–2.5%</td><td>稳健钱</td></tr>
+          <tr><td>纯债基金</td><td class="num">高</td><td class="num">低</td><td>2%–4%，有回撤</td><td>稳健钱</td></tr>
+          <tr><td>宽基指数基金</td><td class="num">高</td><td class="num">高</td><td>长期 6%–9%，波动大</td><td>长期钱</td></tr>
+          <tr><td>QDII（美股/港股）</td><td class="num">高</td><td class="num">高</td><td>分散单一市场风险，有额度限制</td><td>长期钱</td></tr>
+          <tr><td>黄金（积存/ETF）</td><td class="num">高</td><td class="num">中</td><td>抗通胀与避险配置，5%–10% 仓位常见</td><td>长期钱</td></tr>
+          <tr><td>私募 / 信托</td><td class="num">低</td><td class="num">中高</td><td>100 万起投，合格投资者门槛</td><td>长期钱（大额）</td></tr>
+          <tr><td>增额寿 / 年金</td><td class="num">低</td><td class="num">低</td><td>锁定 2%–2.5% 复利，重在确定性</td><td>保障钱</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">🧮 资产配置模拟器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>股债现金配置滑块</h4>
+        <div class="tool-sub">拖动滑块，实时查看组合的预期收益与波动参考（简化模型：股 7%、债 3%、现金 1.5%）</div>
+        <div class="slider-row"><span class="sl-label">股票/指数</span><input type="range" id="al-stock" min="0" max="100" value="50" step="5"><output id="al-stock-out">50%</output></div>
+        <div class="slider-row"><span class="sl-label">债券/固收</span><input type="range" id="al-bond" min="0" max="100" value="35" step="5"><output id="al-bond-out">35%</output></div>
+        <div class="slider-row"><span class="sl-label">现金</span><input type="range" id="al-cash" min="0" max="100" value="15" step="5" disabled><output id="al-cash-out">15%</output></div>
+        <div class="result" id="al-out" aria-live="polite"></div>
+      </div>
+      <div class="tool">
+        <h4>定投复利计算器</h4>
+        <div class="tool-sub">初始本金 + 每月定投，按年复利</div>
+        <div class="inline2">
+          <div><label for="cp-p0">初始本金（万元）</label><input id="cp-p0" type="number" value="50" min="0"></div>
+          <div><label for="cp-m">每月定投（万元）</label><input id="cp-m" type="number" value="1" min="0" step="0.1"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="cp-r">预期年化（%）</label><input id="cp-r" type="number" value="6" min="0" max="30" step="0.5"></div>
+          <div><label for="cp-n">年限（年）</label><input id="cp-n" type="number" value="20" min="1" max="60"></div>
+        </div>
+        <button type="button" id="cp-btn">计算终值</button>
+        <div class="result" id="cp-out" aria-live="polite">输入后点击计算</div>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>现在存款利率这么低，钱该放哪？</summary><div class="faq-body"><p>低利率恰恰是检验配置的时刻：活钱和稳健钱接受低收益换确定性；长期钱交给权益资产赚时间的钱；需要锁定长期利率的部分考虑国债与合规储蓄险。任何承诺「保本高息」的产品都应默认是骗局。</p></div></details>
+    <details class="faq"><summary>A 股波动太大，为什么还要配指数？</summary><div class="faq-body"><p>解法不是不配，而是三件事：用<strong>定投</strong>平滑择时、用<strong>沪深300 + 海外 QDII</strong> 分散单一市场、把周期拉到 10 年以上。复利测算只对拿得住的人成立。</p></div></details>
+    <details class="faq"><summary>私募、信托 100 万起投，值得上车吗？</summary><div class="faq-body"><p>合格投资者门槛不是收益保证。看三点：管理人历史完整业绩（含最大回撤）、底层资产是否说得清、流动性条款。看不懂的不买，是高净家庭最有效的风控。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 退休养老 ════════════════════ -->
+<section class="route" id="route-retire">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 04 · 退休养老</div>
+      <h1 class="serif">三支柱时代的退休规划：<br>社保打底，自己补足</h1>
+      <p class="lede">对标美国站的 401(k)/IRA 频道：中国的对应物是<strong>养老三支柱</strong>。第一支柱管温饱，第二支柱覆盖有限，真正拉开差距的是第三支柱与自主投资。</p>
+    </div>
+
+    <h2 class="serif">三支柱全景</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>中国养老三支柱（对标美国体系）</caption>
+        <thead><tr><th>支柱</th><th>中国</th><th>美国对应</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>第一支柱</td><td>城镇职工/居民基本养老保险</td><td>Social Security</td><td>覆盖超 10 亿人；替代率约 40% 且趋于下行，多缴多得、长缴多得</td></tr>
+          <tr><td>第二支柱</td><td>企业年金 / 职业年金</td><td>401(k)</td><td>覆盖率低（参保职工约 7000 万），有则务必用满单位配比</td></tr>
+          <tr><td>第三支柱</td><td>个人养老金账户<span class="policy-tag">2024 年底全国推开</span></td><td>IRA</td><td>每年 12,000 元税前扣除，账户内买存款/理财/基金/保险，领取按 3% 计税</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">两个必须知道的政策变化</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">变化 一</div><h4>渐进式延迟退休<span class="policy-tag">2025 年起实施</span></h4><p>男职工法定退休年龄逐步延迟至 63 岁，女职工延至 55/58 岁；同时设弹性区间，可自愿提前或延后。做规划时，把「领取起点」当作变量而不是常数。</p></div>
+      <div class="card"><div class="kicker serif">变化 二</div><h4>最低缴费年限提高</h4><p>领取基本养老金的最低缴费年限将从 15 年逐步提高至 20 年。自由职业与灵活就业者尤其要盯紧自己的缴费记录连续性。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 退休测算工具</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>退休资产与月度现金流测算</h4>
+        <div class="tool-sub">测算退休时点资产，并折算可持续月支出（按 3.5% 年提取率）</div>
+        <div class="inline2">
+          <div><label for="rt-age">当前年龄</label><input id="rt-age" type="number" value="32" min="16" max="70"></div>
+          <div><label for="rt-ret">计划退休年龄</label><input id="rt-ret" type="number" value="63" min="35" max="80"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="rt-p0">当前可投资资产（万元）</label><input id="rt-p0" type="number" value="100" min="0"></div>
+          <div><label for="rt-m">每月储蓄投资（万元）</label><input id="rt-m" type="number" value="1" min="0" step="0.1"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="rt-r">预期年化（%）</label><input id="rt-r" type="number" value="5" min="0" max="15" step="0.5"></div>
+          <div><label for="rt-pension">预估社保月养老金（万元）</label><input id="rt-pension" type="number" value="0.6" min="0" step="0.1"></div>
+        </div>
+        <button type="button" id="rt-btn">测算退休现金流</button>
+        <div class="result" id="rt-out" aria-live="polite">输入后点击测算</div>
+      </div>
+      <div class="tool">
+        <h4>个人养老金节税估算</h4>
+        <div class="tool-sub">每年顶格缴 12,000 元的税收账怎么算</div>
+        <label for="pp-rate">你的个税边际税率</label>
+        <select id="pp-rate">
+          <option value="0.03">3%（应纳税所得 ≤ 3.6 万）</option>
+          <option value="0.10" selected>10%（3.6 万 – 14.4 万）</option>
+          <option value="0.20">20%（14.4 万 – 30 万）</option>
+          <option value="0.25">25%（30 万 – 42 万）</option>
+          <option value="0.30">30%（42 万 – 66 万）</option>
+          <option value="0.35">35%（66 万 – 96 万）</option>
+          <option value="0.45">45%（96 万以上）</option>
+        </select>
+        <label for="pp-years">计划缴纳年数</label>
+        <input id="pp-years" type="number" value="25" min="1" max="45">
+        <button type="button" id="pp-btn">估算节税收益</button>
+        <div class="result" id="pp-out" aria-live="polite">选择后点击估算</div>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>社保养老金到底能领多少？</summary><div class="faq-body"><p>由基础养老金（与当地社平工资、缴费指数、年限挂钩）+ 个人账户养老金（账户余额 ÷ 计发月数）构成。粗略参考：按 1 倍社平缴 30 年，替代率大约在 40% 上下。精确数字用「国家社会保险公共服务平台」的官方测算器。</p></div></details>
+    <details class="faq"><summary>个人养老金账户里的钱亏了怎么办？</summary><div class="faq-body"><p>账户是税收壳，里面装什么由你决定：保守者选养老储蓄与保险产品，长期主义者选养老目标基金（Y 份额费率更低）。距退休 20 年以上，账户内适度承担权益波动通常更划算。</p></div></details>
+    <details class="faq"><summary>边际税率只有 3%，个人养老金还值得缴吗？</summary><div class="faq-body"><p>缴费省 3%、领取缴 3%，税优基本归零，此时它的价值只剩「强制锁定到退休」。低税率人群优先把钱投向流动性更好的普通账户，等收入上台阶后再顶格缴。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 房地产 ════════════════════ -->
+<section class="route" id="route-property">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 05 · 房地产</div>
+      <h1 class="serif">从「信仰」到「资产」：<br>分化时代的房产决策</h1>
+      <p class="lede">房产占中国城镇家庭总资产约 59%。当「普涨时代」结束，房子回归两个朴素问题：<strong>自住的居住价值，投资的现金流与流动性</strong>。</p>
+    </div>
+
+    <h2 class="serif">看懂当前的政策与市场环境</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">利率</div><h4>历史低位的房贷利率</h4><p>房贷利率锚定 5 年期 LPR 并处于历史低位区间，存量房贷利率也已批量下调。买房前用下方计算器把月供压力测算清楚，再看收入覆盖率（月供 ≤ 家庭月收入 40% 为常用红线）。</p></div>
+      <div class="card"><div class="kicker serif">政策</div><h4>限购限贷大幅松绑</h4><p>多数城市限购已放开或放宽，一线亦在边际放松；「认房不认贷」、降首付降利率成为主基调。政策鼓励的是自住与改善需求，而非杠杆投机。</p></div>
+      <div class="card"><div class="kicker serif">分化</div><h4>城市与地段的剪刀差</h4><p>人口流入的核心城市核心地段与三四线远郊，已是两个市场。看房先看城市人口与产业基本面，再看地段流动性（挂牌量、成交周期），最后才是价格。</p></div>
+      <div class="card"><div class="kicker serif">持有</div><h4>租售比与持有成本</h4><p>一线城市住宅租售比约 1.5%–2%，低于存款替代品收益；投资性房产必须算清「租金 − 持有成本 − 空置」的真实现金流，而不是只赌涨价。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 房贷计算器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>等额本息 vs 等额本金</h4>
+        <div class="tool-sub">同一笔贷款、两种还法的月供与总利息对比</div>
+        <div class="inline2">
+          <div><label for="mg-p">贷款总额（万元）</label><input id="mg-p" type="number" value="300" min="1"></div>
+          <div><label for="mg-y">贷款年限（年）</label><input id="mg-y" type="number" value="30" min="1" max="30"></div>
+        </div>
+        <label for="mg-r">年利率（%）</label>
+        <input id="mg-r" type="number" value="3.5" min="0.5" max="10" step="0.05">
+        <button type="button" id="mg-btn">计算月供</button>
+        <div class="result" id="mg-out" aria-live="polite">输入后点击计算</div>
+      </div>
+      <div class="card myth" style="align-self:start">
+        <h4><span class="x">✕ 高频误区</span>「房贷越短越好，有钱就提前还清」</h4>
+        <p><span class="ok">✓ 事实</span>当房贷利率处于历史低位时，它可能是普通家庭一生能拿到的成本最低的长期杠杆。是否提前还，取决于「稳妥投资收益能否跑赢房贷利率」与家庭现金流安全垫，而不是心理舒适度单一维度。</p>
+        <p><span class="ok">✓ 提醒</span>反过来，若持有大量闲置现金且只会存定期，提前还贷等于锁定「利差收益」，也是理性选择。结论因人而异——先算账。</p>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>现在应该卖掉多余的房子吗？</summary><div class="faq-body"><p>逐套问自己三个问题：真实年化租金回报是否高于 2.5%？所在地段挂牌去化周期是否在半年内？这套房占家庭总资产是否超过 30%？三问皆差的房产，在流动性尚可时优化配置是多数专业机构的共识方向。（本站不构成个别建议。）</p></div></details>
+    <details class="faq"><summary>房产在资产配置里应该占多少？</summary><div class="faq-body"><p>没有统一答案，但可以参考镜像：中国城镇家庭平均约 60%（偏高），成熟市场高净值家庭常见 20%–40%。方向上，让房产占比随财富增长而下降，把增量投入金融资产，是行业报告中高净值人群的普遍轨迹。</p></div></details>
+    <details class="faq"><summary>法拍房便宜 20%，能捡漏吗？</summary><div class="faq-body"><p>价差对应的是尽调成本：欠费、租约、腾退、原房主债务纠纷都可能吞掉折扣。没有能力做产调与现场尽调的普通买家，法拍的「便宜」大概率是风险定价。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 财富传承 ════════════════════ -->
+<section class="route" id="route-legacy">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 06 · 财富传承</div>
+      <h1 class="serif">民法典时代的传承规划：<br>没有遗产税，不等于不用规划</h1>
+      <p class="lede">对标美国站的信托与遗产税频道：中国目前无遗产税，但<strong>法定继承的默认规则、亲属关系的复杂性与资产的分散性</strong>，让「什么都不做」成为成本最高的选项。</p>
+    </div>
+
+    <h2 class="serif">不安排，法律替你安排：法定继承规则</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>民法典继承编·核心规则</caption>
+        <thead><tr><th>规则</th><th>内容</th><th>常被忽略的点</th></tr></thead>
+        <tbody>
+          <tr><td>第一顺序继承人</td><td>配偶、子女、父母</td><td><strong>父母也是第一顺序</strong>——房产可能出现多人共有</td></tr>
+          <tr><td>第二顺序</td><td>兄弟姐妹、祖父母、外祖父母</td><td>仅在无第一顺序继承人时适用</td></tr>
+          <tr><td>夫妻共同财产</td><td>先析产一半归配偶，剩余一半才是遗产</td><td>再婚家庭尤其需要专业梳理</td></tr>
+          <tr><td>代位继承（民法典扩围）</td><td>侄甥可代位继承</td><td>无人继承的遗产范围缩小</td></tr>
+          <tr><td>遗嘱形式</td><td>自书、代书、打印、录音录像、口头、公证六种</td><td>打印遗嘱需两名见证人在场并逐页签名</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">四层工具箱：从一张纸到一个信托</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">第 1 层 · 人人该有</div><h4>遗嘱 + 受益人指定</h4><p>一份有效遗嘱 + 保单受益人逐一指定（写「法定」等于放弃指定权）。成本近乎为零，避免绝大多数纠纷。</p></div>
+      <div class="card"><div class="kicker serif">第 2 层 · 有房家庭</div><h4>房产传承路径选择</h4><p>继承过户免契税但手续重；生前赠与契税 3% 且受赠方将来出售税负高；买卖过户在某些情形反而最省。三条路径务必先算总账。</p></div>
+      <div class="card"><div class="kicker serif">第 3 层 · 百万保费级</div><h4>保险金信托</h4><p>以大额寿险/年金保单为基础嫁接信托，门槛从家族信托的 1000 万降到 100 万级，实现定向、分期、附条件给付——防挥霍、防婚变分割。</p></div>
+      <div class="card"><div class="kicker serif">第 4 层 · 千万级以上</div><h4>家族信托 / 家族办公室</h4><p>1000 万起设立，实现资产隔离、税务安排与跨代治理；企业主可结合股权架构把「企业传承」与「财富传承」一并设计。</p></div>
+    </div>
+
+    <h2 class="serif">✅ 传承规划自查清单（可勾选）</h2>
+    <p>勾选你已完成的项目，看看你的传承准备度。</p>
+    <ul class="icheck" id="legacy-check">
+      <li><label><input type="checkbox">列出完整资产清单（房产、账户、保单、股权、数字资产），家人知道存放位置</label></li>
+      <li><label><input type="checkbox">订立有效遗嘱（形式合规，必要时公证）</label></li>
+      <li><label><input type="checkbox">所有保单逐一指定了受益人（而非「法定」）</label></li>
+      <li><label><input type="checkbox">梳理清楚夫妻共同财产与个人财产边界（必要时办理财产协议）</label></li>
+      <li><label><input type="checkbox">为未成年子女指定了监护安排与资金托管方式</label></li>
+      <li><label><input type="checkbox">房产传承路径（继承/赠与/买卖）已做税费比较</label></li>
+      <li><label><input type="checkbox">企业股权设计了接班或退出安排（章程、代持清理、一致行动协议）</label></li>
+      <li><label><input type="checkbox">评估过保险金信托 / 家族信托的适用性</label></li>
+      <li><label><input type="checkbox">境外资产已纳入整体安排并合规申报</label></li>
+      <li><label><input type="checkbox">每 2–3 年或家庭重大变化时复核以上安排</label></li>
+    </ul>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="legacy-fill"></div></div>
+      <div class="progress-label" id="legacy-label">已完成 0 / 10 项</div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>独生子女能 100% 继承父母的房子吗？</summary><div class="faq-body"><p>不一定直接。若祖辈仍在世，作为第一顺序继承人也享有份额；若父母一方先去世未做安排，还会发生多次转继承，最终可能出现多位亲属共有一套房的局面。一份遗嘱即可避免。</p></div></details>
+    <details class="faq"><summary>中国现在到底有没有遗产税？</summary><div class="faq-body"><p>没有开征，也无公布时间表。但传承的摩擦成本真实存在：继承权公证、多继承人协商、房产过户、境外资产的当地税负。规划的目标是降低摩擦与不确定性，而不只是「避税」。</p></div></details>
+    <details class="faq"><summary>家族信托里的资产真的能隔离债务吗？</summary><div class="faq-body"><p>合法设立、资金来源干净、非恶意避债的信托具有隔离效力；但用「快要爆雷时转移资产」的方式设立，法院可依法撤销。隔离效力取决于设立时点与合规性——越早规划越有效。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 保险 ════════════════════ -->
+<section class="route" id="route-insurance">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 07 · 保险保障</div>
+      <h1 class="serif">先保障，后理财：<br>家庭资产负债表的地基</h1>
+      <p class="lede">保险解决的是「小概率、大损失」。配置顺序永远是：<strong>社保打底 → 四大基础险种补缺口 → 再谈储蓄型产品</strong>。倒过来配，是最常见也最贵的错误。</p>
+    </div>
+
+    <h2 class="serif">四大基础险种</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>家庭保障的四块积木（先大人后小孩，先支柱后其他）</caption>
+        <thead><tr><th>险种</th><th>解决什么</th><th class="num">保额参考</th><th class="num">成本感受</th></tr></thead>
+        <tbody>
+          <tr><td>百万医疗险</td><td>大额住院医疗费报销</td><td class="num">200–600 万</td><td class="num">几百元/年</td></tr>
+          <tr><td>重疾险</td><td>大病后的收入损失补偿（确诊给付）</td><td class="num">3–5 倍年收入</td><td class="num">数千元/年</td></tr>
+          <tr><td>定期寿险</td><td>身故后家庭责任兜底（房贷+抚养）</td><td class="num">5–10 倍年收入</td><td class="num">千元级/年</td></tr>
+          <tr><td>意外险</td><td>意外身故/伤残/医疗</td><td class="num">100 万+</td><td class="num">一两百元/年</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="serif">高净家庭的进阶用法</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">进阶 一</div><h4>增额终身寿 / 年金<span class="policy-tag">预定利率下调时代</span></h4><p>人身险预定利率已进入下调通道（传统险上限降至 2.5% 一线，分红型成为主流）。它的价值不是「高收益」，而是<strong>写进合同的长期确定性</strong>——适合利率下行期锁定一部分远期现金流。</p></div>
+      <div class="card"><div class="kicker serif">进阶 二</div><h4>保单的法律功能</h4><p>指定受益人的人身险赔款不属于遗产、可绕开继承程序快速给付；结合保险金信托可实现定向分期给付。详见<a href="#/legacy">财富传承频道</a>。</p></div>
+      <div class="card"><div class="kicker serif">进阶 三</div><h4>香港与境外保单</h4><p>分红演示 ≠ 保证收益，历史履行率要逐款核查；缴费涉及外汇合规；理赔与诉讼在境外进行。适合有真实跨境需求的家庭，而不是单纯追求演示利率。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 家庭保障智能规划器</h2>
+    <p>面向三代五口的典型家庭（默认：30 岁 / 家庭年收入 30 万 / 房贷 100 万），三步生成全家「医疗 · 重疾 · 定寿」三层保障方案：<strong>录入家庭信息 → 自动测算各成员保额 → 产品库给出投保入口</strong>。修改任意数字，方案实时更新。</p>
+    <div class="tool-grid" style="grid-template-columns:1fr">
+      <div class="tool" id="fp-form">
+        <h4>第一步 · 家庭信息录入</h4>
+        <div class="tool-sub">保额单位：万元；年龄影响儿童身故限额与父母适配险种</div>
+        <div class="form-grid">
+          <div><label for="fp-age-self">本人年龄（岁）</label><input id="fp-age-self" type="number" value="30" min="18" max="80"></div>
+          <div><label for="fp-age-spouse">配偶年龄（岁）</label><input id="fp-age-spouse" type="number" value="30" min="18" max="80"></div>
+          <div><label for="fp-age-child">子女年龄（岁）</label><input id="fp-age-child" type="number" value="5" min="0" max="25"></div>
+          <div><label for="fp-age-mom">母亲年龄（岁）</label><input id="fp-age-mom" type="number" value="55" min="30" max="85"></div>
+          <div><label for="fp-age-dad">父亲年龄（岁）</label><input id="fp-age-dad" type="number" value="55" min="30" max="85"></div>
+          <div><label for="fp-inc-self">本人年收入（万元）</label><input id="fp-inc-self" type="number" value="15" min="0"></div>
+          <div><label for="fp-inc-spouse">配偶年收入（万元）</label><input id="fp-inc-spouse" type="number" value="15" min="0"></div>
+          <div><label for="fp-loan">房贷余额（万元）</label><input id="fp-loan" type="number" value="100" min="0"></div>
+          <div><label for="fp-budget">家庭年保费预算（万元）</label><input id="fp-budget" type="number" value="2" min="0" step="0.1"></div>
+        </div>
+        <div class="note">测算原则：双十原则 · 重疾 ≈ 年收入 × 3 · 定寿 = 负债 × 责任比例 + 年收入 × 5 · 意外 ≈ 年收入 × 3 · 父母以防癌医疗 + 意外替代重疾 · 10 岁以下儿童身故保额 ≤ 20 万</div>
+
+        <h4 style="margin-top:20px">第二步 · 智能推荐方案（保额单位：万元）</h4>
+        <div class="table-scroll">
+          <table id="fp-plan"></table>
+        </div>
+        <div class="budget-line" id="fp-budget-box" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <h2 class="serif">第三步 · 产品库与投保入口</h2>
+    <p>按「医疗 → 重疾 → 定寿 → 意外」配置顺序整理的在售产品示例，点击右侧按钮直达承保页面。</p>
+    <div class="prod-list" id="fp-products"></div>
+    <div class="note">说明：① 方案总保额只统计给付型责任（重疾/身故/意外伤残），报销型医疗险不重复计入；② 预估年保费按标准案例（30 岁 / 50 万保额）粗算，实际以投保页面核保结果为准；③ 本工具测算结果仅供保障规划参考，具体保障内容、费率与核保结论以保险合同条款及保险公司承保页面为准。</div>
+
+    <h2 class="serif">🧮 保额缺口计算器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>定期寿险保额缺口测算</h4>
+        <div class="tool-sub">「留下的责任 − 已有的准备」= 需要的保额（单位：万元）</div>
+        <div class="inline2">
+          <div><label for="in-mortgage">房贷等负债余额</label><input id="in-mortgage" type="number" value="150" min="0"></div>
+          <div><label for="in-expense">家庭年支出</label><input id="in-expense" type="number" value="25" min="0"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="in-years">需要支撑的年数</label><input id="in-years" type="number" value="10" min="1" max="30"></div>
+          <div><label for="in-edu">子女教育预算</label><input id="in-edu" type="number" value="80" min="0"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="in-liquid">家庭流动资产</label><input id="in-liquid" type="number" value="120" min="0"></div>
+          <div><label for="in-cover">已有寿险保额</label><input id="in-cover" type="number" value="50" min="0"></div>
+        </div>
+        <button type="button" id="in-btn">计算保额缺口</button>
+        <div class="result" id="in-out" aria-live="polite">输入后点击计算</div>
+      </div>
+      <div class="card myth" style="align-self:start">
+        <h4><span class="x">✕ 高频误区</span>「给孩子买一堆保险，大人裸奔」</h4>
+        <p><span class="ok">✓ 事实</span>孩子的最大保障是父母的持续收入。正确顺序：家庭经济支柱的医疗/重疾/定寿配足，再给孩子配医疗与意外。给孩子买终身储蓄险之前，先确认大人的保障没有缺口。</p>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>有社保医保，还需要商业医疗险吗？</summary><div class="faq-body"><p>医保有目录、起付线与封顶线，进口药、质子重离子等大额项目自付比例高。百万医疗险每年几百元，恰好覆盖「医保之外的大额风险」，是杠杆比最高的一张保单。</p></div></details>
+    <details class="faq"><summary>增额终身寿说「复利 2.5%」，划算吗？</summary><div class="faq-body"><p>先分清：合同保证的现金价值增速，才是可以当真的部分。它跑不赢长期权益资产，但胜在刚性与免税增值；定位是「稳健钱/传承钱」的容器，占比过高会牺牲成长性。买前逐年核对现金价值表。</p></div></details>
+    <details class="faq"><summary>买保险要注意什么才不会被拒赔？</summary><div class="faq-body"><p>核心是<strong>如实告知</strong>：健康问卷逐项如实回答，不确定的补充说明；两年不可抗辩条款不是带病投保的护身符。留好投保记录，理赔时按条款主张权利，争议可向金融监管部门投诉或诉讼。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 教育规划 ════════════════════ -->
+<section class="route" id="route-education">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">频道 08 · 教育规划</div>
+      <h1 class="serif">教育金：中国家庭最确定的<br>一笔大额刚性支出</h1>
+      <p class="lede">对标美国站的 529 频道：中国没有专门的教育税优账户，教育金规划 = <strong>提前锁定一笔「时间确定、金额可估」的现金流</strong>。路线选择比省钱技巧重要一百倍。</p>
+    </div>
+
+    <h2 class="serif">三条路线的成本量级</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>不同教育路线的费用量级（整理估算，随城市与学校差异大）</caption>
+        <thead><tr><th>路线</th><th>K12 阶段</th><th>大学阶段</th><th class="num">18 年总量级</th></tr></thead>
+        <tbody>
+          <tr><td>体制内公立</td><td>学费低，课外与兴趣班为主要支出</td><td>国内高校 0.5–3 万/年</td><td class="num">约 30–80 万</td></tr>
+          <tr><td>双轨（公立 + 留学）</td><td>公立 + 语言/背景提升</td><td>海外本科 4 年 150–300 万</td><td class="num">约 200–400 万</td></tr>
+          <tr><td>全程国际化</td><td>国际学校 15–35 万/年</td><td>海外本科 + 研究生</td><td class="num">约 500–800 万+</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">留学参考：美国私立本科总费用约 6–9 万美元/年；英国、澳洲约 3.5–5.5 万美元/年；香港、新加坡约 2–4 万美元/年（学费+生活费，2020 年代中期水平整理）。</div>
+
+    <h2 class="serif">教育金的三个规划原则</h2>
+    <div class="card-grid">
+      <div class="card"><div class="kicker serif">原则 一</div><h4>刚性支出用确定性工具</h4><p>入学年份不会等你回本。距用款 5 年以内的部分，放稳健资产（存款、国债、教育年金）；10 年以上的部分才可以用指数定投博取成长。</p></div>
+      <div class="card"><div class="kicker serif">原则 二</div><h4>专户隔离，不与家庭资金混用</h4><p>单独账户定投 + 保单锁定，避免「教育金被临时挪去补仓/买房」。保险金信托可以把「专款专用」写成条款。</p></div>
+      <div class="card"><div class="kicker serif">原则 三</div><h4>路线可以中途换，钱要按贵的准备</h4><p>按目标路线的上限做预算：准备了国际路线的钱走体制内是余量，反过来则是被动。留学家庭还需预留汇率波动缓冲（10% 为常用系数）。</p></div>
+    </div>
+
+    <h2 class="serif">🧮 教育金计算器</h2>
+    <div class="tool-grid">
+      <div class="tool">
+        <h4>教育金月储蓄测算</h4>
+        <div class="tool-sub">按教育通胀折算未来费用，反推每月需要存多少（单位：万元）</div>
+        <div class="inline2">
+          <div><label for="ed-age">孩子当前年龄</label><input id="ed-age" type="number" value="3" min="0" max="17"></div>
+          <div><label for="ed-start">用款起始年龄</label><input id="ed-start" type="number" value="18" min="3" max="30"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="ed-cost">目标费用（按今天价格，万元）</label><input id="ed-cost" type="number" value="200" min="1"></div>
+          <div><label for="ed-inf">教育通胀率（%）</label><input id="ed-inf" type="number" value="4" min="0" max="10" step="0.5"></div>
+        </div>
+        <label for="ed-r">投资年化收益（%）</label>
+        <input id="ed-r" type="number" value="5" min="0" max="12" step="0.5">
+        <button type="button" id="ed-btn">计算每月储蓄额</button>
+        <div class="result" id="ed-out" aria-live="polite">输入后点击计算</div>
+      </div>
+      <div class="card myth" style="align-self:start">
+        <h4><span class="x">✕ 高频误区</span>「到时候卖套房就够了」</h4>
+        <p><span class="ok">✓ 事实</span>把刚性支出押在流动性最差、波动周期最长的资产上，等于让孩子的入学年份去赌房市周期。教育金的第一属性是「到期必须在」，专户逐年积累远比「到时候再说」可靠。</p>
+      </div>
+    </div>
+
+    <h2 class="serif">常见问题</h2>
+    <details class="faq"><summary>中国有类似美国 529 的教育储蓄账户吗？</summary><div class="faq-body"><p>没有专门税优账户。可组合替代：教育年金险（确定给付）+ 指数基金专户定投（长期成长）+ 增额寿（灵活减保取现）。税优维度可顺带用足个人养老金（父母自己的）与专项附加扣除。</p></div></details>
+    <details class="faq"><summary>留学资金怎么换汇与汇出才合规？</summary><div class="faq-body"><p>凭录取通知与学费单，学费可直接向学校汇款（不占个人便利化额度）；生活费在每人每年 5 万美元便利化额度内购汇。提前一年分批换汇平滑汇率，是常用做法。以银行与外管要求为准。</p></div></details>
+    <details class="faq"><summary>教育金保险和自己定投，到底选哪个？</summary><div class="faq-body"><p>不是二选一，是分工：保险管「确定要花的底线金额」，定投管「弹性升级的部分」。全押保险牺牲收益，全靠定投则把刚性支出暴露在波动里。常见比例是底线部分 40%–60% 用确定性工具。</p></div></details>
+  </div>
+</section>
+
+<!-- ════════════════════ 工具库 ════════════════════ -->
+<section class="route" id="route-tools">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow serif">🧮 工具库</div>
+      <h1 class="serif">全站 13 个计算工具</h1>
+      <p class="lede">所有工具都在浏览器本地计算，不上传任何数据。输入关键词快速筛选。</p>
+      <input id="tool-search" type="search" placeholder="搜索工具：如 个税、房贷、教育…" style="max-width:420px; width:100%; padding:10px 14px; font-size:15px; border:1px solid var(--line-strong); border-radius:8px; background:var(--surface); color:var(--ink); margin-top:6px;">
+    </div>
+
+    <div class="card-grid" id="tool-index">
+      <a class="card link-card" href="#/tools" data-kw="净资产 资产 负债 盘点"><h4>净资产计算器</h4><p>资产 − 负债，定位你的财富层级（就在本页下方 ↓）</p><p class="go">直接使用 ↓</p></a>
+      <a class="card link-card" href="#/tax" data-kw="个税 工资 综合所得 税"><h4>年度个税计算器</h4><p>按年度汇算口径估算应纳个税与税后收入</p><p class="go">税务频道 →</p></a>
+      <a class="card link-card" href="#/tax" data-kw="年终奖 奖金 单独计税"><h4>年终奖计税对比器</h4><p>单独计税 vs 并入综合所得，自动告诉你哪种省</p><p class="go">税务频道 →</p></a>
+      <a class="card link-card" href="#/equity" data-kw="rsu 期权 股权 股票 激励"><h4>RSU 归属税负估算器</h4><p>归属收益、单独计税税负与税后净得</p><p class="go">股权薪酬频道 →</p></a>
+      <a class="card link-card" href="#/invest" data-kw="配置 股债 组合 滑块"><h4>资产配置模拟器</h4><p>拖动股债现金比例，实时查看预期收益与波动</p><p class="go">投资频道 →</p></a>
+      <a class="card link-card" href="#/invest" data-kw="定投 复利 基金 终值"><h4>定投复利计算器</h4><p>初始本金 + 每月定投的长期终值测算</p><p class="go">投资频道 →</p></a>
+      <a class="card link-card" href="#/retire" data-kw="退休 养老 现金流 提取"><h4>退休现金流测算器</h4><p>退休资产 + 社保养老金 → 每月可支配金额</p><p class="go">退休养老频道 →</p></a>
+      <a class="card link-card" href="#/retire" data-kw="个人养老金 节税 税优 12000"><h4>个人养老金节税估算</h4><p>顶格缴存 12,000 元/年的节税收益</p><p class="go">退休养老频道 →</p></a>
+      <a class="card link-card" href="#/property" data-kw="房贷 月供 等额本息 等额本金 利率"><h4>房贷计算器</h4><p>等额本息 vs 等额本金的月供与总利息对比</p><p class="go">房地产频道 →</p></a>
+      <a class="card link-card" href="#/legacy" data-kw="传承 遗嘱 清单 信托"><h4>传承规划自查清单</h4><p>10 项可勾选自查，实时显示准备度</p><p class="go">财富传承频道 →</p></a>
+      <a class="card link-card" href="#/insurance" data-kw="保险 家庭 方案 规划 保额 双十 预算 产品 投保"><h4>家庭保障智能规划器</h4><p>录入家庭信息，实时生成全家保额方案与保费预算体检</p><p class="go">保险频道 →</p></a>
+      <a class="card link-card" href="#/insurance" data-kw="保险 保额 缺口 寿险"><h4>保额缺口计算器</h4><p>责任减去准备，算出定寿应配保额</p><p class="go">保险频道 →</p></a>
+      <a class="card link-card" href="#/education" data-kw="教育 教育金 留学 学费"><h4>教育金月储蓄测算</h4><p>按教育通胀反推每月应存金额</p><p class="go">教育规划频道 →</p></a>
+    </div>
+
+    <h2 class="serif">净资产计算器</h2>
+    <div class="tool-grid">
+      <div class="tool" style="max-width:520px">
+        <h4>家庭净资产与层级定位</h4>
+        <div class="tool-sub">单位：万元。本站高净口径：可投资资产 ≥ 100 万</div>
+        <div class="inline2">
+          <div><label for="nw-house">房产市值</label><input id="nw-house" type="number" value="300" min="0"></div>
+          <div><label for="nw-fin">金融资产（存款/基金/股票）</label><input id="nw-fin" type="number" value="80" min="0"></div>
+        </div>
+        <div class="inline2">
+          <div><label for="nw-other">其他资产（公积金/车辆等）</label><input id="nw-other" type="number" value="30" min="0"></div>
+          <div><label for="nw-debt">负债合计</label><input id="nw-debt" type="number" value="150" min="0"></div>
+        </div>
+        <button type="button" id="nw-btn">计算净资产</button>
+        <div class="result" id="nw-out" aria-live="polite">输入后点击计算</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>关于本站</h5>
+        <p style="font-size:13.5px">对标海外高净值财务指南的内容框架，为可投资资产 100 万元以上的中国家庭提供税务、股权、投资、养老、房产、传承、保险与教育的教育性内容与计算工具。所有计算在浏览器本地完成，不收集任何数据。</p>
+      </div>
+      <div>
+        <h5>八大频道</h5>
+        <ul>
+          <li><a href="#/tax">税务筹划</a> · <a href="#/equity">股权薪酬</a></li>
+          <li><a href="#/invest">投资理财</a> · <a href="#/retire">退休养老</a></li>
+          <li><a href="#/property">房地产</a> · <a href="#/legacy">财富传承</a></li>
+          <li><a href="#/insurance">保险保障</a> · <a href="#/education">教育规划</a></li>
+          <li><a href="#/tools">🧮 工具库</a> · <a href="#/">数据总览</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>数据与政策来源</h5>
+        <ul>
+          <li>招商银行 × 贝恩《中国私人财富报告》</li>
+          <li>胡润研究院《胡润财富报告》</li>
+          <li>中国人民银行城镇家庭资产负债调查（2019）</li>
+          <li>瑞银《全球财富报告 2023》</li>
+          <li>个人所得税法、民法典及财政部/税务总局公开政策文件</li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      免责声明：本站全部内容仅供教育与研究参考，不构成任何投资、税务、法律或保险建议。税收与监管政策可能调整，请以官方最新文件为准；标注「约」的数值为公开数据整理估算；所有计算器采用简化模型，结果不代表任何真实收益或税负承诺。做出任何财务决策前，请咨询持牌专业人士。<br>
+      Disclaimer: All content is for educational reference only and does not constitute investment, tax, legal, or insurance advice. Policies may change; consult licensed professionals before making financial decisions.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ═══════ 路由 ═══════ */
+  var routes = ["home","tax","equity","invest","retire","property","legacy","insurance","education","tools"];
+  function currentRoute() {
+    var h = location.hash.replace(/^#\/?/, "");
+    return routes.indexOf(h) >= 0 ? h : "home";
+  }
+  function render() {
+    var r = currentRoute();
+    routes.forEach(function (name) {
+      var sec = document.getElementById("route-" + name);
+      if (sec) sec.classList.toggle("active", name === r);
+    });
+    document.querySelectorAll(".channel-nav a").forEach(function (a) {
+      a.classList.toggle("active", a.getAttribute("data-route") === r);
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", render);
+  render();
+
+  /* ═══════ 工具函数 ═══════ */
+  function fmt(n) { return n.toLocaleString("zh-CN", { maximumFractionDigits: 1 }); }
+  function fmt0(n) { return n.toLocaleString("zh-CN", { maximumFractionDigits: 0 }); }
+  function num(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) ? v : 0;
+  }
+  function on(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("click", fn);
+  }
+
+  /* 综合所得年度税率表 */
+  function annualTax(taxable) {
+    if (taxable <= 0) return 0;
+    var b = [
+      [960000, 0.45, 181920], [660000, 0.35, 85920], [420000, 0.30, 52920],
+      [300000, 0.25, 31920], [144000, 0.20, 16920], [36000, 0.10, 2520], [0, 0.03, 0]
+    ];
+    for (var i = 0; i < b.length; i++) {
+      if (taxable > b[i][0]) return taxable * b[i][1] - b[i][2];
+    }
+    return 0;
+  }
+  /* 年终奖单独计税（月度换算表） */
+  function bonusTax(bonus) {
+    if (bonus <= 0) return 0;
+    var m = bonus / 12;
+    var b = [
+      [80000, 0.45, 15160], [55000, 0.35, 7160], [35000, 0.30, 4410],
+      [25000, 0.25, 2660], [12000, 0.20, 1410], [3000, 0.10, 210], [0, 0.03, 0]
+    ];
+    for (var i = 0; i < b.length; i++) {
+      if (m > b[i][0]) return bonus * b[i][1] - b[i][2];
+    }
+    return 0;
+  }
+  function compound(p0, monthly, ratePct, years) {
+    var r = ratePct / 100, annual = monthly * 12;
+    var fv = p0 * Math.pow(1 + r, years);
+    if (r > 0) fv += annual * (Math.pow(1 + r, years) - 1) / r;
+    else fv += annual * years;
+    return fv;
+  }
+
+  /* ═══════ 总览：自测 ═══════ */
+  on("quiz-btn", function () {
+    var total = 0, answered = 0;
+    for (var i = 1; i <= 8; i++) {
+      var sel = document.querySelector('input[name="q' + i + '"]:checked');
+      if (sel) { total += parseInt(sel.value, 10); answered++; }
+    }
+    var out = document.getElementById("quiz-out");
+    if (answered < 8) {
+      out.textContent = "还有 " + (8 - answered) + " 题未回答";
+      return;
+    }
+    var band, advice;
+    if (total >= 13) {
+      band = "优秀（" + total + "/16）";
+      advice = "基础扎实。下一步关注进阶话题：税务优化（税务频道）、传承安排（财富传承频道）与跨境合规。";
+    } else if (total >= 8) {
+      band = "良好（" + total + "/16）";
+      advice = "框架已有，短板集中在得 0 分的题目。优先补齐保障缺口与应急金，再优化资产结构。";
+    } else {
+      band = "待改进（" + total + "/16）";
+      advice = "建议从三件事开始：① 盘点净资产（工具库）② 建立应急金 ③ 给家庭支柱配基础保障（保险频道）。";
+    }
+    out.innerHTML = "评分：<b>" + band + "</b><br><span class=\"sub-line\">" + advice + "</span>";
+  });
+
+  /* ═══════ 税务 ═══════ */
+  on("tax-btn", function () {
+    var salary = num("tax-salary"), sb = num("tax-sb"), ded = num("tax-ded");
+    var taxable = Math.max(0, salary - 60000 - sb - ded);
+    var tax = annualTax(taxable);
+    var net = salary - sb - tax;
+    var avg = salary > 0 ? (tax / salary * 100).toFixed(1) : 0;
+    document.getElementById("tax-out").innerHTML =
+      "应纳税所得额：" + fmt0(taxable) + " 元<br>全年个税：<b>" + fmt0(tax) + " 元</b>（平均税率 " + avg + "%）<br><span class=\"sub-line\">税后到手约 " + fmt0(net) + " 元（未含年终奖与公积金提取）</span>";
+  });
+
+  on("bonus-btn", function () {
+    var bonus = num("bonus-amt"), other = num("bonus-taxable");
+    var sep = bonusTax(bonus) + annualTax(Math.max(0, other));
+    var merged = annualTax(Math.max(0, other + bonus));
+    var diff = Math.abs(sep - merged);
+    var better = sep < merged ? "单独计税" : (sep > merged ? "并入综合所得" : "两种方式相同");
+    document.getElementById("bonus-out").innerHTML =
+      "单独计税合计：" + fmt0(sep) + " 元<br>并入计税合计：" + fmt0(merged) + " 元<br>更省的方式：<b>" + better + "</b>" +
+      (diff > 0.5 ? "（省 " + fmt0(diff) + " 元）" : "") +
+      "<br><span class=\"sub-line\">注意年终奖存在「多发一元多缴几千」的临界点（3.6万/14.4万/30万…），发放前建议避开。</span>";
+  });
+
+  /* ═══════ 股权薪酬 ═══════ */
+  on("rsu-btn", function () {
+    var shares = num("rsu-shares"), price = num("rsu-price"), strike = num("rsu-strike");
+    var fx = parseFloat(document.getElementById("rsu-cur").value);
+    var income = Math.max(0, shares * (price - strike) * fx);
+    var tax = annualTax(income);
+    var net = income - tax;
+    var rate = income > 0 ? (tax / income * 100).toFixed(1) : 0;
+    document.getElementById("rsu-out").innerHTML =
+      "归属所得：" + fmt0(income) + " 元<br>估算个税（单独计税）：<b>" + fmt0(tax) + " 元</b>（实际税率 " + rate + "%）<br><span class=\"sub-line\">税后约 " + fmt0(net) + " 元。同一年多次归属需合并累计计算，此处为单次简化估算。</span>";
+  });
+
+  /* ═══════ 投资 ═══════ */
+  function allocUpdate() {
+    var s = num("al-stock"), b = num("al-bond");
+    if (s + b > 100) { b = 100 - s; document.getElementById("al-bond").value = b; }
+    var c = 100 - s - b;
+    document.getElementById("al-stock-out").textContent = s + "%";
+    document.getElementById("al-bond-out").textContent = b + "%";
+    document.getElementById("al-cash").value = c;
+    document.getElementById("al-cash-out").textContent = c + "%";
+    var ret = (s * 0.07 + b * 0.03 + c * 0.015) / 100;
+    var dd = (s * 0.40 + b * 0.06) / 100;
+    var y10 = Math.pow(1 + ret, 10);
+    document.getElementById("al-out").innerHTML =
+      "组合预期年化：<b>" + (ret * 100).toFixed(1) + "%</b> ｜ 极端年份回撤参考：约 −" + (dd * 100).toFixed(0) + "%<br><span class=\"sub-line\">100 万本金 10 年后约 " + fmt(y10 * 100) + " 万（简化模型，非预测）。回撤超出承受力时，请下调股票比例。</span>";
+  }
+  var alS = document.getElementById("al-stock"), alB = document.getElementById("al-bond");
+  if (alS && alB) {
+    alS.addEventListener("input", allocUpdate);
+    alB.addEventListener("input", allocUpdate);
+    allocUpdate();
+  }
+
+  on("cp-btn", function () {
+    var fv = compound(num("cp-p0"), num("cp-m"), num("cp-r"), num("cp-n"));
+    var invested = num("cp-p0") + num("cp-m") * 12 * num("cp-n");
+    document.getElementById("cp-out").innerHTML =
+      num("cp-n") + " 年后终值：<b>" + fmt(fv) + " 万元</b><br><span class=\"sub-line\">累计投入 " + fmt(invested) + " 万，复利增值 " + fmt(fv - invested) + " 万</span>";
+  });
+
+  /* ═══════ 退休 ═══════ */
+  on("rt-btn", function () {
+    var years = num("rt-ret") - num("rt-age");
+    var out = document.getElementById("rt-out");
+    if (years <= 0) { out.textContent = "退休年龄需大于当前年龄"; return; }
+    var fv = compound(num("rt-p0"), num("rt-m"), num("rt-r"), years);
+    var monthlyDraw = fv * 0.035 / 12;
+    var totalMonthly = monthlyDraw + num("rt-pension");
+    out.innerHTML =
+      num("rt-ret") + " 岁时预计资产：<b>" + fmt(fv) + " 万元</b><br>按 3.5% 提取 ≈ 每月 " + fmt(monthlyDraw) + " 万 + 社保 " + fmt(num("rt-pension")) + " 万<br><span class=\"sub-line\">合计每月可支配约 <strong>" + fmt(totalMonthly) + " 万元</strong>（未考虑通胀与税费）</span>";
+  });
+
+  on("pp-btn", function () {
+    var rate = parseFloat(document.getElementById("pp-rate").value);
+    var years = num("pp-years");
+    var saveYear = 12000 * (rate - 0.03);
+    var saveTotal = saveYear * years;
+    var out = document.getElementById("pp-out");
+    if (rate <= 0.03) {
+      out.innerHTML = "边际税率 3% 时，缴费省 3%、领取缴 3%，<b>税优约为零</b><br><span class=\"sub-line\">此档位主要价值是强制储蓄；建议优先普通账户，收入上台阶后再顶格缴。</span>";
+      return;
+    }
+    out.innerHTML =
+      "每年净节税约：<b>" + fmt0(saveYear) + " 元</b>（缴费抵扣 " + Math.round(rate * 100) + "% − 领取时 3%）<br><span class=\"sub-line\">" + years + " 年累计净节税约 " + fmt0(saveTotal) + " 元，尚未计入账户内投资收益的免税复利。</span>";
+  });
+
+  /* ═══════ 房地产 ═══════ */
+  on("mg-btn", function () {
+    var P = num("mg-p") * 10000, years = num("mg-y"), n = years * 12;
+    var r = num("mg-r") / 100 / 12;
+    var out = document.getElementById("mg-out");
+    if (P <= 0 || n <= 0) { out.textContent = "请输入有效的贷款金额与年限"; return; }
+    var pmtEq;
+    if (r > 0) {
+      pmtEq = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    } else { pmtEq = P / n; }
+    var totalEq = pmtEq * n - P;
+    var firstPr = P / n + P * r;
+    var lastPr = P / n + (P / n) * r;
+    var totalPr = P * r * (n + 1) / 2;
+    out.innerHTML =
+      "等额本息：月供 <b>" + fmt0(pmtEq) + " 元</b>，总利息 " + fmt(totalEq / 10000) + " 万<br>" +
+      "等额本金：首月 " + fmt0(firstPr) + " 元 → 末月 " + fmt0(lastPr) + " 元，总利息 " + fmt(totalPr / 10000) + " 万<br>" +
+      "<span class=\"sub-line\">等额本金总利息少 " + fmt((totalEq - totalPr) / 10000) + " 万，但前期月供更高；现金流紧张选本息，求总成本低选本金。</span>";
+  });
+
+  /* ═══════ 传承清单 ═══════ */
+  var legacyBoxes = document.querySelectorAll("#legacy-check input[type=checkbox]");
+  function legacyUpdate() {
+    var done = 0;
+    legacyBoxes.forEach(function (b) { if (b.checked) done++; });
+    var pct = Math.round(done / legacyBoxes.length * 100);
+    document.getElementById("legacy-fill").style.width = pct + "%";
+    var label = "已完成 " + done + " / " + legacyBoxes.length + " 项";
+    if (done === legacyBoxes.length) label += " · 传承准备度极高 🎉";
+    else if (done >= 6) label += " · 准备度良好，补齐剩余项";
+    else if (done >= 3) label += " · 已起步，优先完成遗嘱与受益人指定";
+    else label += " · 建议从资产清单和遗嘱开始";
+    document.getElementById("legacy-label").textContent = label;
+  }
+  legacyBoxes.forEach(function (b) { b.addEventListener("change", legacyUpdate); });
+
+  /* ═══════ 保险 ═══════ */
+  on("in-btn", function () {
+    var need = num("in-mortgage") + num("in-expense") * num("in-years") + num("in-edu");
+    var have = num("in-liquid") + num("in-cover");
+    var gap = need - have;
+    var out = document.getElementById("in-out");
+    if (gap <= 0) {
+      out.innerHTML = "责任总额 " + fmt(need) + " 万 ≤ 已有准备 " + fmt(have) + " 万<br><b>当前无明显保额缺口</b><br><span class=\"sub-line\">仍建议保留基础定寿应对流动性风险，并定期复核。</span>";
+      return;
+    }
+    out.innerHTML =
+      "家庭责任总额：" + fmt(need) + " 万 − 已有准备 " + fmt(have) + " 万<br>建议补充定寿保额：<b>约 " + fmt(gap) + " 万元</b><br><span class=\"sub-line\">30 岁健康人群 100 万保额 30 年期定寿，年缴保费通常在千元级。</span>";
+  });
+
+
+  /* ═══════ 家庭保障智能规划器 ═══════ */
+  var PRODUCTS = [
+    {name:"惠民保（城市定制医疗）· 以杭州为例", co:"各地医保局指导", type:"普惠医疗", who:"全家", fee:150, hi:"有社保即可投，带病可保", url:"https://hzhmb.shie.com.cn/#/?busiDomainCode=HZ-YL-10181&agentID=xhylbtoken800001&code=0010LCHa1TYqjM0VaAGa1dva7W00LCHp"},
+    {name:"蓝医保·长期医疗险（20年保证续保）", co:"太平洋财险", type:"百万医疗险", who:"本人/配偶/子女", fee:300, hi:"最高400万报销额度，1万免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=8e292a1433d2f790dfb46ede3d737942&shareType=shousuoshouye&productId=1076055&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&iOpenId=ImZunUJ83hhJHP3F1e&wareId=23611&pageCode=cp"},
+    {name:"众民保·百万医疗险2026", co:"众安财险", type:"百万医疗险", who:"母亲/父亲", fee:1000, hi:"最高600万报销额度，1.5万免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=adcbc0deda45d4adea2da52258a925c1&shareType=rank&productId=203811&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203811&pageCode=cp"},
+    {name:"达尔文12号重大疾病保险", co:"复星联合健康保险", type:"重疾险", who:"本人/配偶", fee:5500, hi:"30万保额，20年交", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=779aad4426abf94789453195c1fa40b0&shareType=rank&productId=203233&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203233&pageCode=cp"},
+    {name:"妈咪保贝哪吒守护少儿重疾险(互联网)", co:"复星联合健康保险", type:"重疾险", who:"子女", fee:600, hi:"30万保额，30年期，20年交", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=387c8f3e7e96bed7f90fddec1944a84f&shareType=rank&productId=203577&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203577&pageCode=cp"},
+    {name:"同方全球「臻爱2026」互联网定寿", co:"同方全球人寿", type:"定期寿险", who:"本人/配偶", fee:1600, hi:"100万保额，保至60岁，覆盖房贷责任期", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=9f53529573f8962b1a41b0c57b6f1a85&shareType=shousuoshouye&productId=203264&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203264&pageCode=cp"},
+    {name:"众安个人综合意外险(2023版)", co:"众安财险", type:"意外险", who:"本人/配偶", fee:160, hi:"意外身故/伤残10万+意外医疗2万", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2b19d5beefb7fc84691a157bd656f663&shareType=productCore&productId=200204&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=200204&pageCode=cp"},
+    {name:"平安i小神童8号少儿意外险(互联网版)", co:"平安财险", type:"意外险", who:"子女", fee:80, hi:"意外医疗5万，0免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=65772c0a5e5a60df833070bef1ffcfa5&shareType=rank&productId=203751&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203751&pageCode=cp"},
+    {name:"孝欣保中老年人综合意外(3号)", co:"众安财险", type:"意外险", who:"母亲/父亲", fee:140, hi:"含骨折津贴1万，85岁可投", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=f5482e71187e423f033bc098033261a6&shareType=productCore&productId=201083&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=201083&pageCode=cp"},
+    {name:"众安住院保2024", co:"众安财险", type:"补充医疗险", who:"本人/配偶/父母", fee:400, hi:"住院1万，弥补百万医疗免赔额", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2ba462e27f270723bacb3bb29a93646c&shareType=rank&productId=201189&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=201189&pageCode=cp"},
+    {name:"大地熊猫宝宝2号少儿门急诊保险", co:"大地财险", type:"补充医疗险", who:"子女", fee:800, hi:"门急诊3万，住院5万，弥补免赔额", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2064bdb1119d41243fe5117294ed75fe&shareType=rank&productId=203621&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203621&pageCode=cp"}
+  ];
+  /* 标准案例下各成员年保费粗算（元） */
+  var BASE_FEE = {self:7710, spouse:7710, child:1530, mom:1290, dad:1290};
+
+  function fpUpdate() {
+    var incS = num("fp-inc-self"), incP = num("fp-inc-spouse"), loan = num("fp-loan");
+    var ageChild = num("fp-age-child"), ageMom = num("fp-age-mom"), ageDad = num("fp-age-dad");
+    var childNote = ageChild < 10
+      ? "孩子先保医疗+重疾，无需寿险；10 岁以下身故保额上限 20 万"
+      : (ageChild < 18 ? "孩子先保医疗+重疾，无需寿险；未成年身故保额上限 50 万" : "先医疗+重疾，成年后可补定寿");
+    function parentNote(age, who) {
+      if (age >= 60) return who + "已 " + age + " 岁：优先百万医疗/防癌险 + 意外，注意产品投保年龄上限";
+      return who + "优先医疗 + 意外，建议补防癌险";
+    }
+    var rows = [
+      { who: "本人", med: "已有·社保", mil: "有 · 400 万报销", ci: Math.round(incS * 3), acc: Math.round(incS * 3), term: Math.round(loan * 0.6 + incS * 5), fee: BASE_FEE.self, note: "家庭支柱优先：定寿 → 重疾 → 医疗 → 意外" },
+      { who: "配偶", med: "已有·社保", mil: "有 · 400 万报销", ci: Math.round(incP * 3), acc: Math.round(incP * 3), term: Math.round(loan * 0.4 + incP * 5), fee: BASE_FEE.spouse, note: "与本人互为补充，寿险按收入/负债占比配置" },
+      { who: "子女", med: "已有·少儿医保", mil: "有 · 200~400 万报销", ci: 30, acc: 20, term: 0, fee: BASE_FEE.child, note: childNote },
+      { who: "母亲", med: "已有·社保/新农合", mil: "有 · 600 万（中老年版）", ci: 0, acc: 20, term: 0, fee: BASE_FEE.mom, note: parentNote(ageMom, "母亲") },
+      { who: "父亲", med: "已有·社保/新农合", mil: "有 · 600 万（中老年版）", ci: 0, acc: 20, term: 0, fee: BASE_FEE.dad, note: parentNote(ageDad, "父亲") }
+    ];
+    var html = "<thead><tr><th>被保险人</th><th>基本医疗</th><th>百万医疗险</th><th class=\"num\">重疾险</th><th class=\"num\">意外身故/伤残</th><th class=\"num\">疾病身故/定寿</th><th class=\"num\">总保额</th><th class=\"num\">年保费估算</th><th>配置要点</th></tr></thead><tbody>";
+    var totalSum = 0, feeSum = 0;
+    rows.forEach(function (r) {
+      var ciTxt = r.ci ? r.ci : "—（建议防癌险）";
+      var termTxt = r.term ? r.term : "—";
+      var total = r.ci + r.acc + r.term;
+      totalSum += total; feeSum += r.fee;
+      html += "<tr><td><b>" + r.who + "</b></td><td>" + r.med + "</td><td>" + r.mil + "</td><td class=\"num\">" + ciTxt + "</td><td class=\"num\">" + r.acc + "</td><td class=\"num\">" + termTxt + "</td><td class=\"num\"><b>" + total + "</b></td><td class=\"num\">" + fmt0(r.fee) + "</td><td>" + r.note + "</td></tr>";
+    });
+    html += "<tr><td><b>家庭合计</b></td><td></td><td></td><td></td><td></td><td></td><td class=\"num\"><b>" + totalSum + "</b></td><td class=\"num\"><b>" + fmt0(feeSum) + "</b></td><td>单位：保额万元 / 保费元</td></tr></tbody>";
+    document.getElementById("fp-plan").innerHTML = html;
+
+    var budget = num("fp-budget") * 10000, income = incS + incP;
+    var ratio = income ? (feeSum / (income * 10000) * 100) : 0;
+    var inBudget = feeSum <= budget;
+    var inBand = ratio >= 5 && ratio <= 10;
+    document.getElementById("fp-budget-box").innerHTML =
+      "<span>预算体检：</span>" +
+      "<span class='" + (inBudget ? "ok" : "bad") + "'>" + (inBudget ? "✓ 年保费 " + fmt0(feeSum) + " 元，在预算 " + fmt(budget / 10000) + " 万元内" : "✗ 年保费 " + fmt0(feeSum) + " 元，超出预算，请调整保额或预算") + "</span>" +
+      "<span>占家庭年收入 <b>" + ratio.toFixed(1) + "%</b>（双十原则参考 5%–10%：" + (inBand ? "✓ 合理" : "建议调整") + "）</span>";
+  }
+
+  var fpInputs = document.querySelectorAll("#fp-form input");
+  if (fpInputs.length) {
+    fpInputs.forEach(function (inp) { inp.addEventListener("input", fpUpdate); });
+    fpUpdate();
+    var fpHtml = "";
+    PRODUCTS.forEach(function (p) {
+      fpHtml += "<div class='prod'><div><div class='name'>" + p.name + "</div><div class='meta'>" +
+        p.co + " · " + p.type + " · 适合：" + p.who + " · 预估年保费 " + p.fee + " 元 · " + p.hi +
+        "</div></div><a href='" + p.url + "' target='_blank' rel='noopener'>投保入口</a></div>";
+    });
+    document.getElementById("fp-products").innerHTML = fpHtml;
+  }
+
+  /* ═══════ 教育金 ═══════ */
+  on("ed-btn", function () {
+    var yearsTo = num("ed-start") - num("ed-age");
+    var out = document.getElementById("ed-out");
+    if (yearsTo <= 0) { out.textContent = "用款年龄需大于当前年龄"; return; }
+    var future = num("ed-cost") * Math.pow(1 + num("ed-inf") / 100, yearsTo);
+    var rm = num("ed-r") / 100 / 12, nm = yearsTo * 12, monthly;
+    if (rm > 0) monthly = future * rm / (Math.pow(1 + rm, nm) - 1);
+    else monthly = future / nm;
+    out.innerHTML =
+      yearsTo + " 年后费用约：<b>" + fmt(future) + " 万元</b>（按 " + num("ed-inf") + "% 教育通胀）<br>每月需储蓄投资：<b>" + fmt(monthly) + " 万元</b><br><span class=\"sub-line\">按年化 " + num("ed-r") + "% 测算；距用款 5 年内的部分建议转入稳健资产。</span>";
+  });
+
+  /* ═══════ 工具库 ═══════ */
+  var toolSearch = document.getElementById("tool-search");
+  if (toolSearch) {
+    toolSearch.addEventListener("input", function () {
+      var q = toolSearch.value.trim().toLowerCase();
+      document.querySelectorAll("#tool-index .card").forEach(function (c) {
+        var text = (c.textContent + " " + (c.getAttribute("data-kw") || "")).toLowerCase();
+        c.style.display = !q || text.indexOf(q) >= 0 ? "" : "none";
+      });
+    });
+  }
+
+  on("nw-btn", function () {
+    var assets = num("nw-house") + num("nw-fin") + num("nw-other");
+    var debt = num("nw-debt");
+    var net = assets - debt;
+    var investable = num("nw-fin");
+    var band;
+    if (investable >= 1000) band = "可投资资产已达千万级（行业高净值口径，招行-贝恩）";
+    else if (investable >= 100) band = "✅ 可投资资产 ≥ 100 万，已达到本站「高净人群」口径";
+    else band = "可投资资产距本站 100 万高净口径还差 " + fmt(100 - investable) + " 万";
+    document.getElementById("nw-out").innerHTML =
+      "家庭净资产：<b>" + fmt(net) + " 万元</b>（资产 " + fmt(assets) + " − 负债 " + fmt(debt) + "）<br>" + band +
+      "<br><span class=\"sub-line\">净资产含房产；「可投资资产」仅计金融资产，是衡量抗风险能力的核心指标。</span>";
+  });
+
+})();
+</script>
+</body>
+</html>

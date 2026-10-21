@@ -322,6 +322,34 @@
   .legend .key { display: inline-flex; align-items: center; gap: 7px; }
   .legend .swatch { width: 11px; height: 11px; border-radius: 3px; }
 
+  /* ── 家庭保障规划器 ── */
+  .form-grid { display: grid; gap: 2px 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 4px; }
+  .budget-line {
+    margin-top: 14px; padding: 12px 14px; border-radius: 8px;
+    background: var(--gold-soft); color: var(--ink); font-size: 14px;
+    display: flex; flex-wrap: wrap; gap: 6px 20px;
+  }
+  .budget-line .ok { color: var(--good); font-weight: 700; }
+  .budget-line .bad { color: var(--vermilion); font-weight: 700; }
+
+  /* ── 产品库 ── */
+  .prod-list { display: grid; gap: 10px; margin: 16px 0 12px; }
+  .prod {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px;
+  }
+  .prod .name { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+  .prod .meta { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+  .prod a {
+    white-space: nowrap; justify-self: end; font-size: 13px; font-weight: 600; text-decoration: none;
+    color: var(--gold-strong); border: 1px solid var(--gold); border-radius: 7px; padding: 7px 16px;
+  }
+  .prod a:hover { background: var(--gold); color: var(--bg); }
+  @media (max-width: 520px) {
+    .prod { grid-template-columns: 1fr; }
+    .prod a { justify-self: start; }
+  }
+
   /* ── 页脚 ── */
   footer { margin-top: 56px; border-top: 1px solid var(--line); background: var(--surface); padding: 38px 0 46px; font-size: 13.5px; color: var(--ink-2); }
   footer h5 { margin: 0 0 10px; font-size: 14px; color: var(--ink); }
@@ -362,7 +390,7 @@
     <div class="page-head">
       <div class="eyebrow serif">2026 · 中国高净人群财务指南</div>
       <h1 class="serif">写给可投资资产 <span class="accent">100 万+</span> 家庭的<br>中国财富管理全景指南</h1>
-      <p class="lede">对标海外高净值财务指南的内容框架，结合中国税制、社保、房产、继承与保险制度，覆盖税务、股权薪酬、投资、养老、房地产、传承、保险与教育规划八大频道，并提供 12 个交互计算工具。</p>
+      <p class="lede">对标海外高净值财务指南的内容框架，结合中国税制、社保、房产、继承与保险制度，覆盖税务、股权薪酬、投资、养老、房地产、传承、保险与教育规划八大频道，并提供 13 个交互计算工具。</p>
       <p class="meta">本站口径：<strong>高净人群 = 个人/家庭可投资资产 ≥ 100 万元人民币</strong>（不含自住房产）。行业报告常用 1000 万门槛，本站按大众富裕人群实际需求放宽至 100 万。数据来自公开报告（多为 2022–2023 年发布），「约」为整理估算；内容仅供教育参考，不构成投资建议。</p>
     </div>
 
@@ -460,7 +488,7 @@
       <a class="card link-card" href="#/retire"><div class="kicker serif">频道 04</div><h4>退休养老</h4><p>养老三支柱、个人养老金税优、延迟退休与退休测算。</p><p class="go">进入频道 →</p></a>
       <a class="card link-card" href="#/property"><div class="kicker serif">频道 05</div><h4>房地产</h4><p>房贷计算、等额本息 vs 等额本金、租售比与置换策略。</p><p class="go">进入频道 →</p></a>
       <a class="card link-card" href="#/legacy"><div class="kicker serif">频道 06</div><h4>财富传承</h4><p>民法典继承规则、遗嘱六种形式、家族信托与保险金信托。</p><p class="go">进入频道 →</p></a>
-      <a class="card link-card" href="#/insurance"><div class="kicker serif">频道 07</div><h4>保险保障</h4><p>四大基础险种、增额终身寿、保额缺口计算器。</p><p class="go">进入频道 →</p></a>
+      <a class="card link-card" href="#/insurance"><div class="kicker serif">频道 07</div><h4>保险保障</h4><p>四大基础险种、家庭保障智能规划器与产品库、增额终身寿。</p><p class="go">进入频道 →</p></a>
       <a class="card link-card" href="#/education"><div class="kicker serif">频道 08</div><h4>教育规划</h4><p>体制内/国际/留学三条路线的成本与教育金测算。</p><p class="go">进入频道 →</p></a>
     </div>
 
@@ -907,6 +935,38 @@
       <div class="card"><div class="kicker serif">进阶 三</div><h4>香港与境外保单</h4><p>分红演示 ≠ 保证收益，历史履行率要逐款核查；缴费涉及外汇合规；理赔与诉讼在境外进行。适合有真实跨境需求的家庭，而不是单纯追求演示利率。</p></div>
     </div>
 
+    <h2 class="serif">🧮 家庭保障智能规划器</h2>
+    <p>面向三代五口的典型家庭（默认：30 岁 / 家庭年收入 30 万 / 房贷 100 万），三步生成全家「医疗 · 重疾 · 定寿」三层保障方案：<strong>录入家庭信息 → 自动测算各成员保额 → 产品库给出投保入口</strong>。修改任意数字，方案实时更新。</p>
+    <div class="tool-grid" style="grid-template-columns:1fr">
+      <div class="tool" id="fp-form">
+        <h4>第一步 · 家庭信息录入</h4>
+        <div class="tool-sub">保额单位：万元；年龄影响儿童身故限额与父母适配险种</div>
+        <div class="form-grid">
+          <div><label for="fp-age-self">本人年龄（岁）</label><input id="fp-age-self" type="number" value="30" min="18" max="80"></div>
+          <div><label for="fp-age-spouse">配偶年龄（岁）</label><input id="fp-age-spouse" type="number" value="30" min="18" max="80"></div>
+          <div><label for="fp-age-child">子女年龄（岁）</label><input id="fp-age-child" type="number" value="5" min="0" max="25"></div>
+          <div><label for="fp-age-mom">母亲年龄（岁）</label><input id="fp-age-mom" type="number" value="55" min="30" max="85"></div>
+          <div><label for="fp-age-dad">父亲年龄（岁）</label><input id="fp-age-dad" type="number" value="55" min="30" max="85"></div>
+          <div><label for="fp-inc-self">本人年收入（万元）</label><input id="fp-inc-self" type="number" value="15" min="0"></div>
+          <div><label for="fp-inc-spouse">配偶年收入（万元）</label><input id="fp-inc-spouse" type="number" value="15" min="0"></div>
+          <div><label for="fp-loan">房贷余额（万元）</label><input id="fp-loan" type="number" value="100" min="0"></div>
+          <div><label for="fp-budget">家庭年保费预算（万元）</label><input id="fp-budget" type="number" value="2" min="0" step="0.1"></div>
+        </div>
+        <div class="note">测算原则：双十原则 · 重疾 ≈ 年收入 × 3 · 定寿 = 负债 × 责任比例 + 年收入 × 5 · 意外 ≈ 年收入 × 3 · 父母以防癌医疗 + 意外替代重疾 · 10 岁以下儿童身故保额 ≤ 20 万</div>
+
+        <h4 style="margin-top:20px">第二步 · 智能推荐方案（保额单位：万元）</h4>
+        <div class="table-scroll">
+          <table id="fp-plan"></table>
+        </div>
+        <div class="budget-line" id="fp-budget-box" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <h2 class="serif">第三步 · 产品库与投保入口</h2>
+    <p>按「医疗 → 重疾 → 定寿 → 意外」配置顺序整理的在售产品示例，点击右侧按钮直达承保页面。</p>
+    <div class="prod-list" id="fp-products"></div>
+    <div class="note">说明：① 方案总保额只统计给付型责任（重疾/身故/意外伤残），报销型医疗险不重复计入；② 预估年保费按标准案例（30 岁 / 50 万保额）粗算，实际以投保页面核保结果为准；③ 本工具测算结果仅供保障规划参考，具体保障内容、费率与核保结论以保险合同条款及保险公司承保页面为准。</div>
+
     <h2 class="serif">🧮 保额缺口计算器</h2>
     <div class="tool-grid">
       <div class="tool">
@@ -1006,7 +1066,7 @@
   <div class="wrap">
     <div class="page-head">
       <div class="eyebrow serif">🧮 工具库</div>
-      <h1 class="serif">全站 12 个计算工具</h1>
+      <h1 class="serif">全站 13 个计算工具</h1>
       <p class="lede">所有工具都在浏览器本地计算，不上传任何数据。输入关键词快速筛选。</p>
       <input id="tool-search" type="search" placeholder="搜索工具：如 个税、房贷、教育…" style="max-width:420px; width:100%; padding:10px 14px; font-size:15px; border:1px solid var(--line-strong); border-radius:8px; background:var(--surface); color:var(--ink); margin-top:6px;">
     </div>
@@ -1022,6 +1082,7 @@
       <a class="card link-card" href="#/retire" data-kw="个人养老金 节税 税优 12000"><h4>个人养老金节税估算</h4><p>顶格缴存 12,000 元/年的节税收益</p><p class="go">退休养老频道 →</p></a>
       <a class="card link-card" href="#/property" data-kw="房贷 月供 等额本息 等额本金 利率"><h4>房贷计算器</h4><p>等额本息 vs 等额本金的月供与总利息对比</p><p class="go">房地产频道 →</p></a>
       <a class="card link-card" href="#/legacy" data-kw="传承 遗嘱 清单 信托"><h4>传承规划自查清单</h4><p>10 项可勾选自查，实时显示准备度</p><p class="go">财富传承频道 →</p></a>
+      <a class="card link-card" href="#/insurance" data-kw="保险 家庭 方案 规划 保额 双十 预算 产品 投保"><h4>家庭保障智能规划器</h4><p>录入家庭信息，实时生成全家保额方案与保费预算体检</p><p class="go">保险频道 →</p></a>
       <a class="card link-card" href="#/insurance" data-kw="保险 保额 缺口 寿险"><h4>保额缺口计算器</h4><p>责任减去准备，算出定寿应配保额</p><p class="go">保险频道 →</p></a>
       <a class="card link-card" href="#/education" data-kw="教育 教育金 留学 学费"><h4>教育金月储蓄测算</h4><p>按教育通胀反推每月应存金额</p><p class="go">教育规划频道 →</p></a>
     </div>
@@ -1317,6 +1378,76 @@
     out.innerHTML =
       "家庭责任总额：" + fmt(need) + " 万 − 已有准备 " + fmt(have) + " 万<br>建议补充定寿保额：<b>约 " + fmt(gap) + " 万元</b><br><span class=\"sub-line\">30 岁健康人群 100 万保额 30 年期定寿，年缴保费通常在千元级。</span>";
   });
+
+
+  /* ═══════ 家庭保障智能规划器 ═══════ */
+  var PRODUCTS = [
+    {name:"惠民保（城市定制医疗）· 以杭州为例", co:"各地医保局指导", type:"普惠医疗", who:"全家", fee:150, hi:"有社保即可投，带病可保", url:"https://hzhmb.shie.com.cn/#/?busiDomainCode=HZ-YL-10181&agentID=xhylbtoken800001&code=0010LCHa1TYqjM0VaAGa1dva7W00LCHp"},
+    {name:"蓝医保·长期医疗险（20年保证续保）", co:"太平洋财险", type:"百万医疗险", who:"本人/配偶/子女", fee:300, hi:"最高400万报销额度，1万免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=8e292a1433d2f790dfb46ede3d737942&shareType=shousuoshouye&productId=1076055&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&iOpenId=ImZunUJ83hhJHP3F1e&wareId=23611&pageCode=cp"},
+    {name:"众民保·百万医疗险2026", co:"众安财险", type:"百万医疗险", who:"母亲/父亲", fee:1000, hi:"最高600万报销额度，1.5万免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=adcbc0deda45d4adea2da52258a925c1&shareType=rank&productId=203811&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203811&pageCode=cp"},
+    {name:"达尔文12号重大疾病保险", co:"复星联合健康保险", type:"重疾险", who:"本人/配偶", fee:5500, hi:"30万保额，20年交", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=779aad4426abf94789453195c1fa40b0&shareType=rank&productId=203233&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203233&pageCode=cp"},
+    {name:"妈咪保贝哪吒守护少儿重疾险(互联网)", co:"复星联合健康保险", type:"重疾险", who:"子女", fee:600, hi:"30万保额，30年期，20年交", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=387c8f3e7e96bed7f90fddec1944a84f&shareType=rank&productId=203577&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203577&pageCode=cp"},
+    {name:"同方全球「臻爱2026」互联网定寿", co:"同方全球人寿", type:"定期寿险", who:"本人/配偶", fee:1600, hi:"100万保额，保至60岁，覆盖房贷责任期", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=9f53529573f8962b1a41b0c57b6f1a85&shareType=shousuoshouye&productId=203264&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203264&pageCode=cp"},
+    {name:"众安个人综合意外险(2023版)", co:"众安财险", type:"意外险", who:"本人/配偶", fee:160, hi:"意外身故/伤残10万+意外医疗2万", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2b19d5beefb7fc84691a157bd656f663&shareType=productCore&productId=200204&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=200204&pageCode=cp"},
+    {name:"平安i小神童8号少儿意外险(互联网版)", co:"平安财险", type:"意外险", who:"子女", fee:80, hi:"意外医疗5万，0免赔", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=65772c0a5e5a60df833070bef1ffcfa5&shareType=rank&productId=203751&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203751&pageCode=cp"},
+    {name:"孝欣保中老年人综合意外(3号)", co:"众安财险", type:"意外险", who:"母亲/父亲", fee:140, hi:"含骨折津贴1万，85岁可投", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=f5482e71187e423f033bc098033261a6&shareType=productCore&productId=201083&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=201083&pageCode=cp"},
+    {name:"众安住院保2024", co:"众安财险", type:"补充医疗险", who:"本人/配偶/父母", fee:400, hi:"住院1万，弥补百万医疗免赔额", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2ba462e27f270723bacb3bb29a93646c&shareType=rank&productId=201189&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=201189&pageCode=cp"},
+    {name:"大地熊猫宝宝2号少儿门急诊保险", co:"大地财险", type:"补充医疗险", who:"子女", fee:800, hi:"门急诊3万，住院5万，弥补免赔额", url:"https://gw.iyunbao.com/app/visitor/zyb/receptionlink/share.do?a=1&shareId=2064bdb1119d41243fe5117294ed75fe&shareType=rank&productId=203621&accountId=43896745&aSign=49024ab5358da8348390466bd3847b07&wareId=203621&pageCode=cp"}
+  ];
+  /* 标准案例下各成员年保费粗算（元） */
+  var BASE_FEE = {self:7710, spouse:7710, child:1530, mom:1290, dad:1290};
+
+  function fpUpdate() {
+    var incS = num("fp-inc-self"), incP = num("fp-inc-spouse"), loan = num("fp-loan");
+    var ageChild = num("fp-age-child"), ageMom = num("fp-age-mom"), ageDad = num("fp-age-dad");
+    var childNote = ageChild < 10
+      ? "孩子先保医疗+重疾，无需寿险；10 岁以下身故保额上限 20 万"
+      : (ageChild < 18 ? "孩子先保医疗+重疾，无需寿险；未成年身故保额上限 50 万" : "先医疗+重疾，成年后可补定寿");
+    function parentNote(age, who) {
+      if (age >= 60) return who + "已 " + age + " 岁：优先百万医疗/防癌险 + 意外，注意产品投保年龄上限";
+      return who + "优先医疗 + 意外，建议补防癌险";
+    }
+    var rows = [
+      { who: "本人", med: "已有·社保", mil: "有 · 400 万报销", ci: Math.round(incS * 3), acc: Math.round(incS * 3), term: Math.round(loan * 0.6 + incS * 5), fee: BASE_FEE.self, note: "家庭支柱优先：定寿 → 重疾 → 医疗 → 意外" },
+      { who: "配偶", med: "已有·社保", mil: "有 · 400 万报销", ci: Math.round(incP * 3), acc: Math.round(incP * 3), term: Math.round(loan * 0.4 + incP * 5), fee: BASE_FEE.spouse, note: "与本人互为补充，寿险按收入/负债占比配置" },
+      { who: "子女", med: "已有·少儿医保", mil: "有 · 200~400 万报销", ci: 30, acc: 20, term: 0, fee: BASE_FEE.child, note: childNote },
+      { who: "母亲", med: "已有·社保/新农合", mil: "有 · 600 万（中老年版）", ci: 0, acc: 20, term: 0, fee: BASE_FEE.mom, note: parentNote(ageMom, "母亲") },
+      { who: "父亲", med: "已有·社保/新农合", mil: "有 · 600 万（中老年版）", ci: 0, acc: 20, term: 0, fee: BASE_FEE.dad, note: parentNote(ageDad, "父亲") }
+    ];
+    var html = "<thead><tr><th>被保险人</th><th>基本医疗</th><th>百万医疗险</th><th class=\"num\">重疾险</th><th class=\"num\">意外身故/伤残</th><th class=\"num\">疾病身故/定寿</th><th class=\"num\">总保额</th><th class=\"num\">年保费估算</th><th>配置要点</th></tr></thead><tbody>";
+    var totalSum = 0, feeSum = 0;
+    rows.forEach(function (r) {
+      var ciTxt = r.ci ? r.ci : "—（建议防癌险）";
+      var termTxt = r.term ? r.term : "—";
+      var total = r.ci + r.acc + r.term;
+      totalSum += total; feeSum += r.fee;
+      html += "<tr><td><b>" + r.who + "</b></td><td>" + r.med + "</td><td>" + r.mil + "</td><td class=\"num\">" + ciTxt + "</td><td class=\"num\">" + r.acc + "</td><td class=\"num\">" + termTxt + "</td><td class=\"num\"><b>" + total + "</b></td><td class=\"num\">" + fmt0(r.fee) + "</td><td>" + r.note + "</td></tr>";
+    });
+    html += "<tr><td><b>家庭合计</b></td><td></td><td></td><td></td><td></td><td></td><td class=\"num\"><b>" + totalSum + "</b></td><td class=\"num\"><b>" + fmt0(feeSum) + "</b></td><td>单位：保额万元 / 保费元</td></tr></tbody>";
+    document.getElementById("fp-plan").innerHTML = html;
+
+    var budget = num("fp-budget") * 10000, income = incS + incP;
+    var ratio = income ? (feeSum / (income * 10000) * 100) : 0;
+    var inBudget = feeSum <= budget;
+    var inBand = ratio >= 5 && ratio <= 10;
+    document.getElementById("fp-budget-box").innerHTML =
+      "<span>预算体检：</span>" +
+      "<span class='" + (inBudget ? "ok" : "bad") + "'>" + (inBudget ? "✓ 年保费 " + fmt0(feeSum) + " 元，在预算 " + fmt(budget / 10000) + " 万元内" : "✗ 年保费 " + fmt0(feeSum) + " 元，超出预算，请调整保额或预算") + "</span>" +
+      "<span>占家庭年收入 <b>" + ratio.toFixed(1) + "%</b>（双十原则参考 5%–10%：" + (inBand ? "✓ 合理" : "建议调整") + "）</span>";
+  }
+
+  var fpInputs = document.querySelectorAll("#fp-form input");
+  if (fpInputs.length) {
+    fpInputs.forEach(function (inp) { inp.addEventListener("input", fpUpdate); });
+    fpUpdate();
+    var fpHtml = "";
+    PRODUCTS.forEach(function (p) {
+      fpHtml += "<div class='prod'><div><div class='name'>" + p.name + "</div><div class='meta'>" +
+        p.co + " · " + p.type + " · 适合：" + p.who + " · 预估年保费 " + p.fee + " 元 · " + p.hi +
+        "</div></div><a href='" + p.url + "' target='_blank' rel='noopener'>投保入口</a></div>";
+    });
+    document.getElementById("fp-products").innerHTML = fpHtml;
+  }
 
   /* ═══════ 教育金 ═══════ */
   on("ed-btn", function () {

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>梅森深度观察 — 公众号一键排版发布台</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f4f5f7;color:#1f2937}
+.topbar{position:sticky;top:0;z-index:50;background:#16233b;color:#fff;padding:12px 18px;border-bottom:2px solid #b08d57;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.badge{background:#b08d57;color:#16233b;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:800}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.1);padding:4px;border-radius:8px}
+.tab-btn{border:none;background:transparent;color:#cbd5e1;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.tab-btn.active{background:#b08d57;color:#16233b}
+.btn{border:none;border-radius:7px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-gold{background:#b08d57;color:#16233b}
+.btn-mini{background:#fff;border:1px solid #d1d5db;color:#374151;padding:3px 9px;border-radius:5px;font-size:12px;cursor:pointer}
+.wrap{max-width:760px;margin:20px auto 60px;padding:0 14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.meta-row{margin-bottom:12px}
+.meta-row:last-child{margin-bottom:0}
+.meta-hd{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#b08d57;margin-bottom:4px}
+.stage{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px 28px 44px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.hidden{display:none!important}
+.tblock{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #e5e7eb}
+.tblock:last-child{border-bottom:none}
+.tbadge{background:#16233b;color:#f6efe2;font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;border-left:3px solid #b08d57;text-align:center;height:fit-content}
+.prompt-box{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;font-size:13px;line-height:1.75;border-left:4px solid #b08d57}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#16233b;color:#faf7f0;border:1px solid #b08d57;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
+.toast.show{opacity:1}
+@media(max-width:600px){.stage{padding:20px 16px 32px}.tblock{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="badge">梅森深度观察</span><span>公众号一键排版发布台</span></div>
+  <div class="tabs">
+    <button class="tab-btn active" id="tArt" type="button">深度长文（一键排版）</button>
+    <button class="tab-btn" id="tVid" type="button">60秒口播稿+豆包指令</button>
+  </div>
+  <button class="btn btn-gold" id="bCopyWechat" type="button">一键复制排版到公众号</button>
+</header>
+<main class="wrap">
+  <div id="vArt">
+    <section class="card">
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号标题（已定稿）</span><button class="btn-mini" id="bTitle" type="button">复制标题</button></div>
+        <div id="txtTitle" style="font-size:15px;font-weight:700;color:#16233b">医院没给 VIP 服务、发票却印了“特需”→保司直接整案拒赔，这笔账谁来算？</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号摘要</span><button class="btn-mini" id="bSum" type="button">复制摘要</button></div>
+        <div id="txtSum" style="font-size:13px;color:#4b5563;line-height:1.6">孩子发烧在走廊排队、在普通科室抽血拿药，就因为发票抬头多印了“特需”俩字，理赔员打来电话说一分不赔。把医院和保司两边的账拆开看，真相让人唏嘘。</div>
+      </div>
+    </section>
+    <div class="stage">
+      <section id="wechat-copy-target" style="font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:15.5px;line-height:1.95;color:#2b2f36;letter-spacing:0.8px;word-wrap:break-word;background-color:#ffffff;">
+        <section style="margin:0 0 28px 0;padding-bottom:14px;border-bottom:1px solid #ece7df;">
+          <p style="margin:0 0 6px 0;font-size:12px;color:#b08d57;letter-spacing:2.5px;font-weight:bold;">梅森深度观察</p>
+          <p style="margin:0;font-size:13px;color:#8c95a0;">写给每一个带娃、陪父母跑过医院的普通家庭。</p>
+        </section>
+        <p style="margin:0 0 18px 0;">前天中午十二点多，手机响了。</p>
+        <p style="margin:0 0 18px 0;">电话是某头部大保司的理赔员打来的。声音挺客气，说出来的话却让人瞬间血压飙升：</p>
+        <section style="margin:20px 0 22px 0;padding:16px 18px;background-color:#faf8f4;border-left:3px solid #b08d57;">
+          <p style="margin:0;font-size:15.5px;color:#16233b;font-weight:bold;line-height:1.75;">“您给孩子报销的这笔医疗费，门诊发票上印着‘特需’两个字，按规定我们要整案拒赔。”</p>
+        </section>
+        <p style="margin:0 0 18px 0;">整案拒赔，意思就是一分钱不给。</p>
+        <p style="margin:0 0 18px 0;">挂掉电话，我盯着桌子上那张薄薄的发票，越想越觉得魔幻。</p>
+        <p style="margin:0 0 18px 0;">那天带娃看病，我全程抱着孩子在医院里跑上跑下：没见着什么安静的 VIP 沙发，没享受到什么一对一护士带路。抽血是在普通窗口排了半小时队，拍片用的是普通科室的机器，拿的也是普通药房里几十块钱的常规药。</p>
+        <p style="margin:0 0 18px 0;">更让人摸不着头脑的是——<strong>同样一份保单，同样是挂了带“特需”俩字的号、在普通科室查的病，以前好几次人家都痛痛快快报了。</strong></p>
+        <p style="margin:0 0 26px 0;">怎么前脚还能报，今天突然翻脸，一分钱都不认了？</p>
+        <p style="margin:0 0 18px 0;">换作平时，刷到这种事，评论区肯定分分钟吵翻天：一半人骂医院心黑，挂羊头卖狗肉；另一半人骂保险公司无情，收保费时喊亲爱的，理赔时翻脸不认人。</p>
+        <p style="margin:0 0 28px 0;">可骂完解气吗？解不了。因为骂完之后，下次你带娃、带爸妈去医院，照样会一脚踩进同一个坑里。</p>
+        <p style="margin:0 0 28px 0;">今天咱们不带情绪，也不帮任何一方说话。我把医院的底账、保险公司的算盘、还有法院的真实判例全翻了出来。看完你就会发现：<strong>真正把普通人夹在中间两头为难的，根本不是哪一个坏人，而是两套各自打得噼啪响的算盘。</strong></p>
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">01</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">凌晨七点抢号的人，根本没得选</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">没在凌晨七点蹲过三甲医院小程序的人，很难懂什么叫“被迫特需”。</p>
+        <p style="margin:0 0 18px 0;">孩子半夜烧到 39 度，咳得整宿睡不着。大人顶着黑眼圈卡点抢号，手指刚戳下去，普通号灰了，普通专家号秒空。满屏幕唯一还亮着绿灯、写着“余号 3”的，就是挂号费两三百块的<strong>特需门诊</strong>。</p>
+        <p style="margin:0 0 18px 0;">这时候，哪个当爹当妈的会去纠结“特需两个字保险报不报”？</p>
+        <p style="margin:0 0 18px 0;">多掏两百块挂号费，能让孩子赶紧看上病，咬咬牙也就点了。</p>
+        <p style="margin:0 0 18px 0;">可真正走进医院，很多人才反应过来：<strong>这哪是什么 VIP 啊？</strong></p>
+        <p style="margin:0 0 18px 0;">你花着三百块钱的挂号费，依然坐在闹哄哄的走廊长椅上听叫号；进门看上五分钟，医生啪啪开了化验单，你照样要抱着娃下二楼，跟几百号普通病人挤在一起排队扎手指、拍胸片。</p>
+        <p style="margin:0 0 18px 0;">为什么会这样？很多人以为“国家不管特需”。其实管了，但只管了一半。</p>
+        <p style="margin:0 0 18px 0;">国家发改委、卫健委早就有明文规定：公立医院搞特需医疗，<strong>总规模不能超过全部医疗服务的 10%</strong>，而且价格<strong>放开由医院自主定价</strong>（<a href="http://health.people.com.cn/n1/2016/0707/c398004-28532180.html" style="color:#b08d57;text-decoration:underline;">人民网健康</a>、<a href="http://bj.people.com.cn/n2/2021/0414/c233081-34674215.html" style="color:#b08d57;text-decoration:underline;">北京规范报道</a>）。</p>
+        <p style="margin:0 0 26px 0;">问题就出在“另一半”——全国并没有一套硬标准写清楚：收了特需的钱，诊室必须多大、排队不能超过几分钟、检查必须走独立通道。结果就是，在很多医院，“特需”两个字只剩下了一层意思：<strong>花高价买一张插队看老专家的入场券。</strong></p>
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">02</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">医院也有苦衷，但账不能糊涂算</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">说到这儿，先别急着把板子全打在医院身上。如果咱们站到医院院长的位子上看一眼账本，你会发现，这事儿远比“贪心”复杂得多。</p>
+        <p style="margin:0 0 18px 0;">很多人以为公立医院是国家全额拨款养着的。大错特错。翻开《中国卫生健康统计年鉴》就知道，全国公立医院总收入里，<strong>财政直接拨款只占不到 10%</strong>（9.2%—10.16% 左右，见<a href="https://caoss.org.cn/news/html?id=15530" style="color:#b08d57;text-decoration:underline;">权威统计解读</a>、<a href="https://pdf.dfcfw.com/pdf/H3_AP202308211595388483_1.pdf" style="color:#b08d57;text-decoration:underline;">东方财富研报</a>）。什么概念？一家几千号医护人员的三甲大医院，<strong>九成以上的工资、水电、上千万一台的 CT 机折旧，全得靠医院自己挣。</strong></p>
+        <table style="width:100%;border-collapse:collapse;margin:24px 0 26px 0;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:1px solid #e6dfd3;">
+          <tr>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">90%+</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">公立医院运营费用<br/>需要靠自己挣出来</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#b08d57;">≤ 10%</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">国家允许医院自主<br/>定价的特需额度上限</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">4-5倍</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">含特需的高端医疗险<br/>比普通版贵的倍数</p></td>
+          </tr>
+        </table>
+        <p style="margin:0 0 18px 0;">可你看看医院现在怎么挣钱：药品和耗材早就“零加成”，进价多少卖多少，一分差价赚不到；住院推行按病种打包付费，多花一分医院自己倒贴；一个看了三十年病的老主任，普通专家号挂号费也就三五十块钱——<strong>还没街边理发店总监洗剪吹贵。</strong></p>
+        <p style="margin:0 0 18px 0;">《中国医院院长》杂志调研过，这几年大医院看病人数暴涨，可不少医院的账面依然捉襟见肘（<a href="https://www.h-ceo.com/post/5163.html" style="color:#b08d57;text-decoration:underline;">中国医院院长调研</a>）。所以，国家留出来的这 10% 允许市场定价的“特需”口子，客观上成了医院留住老专家、贴补普通部亏损的合法安全阀。</p>
+        <p style="margin:0 0 26px 0;"><strong>医院真正让人委屈的，不是收这三百块专家劳务费，而是收费系统太偷懒</strong>——只要你挂号时点了“特需”，哪怕后面查血、拍片、拿药全是在普通部按平价收的费，系统打出来的整张发票，照样给你统一盖上“特需门诊”四个大字。医院随手省了分单的麻烦，顺手就给家长埋了一颗大雷。</p>
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">03</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">保险公司为啥以前能报，今天突然翻脸了？</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">接着，咱们再站到保险公司的柜台后面看一眼。说句公道话：<strong>保险公司条款里写“不保特需部、国际部”，本身没毛病。</strong></p>
+        <p style="margin:0 0 18px 0;">咱们给孩子买的普通医疗险，一年保费也就三五百块钱。精算师给你定这么便宜的价，前提就是大家都在公立医院普通部看病、先走社保报一道。要是人人花三百块买普通保单，转头全去挂几百上千的特需号，保费池子半年就得赔穿。</p>
+        <p style="margin:0 0 18px 0;">那问题来了：<strong>既然条款一直没变，为什么以前特需挂号、普通部检查都能报，这两年突然就“整案拒赔”了？</strong>内行人都知道，就两个原因。</p>
+        <p style="margin:0 0 18px 0;"><strong>第一，赔付率扛不住了，人工审单换成了“机器一刀切”。</strong>孩子发烧感冒去医院太频繁，这几年少儿门急诊医疗险赔得险企直肉疼，不少报道都提到了医疗险正悄悄变得“宽进严出”（<a href="https://m.36kr.com/p/3920664920272521" style="color:#b08d57;text-decoration:underline;">36氪深度调查</a>）。以前理赔员还有耐心翻开清单，把 300 块特需挂号费扣掉、剩下 800 块普通检查药费给你报了；现在全靠机器扫发票，系统只认死理——扫到“特需”俩字，啪一下亮红灯，直接给你弹回一句：整案拒赔。</p>
+        <p style="margin:0 0 18px 0;"><strong>第二，顺手卖更贵的保单。</strong>理赔这边把“特需”口子扎紧，销售那边正好顺势跟焦虑的家长算账：“你看普通医疗险特需不报吧，不如升级成特需版/中高端医疗险！”而这类产品的保费，往往是普通医疗险的 <strong>4 到 5 倍</strong>（<a href="https://finance.sina.cn/2024-01-22/detail-inaemchu4878815.d.html?vt=4" style="color:#b08d57;text-decoration:underline;">每日经济新闻报道</a>）。</p>
+        <section style="margin:26px 0 28px 0;padding:20px 22px;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:2px solid #16233b;">
+          <p style="margin:0;font-size:16px;color:#16233b;font-weight:bold;line-height:1.85;text-align:center;">医院觉得自己委屈：没有财政兜底，不贴特需标签拿什么留住老专家？<br/>保司觉得自己委屈：一年才收几百块，特需溢价我真兜不住。<br/><span style="color:#b08d57;">可两家各自算盘打得噼啪响，凭什么让抱着发烧孩子在走廊里站着排队的普通家长，两头买单？</span></p>
+        </section>
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">04</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">法院早判过了：揪住俩字整案拒赔，行不通</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">别听理赔员在电话里一句“系统规定”就把你唬住了。真较起真来，保司凭发票上两个字“整案拒赔”，在法律上根本站不住脚。咱们直接看两起公开的法院判例：</p>
+        <section style="margin:20px 0 22px 0;padding:18px 20px;background-color:#faf8f4;border-left:3px solid #16233b;">
+          <p style="margin:0 0 8px 0;font-size:14px;font-weight:bold;color:#16233b;">判例 1：真住了特需病房，法院都不准保司“一分不赔”</p>
+          <p style="margin:0;font-size:14.5px;color:#3c424d;line-height:1.85;">哈尔滨法院曾审理过一起百万医疗险案子：患者住院花了 7.6 万多元，而且<strong>真住进了保单免责的特需病房</strong>。保司直接拒赔。法院怎么判的？法官直接把账拆开算——只剔除 16,200 元特需床位费，按普通病房 36 元一天折算替代，扣掉 1 万免赔额后，判令保司把剩下 <strong>51,257.18 元</strong>合规治病钱全部赔给患者（<a href="https://cj.sina.cn/articles/view/1673484087/63bf573700100jpt3" style="color:#b08d57;text-decoration:underline;">新浪财经判例拆解</a>）。</p>
+        </section>
+        <section style="margin:20px 0 24px 0;padding:18px 20px;background-color:#faf8f4;border-left:3px solid #b08d57;">
+          <p style="margin:0 0 8px 0;font-size:14px;font-weight:bold;color:#16233b;">判例 2：看病怎么开单，老百姓说了不算</p>
+          <p style="margin:0;font-size:14.5px;color:#3c424d;line-height:1.85;">河北法院的一份二审判决（冀10民终）说得更透：老百姓生了病，去哪查、怎么开单，往往不是患者自己能决定的，而是医院和医生主导的。法院审理赔，看的是<strong>治病是不是真的、花销合不合理</strong>，而不是死抠一张单子上的文字路径（<a href="https://www.insulaw.cn/cases/public-cases/621.html" style="color:#b08d57;text-decoration:underline;">知险案析判例梳理</a>）。</p>
+        </section>
+        <p style="margin:0 0 26px 0;">这两份判决翻译成大白话，就一句话：<strong>特需挂号费多出来的那两三百块，保司扣掉，咱们认；可后面在普通科室抽的血、拍的片、拿的普通药，保司凭发票抬头俩字全给一刀切了，这不叫合规，这叫偷懒。</strong></p>
+        <table style="width:100%;border-collapse:collapse;margin:8px 0 30px 0;font-size:13px;line-height:1.65;">
+          <thead><tr style="background-color:#16233b;color:#faf7f0;"><th style="padding:10px 8px;text-align:left;width:18%;">角色</th><th style="padding:10px 8px;text-align:left;width:41%;">真实难处（情有可原）</th><th style="padding:10px 8px;text-align:left;width:41%;">越界动作（让人寒心）</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">医院</td><td style="padding:10px 8px;color:#475569;">财政拨款不到一成，专家挂号费低，靠 10% 特需额度补贴运转</td><td style="padding:10px 8px;color:#2c3038;">没给特需环境，还把普通检查药费一股脑印上“特需”抬头</td></tr>
+            <tr style="border-bottom:1px solid #e6e9ef;background-color:#faf8f4;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">保司</td><td style="padding:10px 8px;color:#475569;">一年几百块按普通部定价，确实兜不住高价特需溢价</td><td style="padding:10px 8px;color:#2c3038;">图省事靠机器一刀切，不愿拆账核对，口头要求整案拒赔</td></tr>
+            <tr style="border-bottom:1px solid #16233b;"><td style="padding:10px 8px;font-weight:bold;color:#b08d57;">家长</td><td style="padding:10px 8px;color:#475569;">孩子急病抢不到普通号，根本不懂医院内部怎么打发票</td><td style="padding:10px 8px;color:#2c3038;">被电话一句话唬住，糊里糊涂自己点了“撤案”认栽</td></tr>
+          </tbody>
+        </table>
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">05</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">下次带娃去医院，记住这 4 句保命大白话</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">医院的收费系统一时半会儿改不了，保险公司的自动审单也只会越来越严。作为普通家长，没必要跟谁置气，把下面这四条实操记住，关键时刻能帮你把该拿的钱稳稳拿回来：</p>
+        <section style="margin:0 0 26px 0;padding:18px 20px;background-color:#faf8f4;border-radius:6px;">
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">1. 挂号时多看一眼名字，非急病别碰“特需 / 国际 / VIP”。</strong><br/>只要你买的是普通医疗险，抢号时优先盯住“普通门诊”或“普通专家号”，别为了省二十分钟排队，给后面报销埋一颗雷。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">2. 实在没办法挂了特需，进门先问医生一句“检查和药能不能单独开普通单”。</strong><br/>很多医院的医生其实能理解，抽血、拍片、开药如果走普通部结算，发票干干净净，报销丝滑得多。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">3. 离开医院前，把“费用明细清单”打出来。</strong><br/>光有一张总发票不行，明细清单上白纸黑字印着每一项检查的单价、普通科室名称和医保编码，这是证明“你花的是普通部平价钱”的最硬铁证。</p>
+          <p style="margin:0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">4. 真遇到口头“整案拒赔”，别吵架，也千万别自己点“撤案”。</strong><br/>平静回复理赔员两句话：第一，请按《保险法》第二十四条在三日内出具盖章的书面核定说明（<a href="https://www.cpic.com.cn/c/2021-01-07/1616446.shtml" style="color:#b08d57;text-decoration:underline;">法定程序参考</a>）；第二，我认可扣掉特需挂号费，但普通科室的检查和药费请按明细拆账复核。如果保司仍坚持一刀切，拿着书面说明和明细单，走正规金融消费纠纷调解渠道依法复核就行（<a href="https://www.xiaoyusan.com/shk/wkpage/bxzs/300014881?type=11" style="color:#b08d57;text-decoration:underline;">正规调解说明</a>）。</p>
+        </section>
+        <p style="margin:0 0 18px 0;">普通人买保险，图的从来不是占谁的便宜，图的是孩子半夜发烧、家里遇上急事时，心里能有一份兜底的踏实。</p>
+        <p style="margin:0 0 18px 0;">医院要运转，保司要算账，这都无可厚非。但规则的底线，不该是让最缺乏专业信息、最焦头烂额的普通患者，去替两套系统的磨合漏洞买单。</p>
+        <p style="margin:0 0 24px 0;"><strong>觉得这篇大白话有用，顺手转发到家人群，提醒带娃、陪爸妈看病的亲友少踩一次坑。</strong>你去医院看病时，遇过这种“发票印着特需、实际在普通部排队”的经历吗？评论区聊聊，给后来人提个醒。</p>
+        <section style="margin-top:26px;padding-top:14px;border-top:1px solid #e8e4dc;font-size:12px;color:#8c95a0;line-height:1.75;">
+          <p style="margin:0 0 4px 0;font-weight:bold;color:#5c6675;">本文参考公开资料与判例：</p>
+          <p style="margin:0;">1. 国家发改委等部门《推进医疗服务价格改革的意见》（人民网健康）；2. 北京市卫健委公立医院特需医疗规范；3. 《中国卫生健康统计年鉴》财政拨款占比及《中国医院院长》调研；4. 新浪财经《哈尔滨法院特需病房拆账赔付判例》；5. 知险案析《河北（2024）冀10民终二审判例》；6. 每日经济新闻 DRG 与医疗险调研；7. 《中华人民共和国保险法》第二十四条。</p>
+        </section>
+      </section>
+    </div>
+  </div>
+  <div id="vVid" class="hidden">
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:12px"><span style="font-size:15px;color:#16233b">60 秒高网感一气呵成口播稿</span><button class="btn btn-gold" id="bScript" type="button">一键复制口播稿</button></div>
+      <div id="vidScript">
+        <div class="tblock"><span class="tbadge">0-3 秒</span><p style="margin:0;line-height:1.8">带娃在医院走廊站着排的队，在普通窗口抽的血，就因为发票抬头多印了“特需”俩字，保险公司说一分不赔？</p></div>
+        <div class="tblock"><span class="tbadge">3-18 秒</span><p style="margin:0;line-height:1.8">前天中午我刚接到这么一通电话。更让人蒙圈的是，以前一模一样的情况人家都给报了，今天突然翻脸说要整案拒赔。先别急着骂人，我把医院和保司两边的账本翻了一遍，才看明白咱们普通人是怎么两头为难的。</p></div>
+        <div class="tblock"><span class="tbadge">18-35 秒</span><p style="margin:0;line-height:1.8">先说医院，公立医院财政拨款不到一成，九成开销要自己挣，老主任普通挂号费还不如理发店洗个头贵，所以只能靠国家允许的 10% 特需额度贴补家用，结果收费系统图省事，把你后面在普通部做的检查全盖上了“特需”章。再说保司，一年收你三五百块本来就不保特需，以前人工还能帮你拆账，现在换成机器扫发票，扫到“特需”俩字直接亮红灯一刀切。</p></div>
+        <div class="tblock"><span class="tbadge">35-52 秒</span><p style="margin:0;line-height:1.8">但凭两个字一分不赔，法院早就不认了。哈尔滨有个真判例，患者真住了特需病房，法院也只扣了特需床位费，剩下五万多治病钱照赔不误。所以真遇上这事记住三句话：第一别自己点撤案，按《保险法》第二十四条申请书面核定说明；第二打印医院的费用明细单；第三主动提出扣掉特需挂号费、普通检查药费按约拆账，谈不拢再走正规调解渠道。</p></div>
+        <div class="tblock"><span class="tbadge">52-60 秒</span><p style="margin:0;line-height:1.8">两头算盘打得都响，但别让咱们普通家长稀里糊涂买单。转发给家里带娃的人，你遇过这种特需发票吗？评论区聊聊。</p></div>
+      </div>
+      <p style="margin:12px 0 0;font-size:12px;color:#b08d57;font-weight:600">合规角标：画面左下角常驻小字「个人就医与保单核对经验分享，具体理赔以保单条款为准」。</p>
+    </section>
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:10px"><span style="font-size:15px;color:#16233b">豆包视频 / 即梦一键生成画面指令</span><button class="btn-mini" id="bPrompt" type="button">复制指令</button></div>
+      <div class="prompt-box" id="txtPrompt">9:16 竖屏真实生活感财经口播风格，自然柔和的室内书桌光线，35mm 电影胶片微颗粒质感。一位 38 岁左右、穿着深灰卫衣或深蓝休闲衬衫的中国男性坐在书桌前，像跟老朋友聊天一样自然对镜头讲述，神情真诚克制带有一丝无奈的清醒。中段（18-35秒）穿插医院普通候诊大厅走廊排队背影的柔和虚化空镜与费用明细清单特写，尾段回到书桌中近景收尾，画面干净不杂乱，无真实发票隐私信息，配轻缓有节奏感的低音背景音乐。</div>
+    </section>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const toast=document.getElementById('toast');let tm;
+function tip(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(()=>toast.classList.remove('show'),2400)}
+async function copyTxt(t,m){try{await navigator.clipboard.writeText(t);tip(m)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);tip(m)}}
+document.getElementById('bCopyWechat').onclick=async()=>{const el=document.getElementById('wechat-copy-target');try{if(navigator.clipboard&&window.ClipboardItem){await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.outerHTML],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);tip('已一键复制排版，直接去公众号 Ctrl+V 即可！');return}}catch(e){}const r=document.createRange();r.selectNodeContents(el);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();tip('已一键复制排版，直接去公众号 Ctrl+V 即可！')};
+document.getElementById('bTitle').onclick=()=>copyTxt(document.getElementById('txtTitle').textContent.trim(),'已复制标题');
+document.getElementById('bSum').onclick=()=>copyTxt(document.getElementById('txtSum').textContent.trim(),'已复制摘要');
+document.getElementById('bPrompt').onclick=()=>copyTxt(document.getElementById('txtPrompt').textContent.trim(),'已复制豆包画面指令');
+document.getElementById('bScript').onclick=()=>{const ls=[...document.querySelectorAll('#vidScript .tblock')].map(b=>'【'+b.querySelector('.tbadge').textContent+'】\n'+b.querySelector('p').textContent);copyTxt(ls.join('\n\n'),'已复制 60 秒完整口播稿')};
+document.getElementById('tArt').onclick=()=>{document.getElementById('tArt').classList.add('active');document.getElementById('tVid').classList.remove('active');document.getElementById('vArt').classList.remove('hidden');document.getElementById('vVid').classList.add('hidden')};
+document.getElementById('tVid').onclick=()=>{document.getElementById('tVid').classList.add('active');document.getElementById('tArt').classList.remove('active');document.getElementById('vVid').classList.remove('hidden');document.getElementById('vArt').classList.add('hidden')};
+</script>
+</body>
+</html>

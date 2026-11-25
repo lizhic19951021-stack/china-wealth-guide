@@ -23,9 +23,13 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragi
 .meta-hd{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#b08d57;margin-bottom:4px}
 .stage{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px 28px 44px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
 .hidden{display:none!important}
-.tblock{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #e5e7eb}
+.tblock{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:14px 0;border-bottom:1px dashed #e5e7eb}
 .tblock:last-child{border-bottom:none}
-.tbadge{background:#16233b;color:#f6efe2;font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;border-left:3px solid #b08d57;text-align:center;height:fit-content}
+.tbadge{background:#16233b;color:#f6efe2;font-size:12px;font-weight:700;padding:5px 8px;border-radius:6px;border-left:3px solid #b08d57;text-align:center;height:fit-content;line-height:1.4}
+.shot-meta{font-size:12px;color:#475569;margin-bottom:6px;line-height:1.6}
+.shot-line{font-size:15px;font-weight:700;color:#16233b;margin:4px 0;line-height:1.6}
+.shot-prompt{font-size:12.5px;color:#334155;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;margin:6px 0;line-height:1.65}
+.shot-gold{background:#0f172a;color:#e5c27b;font-size:13px;font-weight:700;padding:6px 10px;border-radius:6px;margin-top:6px;display:inline-block}
 .prompt-box{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;font-size:13px;line-height:1.75;border-left:4px solid #b08d57}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#16233b;color:#faf7f0;border:1px solid #b08d57;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
 .toast.show{opacity:1}
@@ -37,7 +41,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragi
   <div class="brand"><span class="badge">梅森深度观察</span><span>公众号一键排版发布台</span></div>
   <div class="tabs">
     <button class="tab-btn active" id="tArt" type="button">深度长文（一键排版）</button>
-    <button class="tab-btn" id="tVid" type="button">60秒口播稿+豆包指令</button>
+    <button class="tab-btn" id="tVid" type="button">60秒口播分镜+豆包指令</button>
   </div>
   <button class="btn btn-gold" id="bCopyWechat" type="button">一键复制排版到公众号</button>
 </header>
@@ -46,120 +50,167 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragi
     <section class="card">
       <div class="meta-row">
         <div class="meta-hd"><span>公众号标题（已定稿）</span><button class="btn-mini" id="bTitle" type="button">复制标题</button></div>
-        <div id="txtTitle" style="font-size:15px;font-weight:700;color:#16233b">金价跌破3600，水贝金店连夜甩货，你买的一口价金饰却没降价？</div>
+        <div id="txtTitle" style="font-size:15px;font-weight:700;color:#16233b">金价跌近9%水贝排长队，你买的一口价金饰凭啥不降？</div>
       </div>
       <div class="meta-row">
         <div class="meta-hd"><span>公众号摘要</span><button class="btn-mini" id="bSum" type="button">复制摘要</button></div>
-        <div id="txtSum" style="font-size:13px;color:#4b5563;line-height:1.6">国际金价逼近3500美元关口，深圳水贝商户忙到没空吃饭，普通人却还在按高价买一口价金饰。拆开金价暴跌背后的双边账本，看清普通消费者的隐性损失。</div>
+        <div id="txtSum" style="font-size:13px;color:#4b5563;line-height:1.6">国际现货黄金一周连破四关跌近9%，深圳水贝排起长队，可商场柜台足金仍挂在1056到1089元/克，与749元回收价相差超300元。拆开新税政、批发市场与品牌柜台三张账本，看清“一口价”金饰不降价的门道。</div>
       </div>
     </section>
     <div class="stage">
       <section id="wechat-copy-target" style="font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:15.5px;line-height:1.95;color:#2b2f36;letter-spacing:0.8px;word-wrap:break-word;background-color:#ffffff;">
         <section style="margin:0 0 28px 0;padding-bottom:14px;border-bottom:1px solid #ece7df;">
           <p style="margin:0 0 6px 0;font-size:12px;color:#b08d57;letter-spacing:2.5px;font-weight:bold;">梅森深度观察</p>
-          <p style="margin:0;font-size:13px;color:#8c95a0;">写给每一个想买金保值的普通家庭。</p>
+          <p style="margin:0;font-size:13px;color:#8c95a0;">写给每一个准备结婚、添置三金、想买点黄金压箱底的普通家庭。</p>
         </section>
-        <p style="margin:0 0 18px 0;">上周末，深圳水贝黄金市场挤满了人。</p>
-        <p style="margin:0 0 18px 0;">商户忙到没空吃饭，一天卖出数公斤黄金。婚庆订单占比80%，客单克重从100克涨到200克至300克。</p>
-        <p style="margin:0 0 18px 0;">可与此同时，国际金价正在暴跌。</p>
+        <p style="margin:0 0 18px 0;">前几天两条完全拧巴的新闻撞到一块。</p>
+        <p style="margin:0 0 18px 0;">一边是国际金价跳水。11月16日至20日五个交易日，国际现货黄金连破3900、3800、3700、3600美元四道关口，20日盘中最低触及3514.355美元/盎司，周跌近9%，较今年1月29日5598.75美元高点回撤约37%。</p>
+        <p style="margin:0 0 18px 0;">另一边是深圳水贝大清早排长队，买三金和金条的人挤满通道。</p>
+        <p style="margin:0 0 18px 0;">可老百姓走进商场金店想趁跌价买首饰时，柜台递来的价签却让人一愣：</p>
         <section style="margin:20px 0 22px 0;padding:16px 18px;background-color:#faf8f4;border-left:3px solid #b08d57;">
-          <p style="margin:0;font-size:15.5px;color:#16233b;font-weight:bold;line-height:1.75;">现货黄金盘中逼近3500美元盎司关口，五个交易日累计跌近9%，创下八个月来最差单周表现。</p>
+          <p style="margin:0;font-size:15.5px;color:#16233b;font-weight:bold;line-height:1.75;">“大盘是跌了，但这件一口价吊坠不按克走，还是三千八百块；按克算的足金挂牌也还在1056到1089元一克。”</p>
         </section>
-        <p style="margin:0 0 18px 0;">金价跌了，商户忙着进货，普通消费者却还在柜台前掏出1100多元一克买金饰。</p>
-        <p style="margin:0 0 18px 0;">更离谱的是，有的金饰标着“一口价”，重量不明、工费不透明，金价跌了它却不跌。</p>
-        <p style="margin:0 0 26px 0;">咱们不骂金店，也不骂消费者。今天把金价暴跌背后的双边账本拆开，看清普通人买金饰的隐性损失。</p>
-        <p style="margin:0 0 28px 0;">看完你就会明白：<strong>金价下跌不等于金饰便宜，一口价可能是你买单的陷阱。</strong></p>
+        <p style="margin:0 0 18px 0;">大盘跌得凶，柜台价不动，转头问回收才749元一克，一进一出每克差出三百多。</p>
+        <p style="margin:0 0 26px 0;">网上吵翻了天，光骂谁都没用。今天把品牌金店、水贝商户和消费者三张账本摊在桌上。<strong>你会发现：柜台不降价不全是耍赖，卡住钱包的是税费账、渠道账和“一口价”的信息差。</strong></p>
+
         <section style="margin:40px 0 22px 0;">
           <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">01</p>
-          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">金价跳水，水贝商户连夜甩货</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">大盘跌近9%水贝排长队，大家到底在抢什么？</p>
           <section style="width:30px;height:2px;background-color:#b08d57;"></section>
         </section>
-        <p style="margin:0 0 18px 0;">11月20日，现场黄金最低触及3502美元盎司，创14个月新低。</p>
-        <p style="margin:0 0 18px 0;">五个交易日累计跌幅接近9%，为八个月来最差单周表现。</p>
-        <p style="margin:0 0 18px 0;">深圳水贝作为全国最大黄金珠宝交易集散地，这个周末迎来近几个月客流峰值。</p>
-        <p style="margin:0 0 18px 0;">饰品金价约918元克，会员金条约811元克，短短6天克价下跌60元左右。</p>
-        <p style="margin:0 0 18px 0;">商户介绍，客流较此前增长两至三倍，单日接待达两三百批客户。</p>
-        <p style="margin:0 0 18px 0;">有的商户一天卖出数公斤黄金，销售吃饭都没时间。</p>
-        <p style="margin:0 0 26px 0;">但这只是账本的一面。</p>
+        <p style="margin:0 0 18px 0;">先把行情捋直。1月底现货黄金曾冲上5598.75美元/盎司，11月中旬连破四关下探3514.355美元，哪怕11月23日至24日反弹回3605到3618美元区间，也比年初高点回撤约37%。</p>
+        <p style="margin:0 0 18px 0;">国内同步回落。11月20日上金所黄金T+D报761.93元/克；到了11月25日，水贝实时行情十分透明：<strong>上金所会员金条805元/克，含税首饰金915元/克，回收价749元/克。</strong></p>
+        <p style="margin:0 0 18px 0;">所以水贝排长队不是商家赔本清仓，而是薄利多销的批发场迎来刚需释放——大盘一跌，攒着婚期买三金的人集中进场。</p>
+        <p style="margin:0 0 18px 0;">把这几组公开行情排成一排，账就明明白白了：11月20日上金所黄金T+D报761.93元/克；11月25日水贝会员金条805元/克、含税首饰金915元/克、回收价749元/克；再看11月20日至21日周大福、周生生、老凤祥足金挂牌价仍在1056到1089元/克区间。</p>
+        <p style="margin:0 0 26px 0;">光是水贝首饰金和品牌柜台之间，每克就差出超过140元；拿品牌挂牌价去对749元回收价，<strong>每克差价直接超过300元</strong>。同是足金，这三百多块到底差在哪？</p>
+
         <section style="margin:40px 0 22px 0;">
           <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">02</p>
-          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">柜台价为什么不跟着大盘走</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">税改落地叠加高房租，品牌金店也有本难念的账</p>
           <section style="width:30px;height:2px;background-color:#b08d57;"></section>
         </section>
-        <p style="margin:0 0 18px 0;">国际金价跌了，上海黄金交易所Au99.99也跟着下调。</p>
-        <p style="margin:0 0 18px 0;">可品牌金店挂出的足金首饰价，仍集中在1100多元一克。</p>
-        <p style="margin:0 0 18px 0;">周大福、老凤祥、中国黄金、菜百，价格差不多都在这个区间。</p>
-        <p style="margin:0 0 18px 0;">柜台卖出价和回收价之间，一克差了三百多元。</p>
-        <p style="margin:0 0 18px 0;">这笔差价不是今天才出现的，但金价往下走的时候，它变得格外显眼。</p>
-        <p style="margin:0 0 26px 0;">原料基准价在跌，首饰零售价却在撑，中间的差价，被普通消费者接住了。</p>
-        <section style="margin:40px 0 22px 0;">
-          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">03</p>
-          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">一口价饰品，重量不明工费不透</p>
-          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
-        </section>
-        <p style="margin:0 0 18px 0;">更让人防不胜防的是“一口价”金饰。</p>
-        <p style="margin:0 0 18px 0;">标价几千元，却不标明克重，也不说明工费。</p>
-        <p style="margin:0 0 18px 0;">金价跌了，一口价却没降。</p>
-        <p style="margin:0 0 18px 0;">等你想变现时，回收只认克重和纯度，工费和品牌溢价一分不认。</p>
-        <p style="margin:0 0 18px 0;">买的时候藏在标价里的三百多元差价，卖的时候才彻底暴露。</p>
-        <p style="margin:0 0 18px 0;">古法金、硬金、一口价产品，工费占比更高，回收时基本不变现。</p>
-        <section style="margin:40px 0 22px 0;">
-          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">04</p>
-          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">双边账本，普通人夹在中间</p>
-          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
-        </section>
+        <p style="margin:0 0 18px 0;">站在柜台后面算算硬成本，品牌金店并非单纯漫天要价。11月11日财联社报道，黄金税收新政落地：黄金加工业务原有的进项增值税抵扣从13%降至6%，<strong>加工环节实际税负增约7%</strong>。原先原料进场能抵扣13%的税，如今只能抵扣6%，多出来的约7%税负，加工厂与品牌商要么自己扛下，要么顺着定价传导到零售终端。</p>
         <table style="width:100%;border-collapse:collapse;margin:24px 0 26px 0;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:1px solid #e6dfd3;">
           <tr>
-            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">-9%</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">五个交易日国际<br/>金价累计跌幅</p></td>
-            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#b08d57;">300元</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">柜台零售价与<br/>回收价之间的克差</p></td>
-            <td style="width:33.3%;padding:16px 8px;text-align:center;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">1100元</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">品牌金店足金<br/>首饰挂牌价参考</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">近9%</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">11月16-20日国际<br/>现货黄金单周跌幅</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#b08d57;">300+元</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">品牌足金挂牌价与<br/>749元回收价克差</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">约7%</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">进项税抵扣13%降至6%<br/>带来的实际税负增幅</p></td>
           </tr>
         </table>
-        <p style="margin:0 0 18px 0;">金店的账本：原料成本下降，零售价维持高位，品牌溢价和工费照收。</p>
-        <p style="margin:0 0 18px 0;">商户的账本：金价波动带来库存风险，趁跌价囤货，等待反弹。</p>
-        <p style="margin:0 0 18px 0;">普通人的账本：以为买金保值，实际可能买了一件工费昂贵的饰品。</p>
-        <p style="margin:0 0 26px 0;"><strong>三方各算各的账，最终买单的是最不懂行情的普通消费者。</strong></p>
+        <p style="margin:0 0 18px 0;">再加上一线商圈一楼黄金铺位的高额租金、几班倒导购的底薪提成，以及满柜台高价老库存占用的资金利息，大盘骤跌时品牌店天然不愿亏本清仓，只能稳住挂牌价或收紧折扣慢慢消化。</p>
+        <p style="margin:0 0 26px 0;">水贝批发商户同样有难处，金价一周暴跌近9%，前一天进的板料隔天就可能账面浮亏，加工利润薄得像刀片，只能趁刚需客流集中时拼命走量对冲风险。<strong>但商家扛库存、扛税负的难处，绝不能变成遮掩克重、让普通消费者稀里糊涂买单的理由。</strong></p>
+
         <section style="margin:40px 0 22px 0;">
-          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">05</p>
-          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">普通人买金，记住这4条实操</p>
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">03</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">最坑的不是工费贵，是“一口价”不让你看清克重</p>
           <section style="width:30px;height:2px;background-color:#b08d57;"></section>
         </section>
-        <section style="margin:0 0 26px 0;padding:18px 20px;background-color:#faf8f4;border-radius:6px;">
-          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">1. 优先按克计价，避开一口价和古法金。</strong><br/>按克计价、工费透明的素圈和简单款，折损相对可控，回收时更好算账。</p>
-          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">2. 对比水贝大盘价，别只看柜台标价。</strong><br/>上海黄金交易所Au99.99是原料基准价，柜台价里的品牌溢价和店租，你不必全买单。</p>
-          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">3. 买金条金币比买首饰更接近投资。</strong><br/>银行投资金条和积存金报价更贴近原料价，手续费结构也比首饰清晰。</p>
-          <p style="margin:0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">4. 别把金饰当理财，买来戴就好。</strong><br/>金饰有工费、品牌费、店租，回收时只认克重纯度，不适合短期投机。</p>
+        <p style="margin:0 0 18px 0;">如果一家店明码标出今日足金克价、首饰克重和每克工费，消费者觉得款式好看愿买愿卖，本无可厚非。普通人真正容易栽跟头的，是不按克计价的<strong>“一口价”金饰</strong>。</p>
+        <p style="margin:0 0 18px 0;">11月19日凤凰网大风号报道了济南刘女士的真实维权经历：她在金店挑了一枚“一口价”金戒指，付款前销售口头报重约1.3克；回家后总觉得戴在手上轻飘飘不对劲，拿去复称一量，<strong>实际居然只有0.65克，硬生生少了一半。</strong>找门店讨说法，折腾半天依然维权艰难。</p>
+        <p style="margin:0 0 18px 0;">“一口价”定价逻辑本就与大盘克价脱钩。价签正面印着漂亮的总价，实际克重缩在背面小字甚至干脆不标，导购再顺口夸一句工艺硬、造型好、能换款，不少消费者一上头就刷了卡。</p>
+        <section style="margin:26px 0 28px 0;padding:20px 22px;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:2px solid #16233b;">
+          <p style="margin:0;font-size:16px;color:#16233b;font-weight:bold;line-height:1.85;text-align:center;">买的时候听的是“工艺、造型、一口价”；<br/>卖的时候回收师傅只拿电子秤量重量、验纯度。<br/><span style="color:#b08d57;">0.65克按749元回收价只值486元，溢价部分一分不跟着变现。</span></p>
         </section>
-        <p style="margin:0 0 18px 0;">金价暴跌，水贝商户忙着进货，普通消费者却还在柜台前掏钱。</p>
-        <p style="margin:0 0 18px 0;">买金保值的初衷是好的，但看清价格陷阱才是保住钱包的第一步。</p>
-        <p style="margin:0 0 24px 0;"><strong>觉得有用，转发给家里打算买金的亲友，提醒他们看清标价再下单。</strong>你买过一口价金饰吗？回收时吃过亏吗？评论区聊聊。</p>
+        <p style="margin:0 0 26px 0;">大盘按克金料在跌，“一口价”却稳立高台。你以为捡了便宜，实则大半掏给了工艺和品牌溢价，黄金克重没买到多少。</p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">04</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">三张账本一碰头，谁在用老实人的信息差买单？</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">把这次风波里三个主角的算盘并排摆出来，很多憋在心里的气一下就理顺了。没有谁天生是坏人，可一旦有人越过了透明交易的底线，吃亏的永远是最后掏钱的那个人：</p>
+        <table style="width:100%;border-collapse:collapse;margin:8px 0 30px 0;font-size:13px;line-height:1.65;">
+          <thead><tr style="background-color:#16233b;color:#faf7f0;"><th style="padding:10px 8px;text-align:left;width:20%;">角色</th><th style="padding:10px 8px;text-align:left;width:40%;">真实难处（情有可原）</th><th style="padding:10px 8px;text-align:left;width:40%;">越界动作（让人寒心）</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">品牌金店柜台</td><td style="padding:10px 8px;color:#475569;">黄金加工进项税抵扣由13%降至6%、税负增约7%，叠加上游高价老库存与商场租金压力</td><td style="padding:10px 8px;color:#2c3038;">推销“一口价”时遮掩实际克重与工费占比，甚至出现口头虚报克重误导下单</td></tr>
+            <tr style="border-bottom:1px solid #e6e9ef;background-color:#faf8f4;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">水贝批发商户</td><td style="padding:10px 8px;color:#475569;">大盘一周暴跌近9%引发库存跌价风险，靠走量维持微薄加工毛利</td><td style="padding:10px 8px;color:#2c3038;">个别档口趁排长队客流大，混卖高工费半成品或含糊售后复称退换规则</td></tr>
+            <tr style="border-bottom:1px solid #16233b;"><td style="padding:10px 8px;font-weight:bold;color:#b08d57;">普通购金消费者</td><td style="padding:10px 8px;color:#475569;">看到金价回撤想买三金或压箱底，分不清金条、按克首饰与一口价的回收区别</td><td style="padding:10px 8px;color:#2c3038;">轻信导购口头承诺，不索要带克重凭证的小票，事后吃哑巴亏才后悔</td></tr>
+          </tbody>
+        </table>
+        <p style="margin:0 0 26px 0;">你看，税政调整和库存压力都是摆在明面上的客观账，但<strong>把原本该明码标价的克重藏起来，拿“不降价的一口价”去补利润</strong>，这就越过了买卖公平的红线。</p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">05</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">进金店前，把这 4 条实操和法条揣进兜里</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">买金图的是喜庆和踏实，别因为看不懂规则白扔几千块钱冤枉钱。下次不管去商场专柜还是水贝档口，进店前把这四条实操和法律底牌揣进兜里：</p>
+        <section style="margin:0 0 26px 0;padding:18px 20px;background-color:#faf8f4;border-radius:6px;">
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">1. 先算“单克落地价”，把“一口价”换算成克价再比。</strong><br/>进店别光听总价三千八，直接问清楚实际几克、用总价除以克重；明显高于当日按克挂牌加正常工费的，果断放下换按克素圈或常规款。依据《消费者权益保护法》第八条，你有权知悉商品真实克重并要求当场上秤复核。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">2. 把首饰佩戴和攒金压箱底分开，别指望首饰短线保值。</strong><br/>11月25日水贝会员金条805元/克、回收价749元/克，而品牌足金挂牌1056到1089元/克，中间三百多块克差买的是租金、品牌与工艺。纯粹攒金压箱底，标准投资金条溢价远低于首饰；首饰就按喜好买来佩戴。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">3. 没把克重、纯度、工费写进小票质保单，千万别刷卡。</strong><br/>《明码标价和禁止价格欺诈规定》要求货签对位、不得使用误导性价格标示；《消费者权益保护法》第二十条规定经营者提供商品价格与质量信息必须真实全面。要求把克重、纯度、工费白纸黑字落到质保单上再付款。</p>
+          <p style="margin:0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">4. 遇口头虚报克重或暗坑，留证依法维权别吃哑巴亏。</strong><br/>万一遇到类似济南刘女士“口头报1.3克、复称仅0.65克”的套路，立刻对价签、小票、现场复称画面和聊天记录拍照留证。依据《消费者权益保护法》第十条公平交易权，协商不成直接通过12315平台投诉申诉。</p>
+        </section>
+        <p style="margin:0 0 18px 0;">大盘涨跌谁也猜不准，税率与房租也是事实，但有一件事不该由老百姓兜底——连买了多少克黄金都不明不白的糊涂账。</p>
+        <p style="margin:0 0 24px 0;"><strong>觉得这篇算得清楚，顺手转发家人群，提醒近期买三金的亲友看清克重再下手。</strong>你买金时遇到过导购强推“一口价”吗？评论区聊聊。</p>
         <section style="margin-top:26px;padding-top:14px;border-top:1px solid #e8e4dc;font-size:12px;color:#8c95a0;line-height:1.75;">
-          <p style="margin:0 0 4px 0;font-weight:bold;color:#5c6675;">本文参考公开资料：</p>
-          <p style="margin:0;">1. 商业早8点 2026年11月25日 现货黄金盘中逼近3500美元盎司关口</p>
-          <p style="margin:0;">2. 每日经济新闻 2026年11月20日 一周跌近9国际金价逼近3500美元关口</p>
-          <p style="margin:0;">3. 新京报 2026年11月22日 水贝商户一天卖数公斤黄金金价跌了多地现购金热潮</p>
-          <p style="margin:0;">4. 财联社 2026年11月22日 水贝商户一天卖数公斤黄金金价跌了多地现购金热潮</p>
-          <p style="margin:0;">5. 东方财富网 2026年11月19日 现货黄金跌破3700美元盎司创14个月新低</p>
-          <p style="margin:0;">6. 上海黄金交易所 Au99.99 实时报价</p>
+          <p style="margin:0 0 4px 0;font-weight:bold;color:#5c6675;">本文参考公开资料与法律法规：</p>
+          <p style="margin:0;">1. 中新经纬（2026-11-20）：国际现货黄金一周连破四道关口跌近9%，盘中最低触及3514.355美元/盎司；2. 金价查询网（2026-11-24/25）：现货黄金反弹区间、上金所黄金T+D 761.93元/克、水贝首饰金915元/克、会员金条805元/克、回收价749元/克，以及周大福、周生生、老凤祥1056-1089元/克挂牌行情；3. 财联社（2026-11-11）：黄金税收新政落地，加工进项增值税抵扣由13%降至6%；4. 凤凰网大风号（2026-11-19）：济南刘女士购买“一口价”金戒指口头报1.3克复称0.65克维权报道；5. 《中华人民共和国消费者权益保护法》第八条、第十条、第二十条及《明码标价和禁止价格欺诈规定》。</p>
         </section>
       </section>
     </div>
   </div>
   <div id="vVid" class="hidden">
     <section class="card">
-      <div class="meta-hd" style="margin-bottom:12px"><span style="font-size:15px;color:#16233b">60 秒高网感一气呵成口播稿</span><button class="btn btn-gold" id="bScript" type="button">一键复制口播稿</button></div>
+      <div class="meta-hd" style="margin-bottom:12px"><span style="font-size:15px;color:#16233b">60 秒高网感口播分镜脚本（含 Veo3.1 / Seedance2.0 Prompt）</span><button class="btn btn-gold" id="bScript" type="button">一键复制分镜脚本</button></div>
       <div id="vidScript">
-        <div class="tblock"><span class="tbadge">0-3 秒</span><p style="margin:0;line-height:1.8">金价暴跌，水贝金店忙到没空吃饭，你买的一口价金饰却没降价？</p></div>
-        <div class="tblock"><span class="tbadge">3-18 秒</span><p style="margin:0;line-height:1.8">国际金价逼近3500美元关口，五个交易日累计跌近9%。深圳水贝商户连夜甩货，客单克重从100克涨到300克，商户一天卖出数公斤黄金。</p></div>
-        <div class="tblock"><span class="tbadge">18-35 秒</span><p style="margin:0;line-height:1.8">可柜台价却没跟着下调。品牌金店足金首饰价仍在1100多元一克，零售价和回收价之间一克差三百多元。更别提一口价金饰，不标克重、工费不透，金价跌了它照样不跌。</p></div>
-        <div class="tblock"><span class="tbadge">35-52 秒</span><p style="margin:0;line-height:1.8">普通人买金要记住四条：第一按克计价避开一口价，第二对比水贝大盘价别只看柜台，第三买金条金币比买首饰更接近投资，第四别把金饰当理财，买来戴就好。</p></div>
-        <div class="tblock"><span class="tbadge">52-60 秒</span><p style="margin:0;line-height:1.8">金价跌了不等于金饰便宜，看清价格陷阱才是保住钱包。转发给打算买金的家人，评论区聊聊你的经历。</p></div>
+        <div class="tblock">
+          <span class="tbadge">镜1 · 0-5s<br/>痛点切入</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中近景固定微推 ｜ 音效：微信提示音 + 低沉大提琴单音</div>
+            <div class="shot-line">彪子台词：金价跌了，一口价咋不降？</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, realistic documentary style, 35mm film grain. A 38-year-old Chinese man in a dark grey sweatshirt sitting at a clean wooden desk in warm indoor natural light, looking directly at the camera with an incredulous, grounded expression, holding a small paper shopping receipt. Shallow depth of field, subtle push-in camera movement.</div>
+            <div class="shot-gold">黑屏金字反转：大盘暴跌近9% ≠ 柜台降价</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜2 · 5-15s<br/>行情对账</span>
+          <div>
+            <div class="shot-meta">景别/运镜：黄金交易大屏特写切水贝人群空镜慢摇 ｜ 音效：键盘敲击声 + 嘈杂市场环境底噪</div>
+            <div class="shot-line">彪子台词：现货破三千六，水贝排队！</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, realistic B-roll montage. First, close-up of a dark financial monitor showing a sharp downward gold candlestick chart in soft focus. Smooth cut to a bustling Chinese wholesale jewelry market corridor with blurred shoppers waiting in line under bright ceiling lights, no identifiable logos or faces.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜3 · 15-26s<br/>柜台克差</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中景坐姿手势算账切计算器特写 ｜ 音效：计算器清脆按键声 + “叮”一声</div>
+            <div class="shot-line">彪子台词：品牌卖千八，回收七百四！</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, warm desk lighting. Medium shot of the same Chinese man counting firmly on his fingers earnestly, cutting briefly to an overhead close-up of a sleek silver calculator beside a clean notebook on the wooden desk.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜4 · 26-36s<br/>税负上调</span>
+          <div>
+            <div class="shot-meta">景别/运镜：账本俯拍微推 ｜ 音效：纸张翻动声 + 钢笔划重点声</div>
+            <div class="shot-line">彪子台词：进项抵扣砍到6%，税涨！</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, top-down close-up of a clean beige ledger notebook and a black fountain pen on a wooden desk under warm side light, slow smooth push-in, crisp paper texture, no readable private text.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜5 · 36-48s<br/>一口价暗坑</span>
+          <div>
+            <div class="shot-meta">景别/运镜：珠宝电子秤特写切黑屏金字冲击 ｜ 音效：重低音下沉转场（Whoosh + Boom）</div>
+            <div class="shot-line">彪子台词：报一克三，实称零点六五！</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, dramatic contrast. Overhead close-up of a plain unbranded gold ring resting on a silver digital jewelry scale under warm spotlight, transitioning swiftly into a clean matte black background with glowing champagne-gold Chinese typography pulsing in the center.</div>
+            <div class="shot-gold">黑屏金字反转：嘴上报1.3克 → 复称仅0.65克！</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜6 · 48-60s<br/>避坑法条互动</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中近景直视镜头微推进收尾 ｜ 音效：节奏感轻鼓点收住，留白半秒</div>
+            <div class="shot-line">彪子台词：先算克重再复称，你遇过吗</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, natural indoor desk lighting. The 38-year-old Chinese man leans slightly forward toward the camera, pointing gently at an open notebook on the desk, sincere and practical tone, warm steady lighting, clean background.</div>
+            <div class="shot-gold">黑屏金字收尾：先问克重再复称 · 写进小票再掏钱</div>
+          </div>
+        </div>
       </div>
-      <p style="margin:12px 0 0;font-size:12px;color:#b08d57;font-weight:600">合规角标：黄金价格波动受市场影响，文中信息仅供参考，不构成投资建议。</p>
+      <p style="margin:12px 0 0;font-size:12px;color:#b08d57;font-weight:600">合规角标：画面左下角常驻小字「黄金价格波动受市场影响，文中公开行情仅供参考，不构成投资建议」。</p>
     </section>
     <section class="card">
-      <div class="meta-hd" style="margin-bottom:10px"><span style="font-size:15px;color:#16233b">豆包视频 / 即梦一键生成画面指令</span><button class="btn-mini" id="bPrompt" type="button">复制指令</button></div>
-      <div class="prompt-box" id="txtPrompt">9:16 竖屏真实生活感财经口播风格，自然柔和的室内书桌光线，35mm 电影胶片微颗粒质感。一位 35 岁左右、穿着深灰卫衣的中国男性坐在书桌前，像跟老朋友聊天一样自然对镜头讲述，神情真诚克制。中段穿插深圳水贝黄金市场人头攒动的柔和虚化空镜与金价显示屏特写，尾段回到书桌中近景收尾，画面干净不杂乱，无真实金店隐私信息，配轻缓有节奏感的低音背景音乐。</div>
+      <div class="meta-hd" style="margin-bottom:10px"><span style="font-size:15px;color:#16233b">豆包视频 / 即梦一键生成画面与封面指令</span><button class="btn-mini" id="bPrompt" type="button">复制指令</button></div>
+      <div class="prompt-box" id="txtPrompt">9:16 竖屏真实生活感财经口播风格，自然柔和的室内书桌光线，35mm 电影胶片微颗粒质感。一位 38 岁左右、穿着深灰卫衣的东北气质中国男性坐在原木书桌前，神情真诚接地气，像跟街坊老铁算家庭细账一样自然对镜头讲述。中段（18-48秒）穿插金融行情大屏下跌曲线虚化镜头、水贝珠宝走廊排长队氛围空镜，以及素圈金戒放在银色高精度珠宝电子秤上的俯拍特写；40秒处衔接黑屏暗金大字反转画面，尾段回到书桌中近景诚恳收尾，全程无真实品牌Logo或个人隐私单据，配轻缓有节奏感的低音背景音乐。</div>
     </section>
   </div>
 </main>
@@ -172,7 +223,7 @@ document.getElementById('bCopyWechat').onclick=async()=>{const el=document.getEl
 document.getElementById('bTitle').onclick=()=>copyTxt(document.getElementById('txtTitle').textContent.trim(),'已复制标题');
 document.getElementById('bSum').onclick=()=>copyTxt(document.getElementById('txtSum').textContent.trim(),'已复制摘要');
 document.getElementById('bPrompt').onclick=()=>copyTxt(document.getElementById('txtPrompt').textContent.trim(),'已复制豆包画面指令');
-document.getElementById('bScript').onclick=()=>{const ls=[...document.querySelectorAll('#vidScript .tblock')].map(b=>'【'+b.querySelector('.tbadge').textContent+'】\n'+b.querySelector('p').textContent);copyTxt(ls.join('\n\n'),'已复制 60 秒完整口播稿')};
+document.getElementById('bScript').onclick=()=>{const ls=[...document.querySelectorAll('#vidScript .tblock')].map(b=>b.innerText.trim());copyTxt(ls.join('\n\n'),'已复制 60 秒完整分镜脚本')};
 document.getElementById('tArt').onclick=()=>{document.getElementById('tArt').classList.add('active');document.getElementById('tVid').classList.remove('active');document.getElementById('vArt').classList.remove('hidden');document.getElementById('vVid').classList.add('hidden')};
 document.getElementById('tVid').onclick=()=>{document.getElementById('tVid').classList.add('active');document.getElementById('tArt').classList.remove('active');document.getElementById('vVid').classList.remove('hidden');document.getElementById('vArt').classList.add('hidden')};
 </script>

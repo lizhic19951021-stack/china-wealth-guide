@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>梅森深度观察 — 公众号一键排版发布台</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f4f5f7;color:#1f2937}
+.topbar{position:sticky;top:0;z-index:50;background:#16233b;color:#fff;padding:12px 18px;border-bottom:2px solid #b08d57;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.badge{background:#b08d57;color:#16233b;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:800}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.1);padding:4px;border-radius:8px}
+.tab-btn{border:none;background:transparent;color:#cbd5e1;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.tab-btn.active{background:#b08d57;color:#16233b}
+.btn{border:none;border-radius:7px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-gold{background:#b08d57;color:#16233b}
+.btn-mini{background:#fff;border:1px solid #d1d5db;color:#374151;padding:3px 9px;border-radius:5px;font-size:12px;cursor:pointer}
+.wrap{max-width:760px;margin:20px auto 60px;padding:0 14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.meta-row{margin-bottom:12px}
+.meta-row:last-child{margin-bottom:0}
+.meta-hd{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#b08d57;margin-bottom:4px}
+.stage{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px 28px 44px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.hidden{display:none!important}
+.tblock{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:14px 0;border-bottom:1px dashed #e5e7eb}
+.tblock:last-child{border-bottom:none}
+.tbadge{background:#16233b;color:#f6efe2;font-size:12px;font-weight:700;padding:5px 8px;border-radius:6px;border-left:3px solid #b08d57;text-align:center;height:fit-content;line-height:1.4}
+.shot-meta{font-size:12px;color:#475569;margin-bottom:6px;line-height:1.6}
+.shot-line{font-size:15px;font-weight:700;color:#16233b;margin:4px 0;line-height:1.6}
+.shot-prompt{font-size:12.5px;color:#334155;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;margin:6px 0;line-height:1.65}
+.shot-gold{background:#0f172a;color:#e5c27b;font-size:13px;font-weight:700;padding:6px 10px;border-radius:6px;margin-top:6px;display:inline-block}
+.prompt-box{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;font-size:13px;line-height:1.75;border-left:4px solid #b08d57}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#16233b;color:#faf7f0;border:1px solid #b08d57;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
+.toast.show{opacity:1}
+@media(max-width:600px){.stage{padding:20px 16px 32px}.tblock{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="badge">梅森深度观察</span><span>公众号一键排版发布台</span></div>
+  <div class="tabs">
+    <button class="tab-btn active" id="tArt" type="button">深度长文（一键排版）</button>
+    <button class="tab-btn" id="tVid" type="button">60秒口播分镜+豆包指令</button>
+  </div>
+  <button class="btn btn-gold" id="bCopyWechat" type="button">一键复制排版到公众号</button>
+</header>
+<main class="wrap">
+  <div id="vArt">
+    <section class="card">
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号标题（已定稿）</span><button class="btn-mini" id="bTitle" type="button">复制标题</button></div>
+        <div id="txtTitle" style="font-size:15px;font-weight:700;color:#16233b">只给5%的稳健理财咋也暴雷？实控人被抓了</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号摘要</span><button class="btn-mini" id="bSum" type="button">复制摘要</button></div>
+        <div id="txtSum" style="font-size:13px;color:#4b5563;line-height:1.6">11月22日北京朝阳警方通报对“恒昌系”立案侦查，实控人秦洪涛被采取刑事强制措施。为什么只许诺5%到6%预期收益、号称低风险的类固收理财照样停兑爆雷？拆开资金池、债权转让与《处非条例》三张底账，附官方三种报案通道与普通家庭防雷四步清单。</div>
+      </div>
+    </section>
+    <div class="stage">
+      <section id="wechat-copy-target" style="font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:15.5px;line-height:1.95;color:#2b2f36;letter-spacing:0.8px;word-wrap:break-word;background-color:#ffffff;">
+        <section style="margin:0 0 28px 0;padding-bottom:14px;border-bottom:1px solid #ece7df;">
+          <p style="margin:0 0 6px 0;font-size:12px;color:#b08d57;letter-spacing:2.5px;font-weight:bold;">梅森深度观察</p>
+          <p style="margin:0;font-size:13px;color:#8c95a0;">写给每一个想攒点养老钱、避开股市震荡、图个稳当收益的普通家庭。</p>
+        </section>
+        <p style="margin:0 0 18px 0;">很多人亏钱，不是贪高息，而是冲着“稳健”二字踩进坑。</p>
+        <p style="margin:0 0 18px 0;">不少老铁和长辈躲开股票基金，买了线下理财顾问推的“恒昌汇财”与“众润多”APP类固收产品。预期年化5%到6%，销售说是银行定期平替，看着踏实。</p>
+        <p style="margin:0 0 18px 0;">结果11月12日起突然停兑。微信群天天发不盖章的“应急工作小组安抚纪要”，让出借人再等等。</p>
+        <section style="margin:20px 0 22px 0;padding:16px 18px;background-color:#faf8f4;border-left:3px solid #b08d57;">
+          <p style="margin:0;font-size:15.5px;color:#16233b;font-weight:bold;line-height:1.75;">“11月22日晚，‘平安北京朝阳’发布通报：依法对恒昌系公司涉嫌非法集资犯罪立案侦查，实控人秦某某（秦洪涛，男，49岁）已被采取刑事强制措施。”</p>
+        </section>
+        <p style="margin:0 0 18px 0;">只给5%到6%的“低息理财”，为啥照样轰然倒塌？</p>
+        <p style="margin:0 0 26px 0;">今天不熬鸡汤，把停兑十天时间线、债权拆分的资金盘账本，以及《防范和处置非法集资条例》底线摊在桌上。<strong>你会看明白：产品暴雷从不看利息高低，只看底层资产真假与资金流向谁的口袋。</strong></p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">01</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">停兑十天到实控人被抓，5%“低息伪装”最麻痹人</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">先把这十天的节奏捋清楚，每一步都有据可查。</p>
+        <p style="margin:0 0 18px 0;">每日经济新闻、凤凰网与搜狐网披露：恒昌系最后一笔付款停在11月11日，12日停兑。13日流出所谓“内部纪要”，宣称创始人失联缺审批授权，且账面剩4至5亿元现金（未获独立核实）。</p>
+        <p style="margin:0 0 18px 0;">11月17日又流出所谓“过渡小组通告”。仅五天后，11月22日晚北京朝阳警方立案侦查并控制秦洪涛。</p>
+        <p style="margin:0 0 18px 0;">停兑到立案整整10天。为什么这么多人到通报出来才梦醒？</p>
+        <p style="margin:0 0 26px 0;">《起朱楼宴宾客》对话财新主编凌华薇时指出：近年出事机构早不靠15%高息骗人，专卡在5%到6%“银行理财替代线”，让稳健客群放松警惕。<strong>你以为躲开了贪婪，却撞进专门收割稳健人群的陷阱。</strong></p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">02</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">十四年老盘口：P2P退场后，靠“债权转让”接着转</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">恒昌不是突然冒出来的野鸡平台，而是一个活了十多年的庞然大物。</p>
+        <p style="margin:0 0 18px 0;">2011年，秦洪涛创办恒昌（恒昌利通）；2012年1月，北京恒昌汇财成立。当年线下财富圈并称“善林、信和、银谷、恒昌”四大机构，前三个早已先后崩盘。2020年，恒昌利通就曾因P2P业务被警方立案，当时涉案金额约300亿元，涉及出借人约48.5万。</p>
+        <p style="margin:0 0 18px 0;">天眼查工商信息显示，秦洪涛名下关联24家机构，目前存续12家（包括坤元资产等），牌照版图横跨私募、保险代理、小贷、保理、融资租赁与典当。</p>
+        <p style="margin:0 0 18px 0;">P2P退场后，这套线下网络没散，转而借“众润多”APP等继续销售类固收债权转让产品。可算盘根本算不平：</p>
+        <p style="margin:0 0 26px 0;">出借人只拿5%到6%，但线下顾问背高额考核、拿返点佣金，门店还要扛高昂房租，叠加资金池旧账，综合成本远超5%。<strong>一旦新增进款放缓或实控人失联，流动性瞬间穿底。</strong></p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">03</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">三组关键底数与法条红线：不刚兑，提成必须吐出来</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">很多老铁出事后还抱着幻想：平台有这么多关联公司，销售跟我说“不保本也兜底”，甚至员工自己也投了钱，国家会不会管兑付？</p>
+        <table style="width:100%;border-collapse:collapse;margin:24px 0 26px 0;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:1px solid #e6dfd3;">
+          <tr>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">10天</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">11月12日停兑至22日<br/>警方通报刑事立案</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#b08d57;">24家</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">实控人秦洪涛关联机构<br/>存续12家含坤元资产</p></td>
+            <td style="width:33.3%;padding:16px 8px;text-align:center;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">第25条</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">处非条例明文规定<br/>损失自担政府不兜底</p></td>
+          </tr>
+        </table>
+        <p style="margin:0 0 18px 0;">把国务院《防范和处置非法集资条例》和《刑法》第176条翻开看，答案冷冰冰却极其清晰。</p>
+        <p style="margin:0 0 18px 0;">《条例》第二条把非法集资钉死了三个要件：未经国务院金融管理部门依法许可的<strong>非法性</strong>、承诺还本付息或给付回报的<strong>利诱性</strong>、向不特定社会对象吸收资金的<strong>社会性</strong>。哪怕年化只给5%，只要同时占齐这三条，就可能触及《刑法》第176条非法吸收公众存款罪。</p>
+        <p style="margin:0 0 18px 0;">更扎心的条款在后面：<strong>《条例》第二十五条第三款明文规定，因参与非法集资受到的损失，由集资参与人自行承担，政府不兜底、不刚兑。</strong>而第二十五条第二款及第二十六条第（五）项同时写死：任何单位和个人不得从非法集资中获取经济利益，销售人员拿走的提成、返点、佣金、好处费，全部属于清退范围。</p>
+        <section style="margin:26px 0 28px 0;padding:20px 22px;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:2px solid #16233b;">
+          <p style="margin:0;font-size:16px;color:#16233b;font-weight:bold;line-height:1.85;text-align:center;">别信“小利息就安全”，法律只认牌照与资金池；<br/>也别信“销售自己也买了”，出事之后不仅本金难保，<br/><span style="color:#b08d57;">连业务员赚走的返点提成，依法都要一并追缴清退。</span></p>
+        </section>
+        <p style="margin:0 0 18px 0;">公开司法判例早就给这类操作画过句号。（2020）津0104刑初2号及其前案（2018）津0104刑初506号判决书显示，涉案人员因非法吸收公众存款，被判处有期徒刑三年九个月并处罚金15万元，责令退赔41名投资人损失。</p>
+        <p style="margin:0 0 26px 0;">另一份公开判例（2021）闽0521刑初377号同样典型：被告人未经批准合作设立新公司，招募业务员向社会公众销售承诺返本付息的理财产品，最终被判处有期徒刑二年三个月，并没收违法所得346,676.3元。法槌落下时，没有任何一份“内部安抚纪要”能当护身符。</p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">04</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">三方账本对着看，谁把老百姓拖进坑里？</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">事发之后光骂街解决不了回款，把这场局里三方的真实处境与越界红线摆到一起，以后才能一眼认出陷阱：</p>
+        <table style="width:100%;border-collapse:collapse;margin:8px 0 30px 0;font-size:13px;line-height:1.65;">
+          <thead><tr style="background-color:#16233b;color:#faf7f0;"><th style="padding:10px 8px;text-align:left;width:20%;">角色</th><th style="padding:10px 8px;text-align:left;width:40%;">真实难处（客观处境）</th><th style="padding:10px 8px;text-align:left;width:40%;">越界动作（触碰底线）</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">普通家庭投资者</td><td style="padding:10px 8px;color:#475569;">银行存款利率走低，不敢碰高波动股票，只想找5%左右看似稳当的家庭理财替代品</td><td style="padding:10px 8px;color:#2c3038;">轻信“熟人顾问”和低息伪装，不查金融许可证，直接把钱转入非持牌一般户</td></tr>
+            <tr style="border-bottom:1px solid #e6e9ef;background-color:#faf8f4;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">线下财富销售与平台</td><td style="padding:10px 8px;color:#475569;">线下网点租金与人工成本极高，传统P2P退出后急需新产品续命并背负重考核</td><td style="padding:10px 8px;color:#2c3038;">借“债权转让”与多壳公司继续募资拆东墙补西墙，停兑后发无章纪要拖延稳控</td></tr>
+            <tr style="border-bottom:1px solid #16233b;"><td style="padding:10px 8px;font-weight:bold;color:#b08d57;">监管与司法清退底线</td><td style="padding:10px 8px;color:#475569;">跨省涉众案件资产查封、追赃挽损周期长，关联股权与隐匿资金穿透核查难度大</td><td style="padding:10px 8px;color:#2c3038;">法律严禁国家或地方政府为非法集资兜底刚兑，所有违法所得与佣金提成须依法追缴</td></tr>
+          </tbody>
+        </table>
+        <p style="margin:0 0 26px 0;">看透这三栏就明白：平台拿重资产高成本去赌新钱续命，顾问靠佣金考核把风险转嫁给客户，<strong>一旦真出事，没有任何一家非持牌机构能替普通人扛住本金。</strong></p>
+
+        <section style="margin:40px 0 22px 0;">
+          <p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">05</p>
+          <p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">防雷和止损：普通家庭立刻照做的 4 步清单</p>
+          <section style="width:30px;height:2px;background-color:#b08d57;"></section>
+        </section>
+        <p style="margin:0 0 18px 0;">不管你是已经踩雷急着登记，还是正在看各种“稳健理财”，把这四条实操动作存进手机，关键时刻能保住全家积蓄：</p>
+        <section style="margin:0 0 26px 0;padding:18px 20px;background-color:#faf8f4;border-radius:6px;">
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">1. 三查金融牌照与底层穿透，拒绝“债权拆分”APP散卖。</strong><br/>买产品先上中基协、银保信或金融许可证系统查备案，穿透核对真实底层资产。凡是在非持牌APP把保理、租赁等债权拆成几万块散卖的，直接绕道。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">2. 核对打款账户性质，普通公司一般户直接拉黑。</strong><br/>持牌产品资金必须走银行三方存管或持牌专户。打款前看清户名，若收款方是科技、咨询或关联保理公司一般户，立刻停手。</p>
+          <p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">3. 已踩雷人员走“平安北京朝阳”三通道报案，防二次诈骗。</strong><br/>按11月22日通报报案：①网上关注“平安北京朝阳”微信公众号→服务→网上警务→涉众案件登记平台；②邮寄至北京市朝阳区黄杉木店路206号（100123）朝阳经侦，注明“恒昌报案材料”，电话010-85823900；③带合同流水去户籍或常住地经侦/派出所实地报案。凡称“交费提前兑付”的全是二次诈骗。</p>
+          <p style="margin:0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">4. 认清《处非条例》第25条和第26条，不信业务员话术。</strong><br/>别信“我也买了”“内部优先退”。整理合同、流水与宣传“保本稳健”的聊天记录完成官方登记，等司法统一追赃清退。</p>
+        </section>
+        <p style="margin:0 0 18px 0;">赚钱不容易，守住本金永远比多赚那两三个点更要紧。5%的收益换不来100%的安全，低息从来不是免死金牌。</p>
+        <p style="margin:0 0 24px 0;"><strong>如果身边还有长辈把钱放在不透明的线下理财门店，请把这篇文章转进家庭群，提醒他们对照查一遍账户和牌照。</strong>你身边遇到过打着“低息稳健”旗号的线下推销吗？评论区说说。</p>
+        <section style="margin-top:26px;padding-top:14px;border-top:1px solid #e8e4dc;font-size:12px;color:#8c95a0;line-height:1.75;">
+          <p style="margin:0 0 4px 0;font-weight:bold;color:#5c6675;">本文参考公开资料、法规与判例：</p>
+          <p style="margin:0;">1. 平安北京朝阳（2026-11-22）：依法对恒昌系公司涉嫌非法集资犯罪立案侦查、秦某某被采取刑事强制措施的警情通报及官方报案通道；2. 每日经济新闻、凤凰网、搜狐网（2026-11-22/23）：恒昌系11月12日停兑、13日内部纪要、17日通告、秦洪涛关联24家企业及2020年恒昌利通立案历史报道；3. 国务院《防范和处置非法集资条例》第二条、第二十五条、第二十六条第（五）项及《中华人民共和国刑法》第176条；4. 公开司法判例：（2020）津0104刑初2号（前案（2018）津0104刑初506号）及（2021）闽0521刑初377号；5. 播客《起朱楼宴宾客》对话财新主编凌华薇关于5%-6%低息伪装类固收风险分析。</p>
+        </section>
+      </section>
+    </div>
+  </div>
+  <div id="vVid" class="hidden">
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:12px"><span style="font-size:15px;color:#16233b">60 秒高网感口播分镜脚本（含 Veo3.1 / Seedance2.0 Prompt）</span><button class="btn btn-gold" id="bScript" type="button">一键复制分镜脚本</button></div>
+      <div id="vidScript">
+        <div class="tblock">
+          <span class="tbadge">镜1 · 0-5s<br/>痛点切入</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中近景固定微推 ｜ 音效：手机震动弹窗声 + 低沉大提琴单音</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>只给五点，咋也爆雷了</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, realistic documentary style, 35mm film grain. A 38-year-old Chinese man in a dark grey sweatshirt sitting at a clean wooden desk in warm indoor natural light, looking directly at the camera with an incredulous, grounded expression, holding a small paper investment brochure. Shallow depth of field, subtle push-in camera movement.</div>
+            <div class="shot-gold">黑屏金字反转：年化5%稳健理财 ≠ 绝对安全</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜2 · 5-15s<br/>立案时间线</span>
+          <div>
+            <div class="shot-meta">景别/运镜：日历翻页特写切警情通报模糊屏幕 ｜ 音效：翻页声 + 警笛远景环境音</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>停兑十天，老板进去了</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, realistic B-roll montage. Close-up of a desk calendar pages flipping rapidly from November 12 to November 22, smooth cut to a blurred smartphone screen glowing with a dark blue official police notice header in dim indoor light, no readable private text.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜3 · 15-26s<br/>低息伪装账</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中景坐姿手势算账切计算器特写 ｜ 音效：计算器按键声 + 清脆响指</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>专卡五六，麻痹稳健人</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, warm desk lighting. Medium shot of the same Chinese man counting seriously on his fingers, cutting briefly to an overhead close-up of a sleek silver calculator beside a clean open notebook on the wooden desk.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜4 · 26-36s<br/>关联版图账</span>
+          <div>
+            <div class="shot-meta">景别/运镜：空白关系图连线俯拍微推 ｜ 音效：钢笔划线声 + 低频脉冲底噪</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>关联廿四，全靠新钱续</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, top-down close-up of a black fountain pen drawing simple interconnected circles on a clean beige notebook under warm side light, slow smooth push-in, crisp paper texture, no identifiable names or logos.</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜5 · 36-48s<br/>法条底线反转</span>
+          <div>
+            <div class="shot-meta">景别/运镜：法典书页特写切黑屏金字冲击 ｜ 音效：重低音下沉转场（Whoosh + Boom）</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>条例写死，损失自己扛</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, dramatic contrast. Close-up of thick legal book pages turning under a warm desk lamp, transitioning swiftly into a clean matte black background with glowing champagne-gold Chinese typography pulsing in the center.</div>
+            <div class="shot-gold">黑屏金字反转：处非条例第25条 · 损失自担不刚兑</div>
+          </div>
+        </div>
+        <div class="tblock">
+          <span class="tbadge">镜6 · 48-60s<br/>避坑报案互动</span>
+          <div>
+            <div class="shot-meta">景别/运镜：中近景直视镜头微推进收尾 ｜ 音效：轻鼓点收住，留白半秒</div>
+            <div class="shot-line"><span style="font-size:12px;color:#b08d57;margin-right:6px;">彪子台词</span>先查牌照，别信兜底话</div>
+            <div class="shot-prompt"><strong>Veo3.1 / Seedance2.0 Prompt：</strong>9:16 vertical, natural indoor desk lighting. The 38-year-old Chinese man leans slightly forward toward the camera, pointing gently at an open checklist notebook on the desk, sincere and practical tone, warm steady lighting, clean background.</div>
+            <div class="shot-gold">黑屏金字收尾：三查牌照与专户 · 踩雷速走官方登记</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin:12px 0 0;font-size:12px;color:#b08d57;font-weight:600">合规角标：画面左下角常驻小字「案例据警方公开通报与法条整理，理财有风险，选择须谨慎」。</p>
+    </section>
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:10px"><span style="font-size:15px;color:#16233b">豆包视频 / 即梦一键生成画面与封面指令</span><button class="btn-mini" id="bPrompt" type="button">复制指令</button></div>
+      <div class="prompt-box" id="txtPrompt">9:16 竖屏真实生活感财经口播风格，自然柔和的室内书桌光线，35mm 电影胶片微颗粒质感。一位 38 岁左右、穿着深灰卫衣的东北气质中国男性坐在原木书桌前，神情真诚接地气，像跟街坊老铁算家庭血汗钱一样自然对镜头讲述。中段（15-48秒）穿插台历快速翻页特写、手机蓝底公告虚化镜头、钢笔在米色笔记本上画关联圆圈的俯拍，以及厚重法律条文书页特写；40秒处衔接黑屏暗金大字反转画面，尾段回到书桌中近景诚恳收尾，全程无真实品牌Logo或个人隐私单据，配轻缓有节奏感的低音背景音乐。</div>
+    </section>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const toast=document.getElementById('toast');let tm;
+function tip(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(()=>toast.classList.remove('show'),2400)}
+async function copyTxt(t,m){try{await navigator.clipboard.writeText(t);tip(m)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);tip(m)}}
+document.getElementById('bCopyWechat').onclick=async()=>{const el=document.getElementById('wechat-copy-target');try{if(navigator.clipboard&&window.ClipboardItem){await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.outerHTML],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);tip('已一键复制排版，直接去公众号 Ctrl+V 即可！');return}}catch(e){}const r=document.createRange();r.selectNodeContents(el);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();tip('已一键复制排版，直接去公众号 Ctrl+V 即可！')};
+document.getElementById('bTitle').onclick=()=>copyTxt(document.getElementById('txtTitle').textContent.trim(),'已复制标题');
+document.getElementById('bSum').onclick=()=>copyTxt(document.getElementById('txtSum').textContent.trim(),'已复制摘要');
+document.getElementById('bPrompt').onclick=()=>copyTxt(document.getElementById('txtPrompt').textContent.trim(),'已复制豆包画面指令');
+document.getElementById('bScript').onclick=()=>{const ls=[...document.querySelectorAll('#vidScript .tblock')].map(b=>b.innerText.trim());copyTxt(ls.join('\n\n'),'已复制 60 秒完整分镜脚本')};
+document.getElementById('tArt').onclick=()=>{document.getElementById('tArt').classList.add('active');document.getElementById('tVid').classList.remove('active');document.getElementById('vArt').classList.remove('hidden');document.getElementById('vVid').classList.add('hidden')};
+document.getElementById('tVid').onclick=()=>{document.getElementById('tVid').classList.add('active');document.getElementById('tArt').classList.remove('active');document.getElementById('vVid').classList.remove('hidden');document.getElementById('vArt').classList.add('hidden')};
+</script>
+</body>
+</html>

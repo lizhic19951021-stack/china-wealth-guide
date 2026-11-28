@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>取消骑手超时扣款，美团单季赚20亿，这笔账谁买单 — 梅森深度观察</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f4f5f7;color:#1f2937}
+.topbar{position:sticky;top:0;z-index:50;background:#16233b;color:#fff;padding:12px 18px;border-bottom:2px solid #b08d57;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.badge{background:#b08d57;color:#16233b;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:800}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.1);padding:4px;border-radius:8px}
+.tab-btn{border:none;background:transparent;color:#cbd5e1;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.tab-btn.active{background:#b08d57;color:#16233b}
+.btn{border:none;border-radius:7px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-gold{background:#b08d57;color:#16233b}
+.btn-mini{background:#fff;border:1px solid #d1d5db;color:#374151;padding:3px 9px;border-radius:5px;font-size:12px;cursor:pointer}
+.wrap{max-width:760px;margin:20px auto 60px;padding:0 14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.meta-row{margin-bottom:12px}
+.meta-row:last-child{margin-bottom:0}
+.meta-hd{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#b08d57;margin-bottom:4px}
+.stage{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px 28px 44px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.hidden{display:none!important}
+.tblock{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #e5e7eb}
+.tblock:last-child{border-bottom:none}
+.tbadge{background:#16233b;color:#f6efe2;font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;border-left:3px solid #b08d57;text-align:center;height:fit-content}
+.prompt-box{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;font-size:13px;line-height:1.75;border-left:4px solid #b08d57}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#16233b;color:#faf7f0;border:1px solid #b08d57;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
+.toast.show{opacity:1}
+@media(max-width:600px){.stage{padding:20px 16px 32px}.tblock{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="badge">梅森深度观察</span><span>公众号一键排版发布台</span></div>
+  <div class="tabs">
+    <button class="tab-btn active" id="tArt" type="button">深度长文（一键排版）</button>
+    <button class="tab-btn" id="tVid" type="button">60秒口播稿+豆包指令</button>
+  </div>
+  <button class="btn btn-gold" id="bCopyWechat" type="button">一键复制排版到公众号</button>
+</header>
+<main class="wrap">
+  <div id="vArt">
+    <section class="card">
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号标题（已定稿）</span><button class="btn-mini" id="bTitle" type="button">复制标题</button></div>
+        <div id="txtTitle" style="font-size:15px;font-weight:700;color:#16233b">取消骑手超时扣款，美团单季赚20亿，这笔账谁买单</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-hd"><span>公众号摘要</span><button class="btn-mini" id="bSum" type="button">复制摘要</button></div>
+        <div id="txtSum" style="font-size:13px;color:#4b5563;line-height:1.6">11月26日全总宣布美团、淘宝闪购全面取消超时扣款；次日美团交出Q3财报：营收1155.56亿、净利20.71亿扭亏。一边给骑手松绑，一边利润转正，真正为这场算法改革买单的到底是谁？</div>
+      </div>
+    </section>
+    <div class="stage">
+      <section id="wechat-copy-target" style="font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:15.5px;line-height:1.95;color:#2b2f36;letter-spacing:0.8px;word-wrap:break-word;background-color:#ffffff;">
+        <section style="margin:0 0 28px 0;padding-bottom:14px;border-bottom:1px solid #ece7df;">
+          <p style="margin:0 0 6px 0;font-size:12px;color:#b08d57;letter-spacing:2.5px;font-weight:bold;">梅森深度观察</p>
+          <p style="margin:0;font-size:13px;color:#8c95a0;">2026年11月28日 · 平台经济与民生账本深度拆解 · 建议阅读 6 分钟</p>
+        </section>
+        <p style="margin:0 0 18px 0;">周五晚上七点半，你下班到家点了一份热汤面。下单时你扫了一眼预计送达时间，比半年前整整多了八分钟。</p>
+        <p style="margin:0 0 18px 0;">很多人第一反应是骑手变慢了、平台运力紧了。可就在这两天，两条看似完全反着走的新闻前后脚砸了出来。</p>
+        <p style="margin:0 0 18px 0;">11月26日，全国总工会发布消息，覆盖超2500万人的18家重点平台签完算法协商协议，<strong>美团、淘宝闪购全面取消骑手超时扣款处罚</strong>。紧接着11月27日晚间，美团发布2026年三季报：单季营收<strong>1155.56亿元</strong>，归母净利润<strong>20.71亿元</strong>，彻底扭转了去年同期186.32亿元的巨额亏损。</p>
+        <section style="margin:20px 0 22px 0;padding:16px 18px;background-color:#faf8f4;border-left:3px solid #b08d57;"><p style="margin:0;font-size:15.5px;color:#16233b;font-weight:bold;line-height:1.75;">一边是不再靠罚款逼骑手抢时间，一边是平台单季反手赚回20.7亿元。天上不会掉馅饼，少罚的那笔钱、多出来的那八分钟，总得有人在账本另一头扛下来。</p></section>
+        <section style="margin:40px 0 22px 0;"><p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">01 / 钱去哪了</p><p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">罚款取消了，可账本没少收一分</p><section style="width:30px;height:2px;background-color:#b08d57;"></section></section>
+        <p style="margin:0 0 18px 0;">先把一个最容易被误解的账算明白：平台利润转正，靠的从来不是罚款扣骑手的零碎钱。</p>
+        <p style="margin:0 0 18px 0;">翻开美团11月27日披露的港交所财报，核心变量写得清清楚楚。去年三季度为什么亏186.32亿？因为几家巨头正打“补贴肉搏战”，一顿饭补贴十块八块，全行业一起烧钱。今年三季度，外卖补贴潮退去，<strong>外卖平均客单价同比明显回升、低价拼单占比下降</strong>，核心本地商业营收直接做到782.8亿元，单季经营利润冲到57亿元。</p>
+        <p style="margin:0 0 18px 0;">换句话说，以前是平台倒贴钱请你点低价外卖，再用极限时间压榨骑手把补贴成本省回来；现在平台收手不烧钱了，外卖回到正常价位，哪怕把超时扣款拿掉，平台的利润率照样能翻身。</p>
+        <table style="width:100%;border-collapse:collapse;margin:24px 0 26px 0;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:1px solid #e6dfd3;"><tr><td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">2500万+</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">18家平台算法协商<br/>覆盖劳动者总数</p></td><td style="width:33.3%;padding:16px 8px;text-align:center;border-right:1px solid #ebe5da;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#b08d57;">1155.56亿</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">美团2026Q3营收<br/>净利20.71亿扭亏</p></td><td style="width:33.3%;padding:16px 8px;text-align:center;vertical-align:top;"><p style="margin:0 0 4px 0;font-size:21px;font-weight:bold;color:#16233b;">4253个</p><p style="margin:0;font-size:11px;color:#7a828e;line-height:1.5;">无锡全市试点覆盖<br/>红灯停表信号路口</p></td></tr></table>
+        <p style="margin:0 0 26px 0;">可真正落到马路上，问题并没有随着“取消扣款”四个字自动消失。罚款是停了，但订单倒计时还在屏幕上方跳动。</p>
+        <section style="margin:40px 0 22px 0;"><p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">02 / 看不见的紧箍咒</p><p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">从“扣现金”换成“扣分数”，骑手真的轻松了吗</p><section style="width:30px;height:2px;background-color:#b08d57;"></section></section>
+        <p style="margin:0 0 18px 0;">如果仔细看美团和淘宝闪购的新规则，你会发现一个很耐人寻味的词：<strong>替代方案</strong>。</p>
+        <p style="margin:0 0 18px 0;">美团推出的叫“安准卡”，逻辑完全照搬机动车驾照记分制：超时不扣钱，改扣分；准时送达慢慢把分加回来。可一旦多次超时把分扣穿了，骑手面临的是<strong>强制线上线下培训，甚至暂停接单</strong>。淘宝闪购也一样，取消扣款后转为“服务分+安全分”体系。</p>
+        <p style="margin:0 0 18px 0;">这笔账对跑全职的骑手来说其实一点不轻。扣钱，疼的是今天这几十块；扣分停单，断的是明天一整天的派单权重和黄金时段收入。更何况，2025年12月电动自行车新国标落地后，车速被物理锁死，可一单从商家手里拿出来，要经历出餐卡顿、路口长红灯、小区大门登记、写字楼抢电梯四个不可控环节。</p>
+        <p style="margin:0 0 26px 0;">所以今年8月开始，苏州先在1100个路口、无锡直接在4253个路口试行“红灯停表”，福州仓山区干脆把红绿灯实时数据接进骑手系统——等红灯的那一分钟，算法直接暂停计时。上海交警通报的数据很说明问题：当源头治理跟上、骑手不再拿命抢那几十秒，全市涉快递外卖电动自行车交通违法和亡人数同比分别下降了14.8%和42.9%。</p>
+        <section style="margin:40px 0 22px 0;"><p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">03 / 制度缝隙</p><p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">真出了事，谁来认这笔工伤与三者赔付账</p><section style="width:30px;height:2px;background-color:#b08d57;"></section></section>
+        <p style="margin:0 0 18px 0;">超时罚款取消了，车速慢下来了，但几百万人每天穿行在车流里，碰撞和工伤依然是绕不开的底线风险。而这恰恰是普通骑手和外包站点之间最容易扯皮的制度缝隙。</p>
+        <p style="margin:0 0 18px 0;">很多骑手入职时，站长递过来的不是《劳动合同》，而是一份《配送服务承揽协议》，甚至先让骑手用手机注册成“个体工商户”，再签合作协议。字面上写得明明白白“不适用劳动法”，目的只有一个：一旦在送餐路上撞了人或自己摔伤，平台和外包公司想在第一时间把责任撇干净。</p>
+        <section style="margin:20px 0 22px 0;padding:18px 20px;background-color:#faf8f4;border-left:3px solid #16233b;"><p style="margin:0 0 8px 0;font-size:14px;font-weight:bold;color:#16233b;">最高法指导性案例 237 / 238 号与近期司法判例</p><p style="margin:0;font-size:14.5px;color:#3c424d;line-height:1.85;">在最高法发布的<strong>指导性案例238号（圣某欢案）</strong>与<strong>237号（徐某申案）</strong>中，裁判口径非常明确：哪怕签了“承揽协议”甚至注册了“个体工商户”，只要存在考勤排班、站点打卡、奖惩考核等<strong>支配性劳动管理</strong>，法院依然穿透合同外观，依法认定劳动关系成立；存在多层转包的，由实际管理且与报酬来源最密切的企业担责。2026年11月安徽桐城法院最新通报的案例里，骑手王某送餐撞上重型半挂车，供应链公司拿着配送协议起诉撤销工伤认定，同样被法院直接驳回。</p></section>
+        <p style="margin:0 0 18px 0;">另一头，商业保险理赔也经常在“业务边界”上卡壳。在最高法2025年4月公布的典型案例中，一名骑手被站点指派去医院办理健康证，途中撞伤路人赔了7.1万元。保险公司以“当时没在送餐”为由拒赔雇主责任险附加的40万第三者责任险，最终被法院判令必须赔付——只要是为了完成配送业务必需的指派行为，都在保单保障范围内。</p>
+        <section style="margin:26px 0 28px 0;padding:20px 22px;background-color:#faf8f4;border-top:2px solid #16233b;border-bottom:2px solid #16233b;"><p style="margin:0;font-size:16px;color:#16233b;font-weight:bold;line-height:1.85;text-align:center;">取消超时扣款只是把明面上的罚款拿掉了。<br/>真正决定外卖生态能不能稳住的，是平台愿不愿意为等红灯和商家卡餐留出冗余，以及出事时那张保单能不能真兜底。</p></section>
+        <section style="margin:40px 0 22px 0;"><p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">04 / 三方对照账本</p><p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">同一张外卖单上，三拨人各自的算盘与越界</p><section style="width:30px;height:2px;background-color:#b08d57;"></section></section>
+        <table style="width:100%;border-collapse:collapse;margin:8px 0 30px 0;font-size:13px;line-height:1.65;"><thead><tr style="background-color:#16233b;color:#faf7f0;"><th style="padding:10px 8px;text-align:left;width:18%;">角色</th><th style="padding:10px 8px;text-align:left;width:41%;">真实难处与成本压力</th><th style="padding:10px 8px;text-align:left;width:41%;">最常见的越界或错位动作</th></tr></thead><tbody><tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">消费者</td><td style="padding:10px 8px;color:#475569;">花钱买即时便利，满减缩水、客单价回升后更怕送慢饭凉</td><td style="padding:10px 8px;color:#2c3038;">把商家出餐慢和交通堵车的怒气，全撒在骑手身上或恶意给差评</td></tr><tr style="border-bottom:1px solid #e6e9ef;background-color:#faf8f4;"><td style="padding:10px 8px;font-weight:bold;color:#16233b;">外卖骑手</td><td style="padding:10px 8px;color:#475569;">新国标限速+高强度跑单，停单培训比扣几十块更伤收入</td><td style="padding:10px 8px;color:#2c3038;">为保“安准卡/服务分”不掉段，依然冒着风险逆行或抢黄灯</td></tr><tr style="border-bottom:1px solid #16233b;"><td style="padding:10px 8px;font-weight:bold;color:#b08d57;">平台与外包商</td><td style="padding:10px 8px;color:#475569;">既要压降1600万骑手新职伤及社保成本，又要保Q3盈利指标</td><td style="padding:10px 8px;color:#2c3038;">用“个体户+层层转包”切掉劳动关系，把时间压力转嫁成暗扣分</td></tr></tbody></table>
+        <section style="margin:40px 0 22px 0;"><p style="margin:0 0 4px 0;font-size:12px;font-weight:bold;color:#b08d57;letter-spacing:2px;">05 / 实操防身指南</p><p style="margin:0 0 10px 0;font-size:19px;font-weight:bold;color:#16233b;line-height:1.4;">不管你是点餐的人，还是跑单的人，这4件事先备好</p><section style="width:30px;height:2px;background-color:#b08d57;"></section></section>
+        <section style="margin:0 0 26px 0;padding:18px 20px;background-color:#faf8f4;border-radius:6px;"><p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">1. 点外卖卡紧“两个预期”，别逼出马路杀手</strong><br/>午晚高峰和雨雪天，下单前看清预计送达区间并提前10分钟下单。真遇到大幅超时，直接用订单页的“准时保/超时赔付”机制拿补偿，别打电话催命——平台现在已放开商家出餐慢与极端天气剔除通道，理性申诉比催单更有效。</p><p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">2. 跑单必须留存“支配性管理”四件套证据</strong><br/>如果你或家人跑外卖时被要求签承揽协议或注册个体户，千万别删手机里的记录：<strong>站点排班表、工作群考勤指令、请假审批截图、按单结算流水</strong>。按最高法指导性案例237/238号，这四样是出事后认定工伤和劳动关系的硬通货。</p><p style="margin:0 0 14px 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">3. 遇到擦碰先翻保单，别被“非送餐时间”唬住</strong><br/>配送公司通常投有雇主责任险或新职伤保障并附加第三者责任险。只要是受站点指派办健康证、领装备或往返站点途中出事，参照最高法2025年典型案例，均属于“与业务有关工作”，遇拒赔可明确提出司法判例依据。</p><p style="margin:0 0 0 0;font-size:14.5px;line-height:1.85;"><strong style="color:#16233b;">4. 善用“出餐慢”与“等灯上报”保护服务分</strong><br/>规则改成积分制后，骑手最怕“哑巴亏”。到店发现商家明显卡餐，第一时间点亮系统上报并拍一张取餐台积压照片；遇到小区锁门或长时间等灯，留痕走申诉，别等积分掉到派单降权线再补救。</p></section>
+        <p style="margin:0 0 26px 0;">说到底，我们点的每一份外卖，买的从来不只是那一盒热饭，还有背后整套城市毛细血管的运转成本。把那几分钟还给红绿灯，把该买的保险买在明处，慢下来的那五分钟，其实是在给马路上的每个人买平安。</p>
+        <section style="margin-top:26px;padding-top:14px;border-top:1px solid #e8e4dc;font-size:12px;color:#8c95a0;line-height:1.75;">
+          <p style="margin:0 0 4px 0;font-weight:bold;color:#5c6675;">本文参考公开资料与判例：</p>
+          <p style="margin:0;">1. 全国总工会2026年第四季度新闻发布会（2026-11-26，第一财经/中国经济网披露18家平台算法协商及取消超时扣款进展）；2. 美团（03690.HK）截至2026年9月30日止三个月业绩公告及2025年报（营收1155.56亿元、净利20.71亿元、职业伤害保障覆盖17省市1600万骑手）；3. 央视新闻《缓解骑手“时间焦虑”，外卖“红灯停表”试点满月成效显著》（2026-08-31）及上海交警非机动车治理通报（2025-07-14）；4. 最高人民法院指导性案例237号、238号及2025年4月新就业形态典型案例2、安徽省桐城市法院2026年11月通报工伤认定案。</p>
+        </section>
+      </section>
+    </div>
+  </div>
+  <div id="vVid" class="hidden">
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:12px"><span style="font-size:15px;color:#16233b">60 秒高网感一气呵成口播稿</span><button class="btn btn-gold" id="bScript" type="button">一键复制口播稿</button></div>
+      <div id="vidScript">
+        <div class="tblock"><span class="tbadge">0-3秒</span><p style="margin:0;line-height:1.8">美团和淘宝闪购全面取消超时扣款了，可昨天美团财报反而单季赚了20亿，这中间到底谁在买单？</p></div>
+        <div class="tblock"><span class="tbadge">3-18秒</span><p style="margin:0;line-height:1.8">彪子昨天翻了美团刚出的三季报，营收一千一百多亿，去年还亏一百八十多亿，今年一下赚回二十亿。它真不是靠扣骑手钱赚的，是因为今年外卖补贴大战熄火了，大家点餐的客单价悄悄涨回来了。</p></div>
+        <div class="tblock"><span class="tbadge">18-35秒</span><p style="margin:0;line-height:1.8">那骑手是不是就彻底躺平了？你想多了。扣钱改成安准卡扣分，扣光了直接停单培训。好在现在苏州、无锡几千个路口上线了红灯停表，等红灯那几十秒不算超时，上海那边的外卖事故亡人数直接降了四成多。</p></div>
+        <div class="tblock"><span class="tbadge">35-52秒</span><p style="margin:0;line-height:1.8">但有件事真得提防，现在很多外包站点让骑手签承揽协议甚至注册个体户，一旦路上出事就想甩锅。最高法早就有指导案例了，只要考勤排班归你管，换个马甲一样算劳动关系。</p></div>
+        <div class="tblock"><span class="tbadge">52-60秒</span><p style="margin:0;line-height:1.8">说白了，以后点外卖多留五分钟耐心，跑单的兄弟记得把排班和群指令留个底，你点个赞，咱们下期继续算账。</p></div>
+      </div>
+      <p style="margin:12px 0 0;font-size:12px;color:#b08d57;font-weight:600">合规角标：数据源自上市公司财报、全总发布会及最高法公开案例，仅作商业规则与权益科普，不构成任何消费或劳动法律个案代理意见。</p>
+    </section>
+    <section class="card">
+      <div class="meta-hd" style="margin-bottom:10px"><span style="font-size:15px;color:#16233b">豆包视频 / 即梦一键生成画面指令</span><button class="btn-mini" id="bPrompt" type="button">复制指令</button></div>
+      <div class="prompt-box" id="txtPrompt">9:16竖屏，35mm写实电影胶片微颗粒质感，低饱和冷灰与暖琥珀灯光对比。开场0-3秒：晚高峰城市十字路口实景空镜，电动车骑手在红灯前稳稳停下，头盔反射路口红灯微光；3-35秒：切入38岁男性（彪子）坐在略显杂乱的书桌前对镜头松弛口播，桌上放着热气腾腾的外卖盒和一台亮着财报柱状图的平板电脑，穿插手机外卖APP倒计时界面特写与红灯停表动画；35-60秒：切换深夜街头路灯下骑手背影与桌面手写账本特写，最后黑屏居中浮现香槟金大字反转字幕：少抢一分钟，多保一条命。</div>
+    </section>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const toast=document.getElementById('toast');let tm;
+function tip(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(()=>toast.classList.remove('show'),2400)}
+async function copyTxt(t,m){try{await navigator.clipboard.writeText(t);tip(m)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);tip(m)}}
+document.getElementById('bCopyWechat').onclick=async()=>{const el=document.getElementById('wechat-copy-target');try{if(navigator.clipboard&&window.ClipboardItem){await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.outerHTML],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);tip('已一键复制排版，直接去公众号 Ctrl+V 即可！');return}}catch(e){}const r=document.createRange();r.selectNodeContents(el);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();tip('已一键复制排版，直接去公众号 Ctrl+V 即可！')};
+document.getElementById('bTitle').onclick=()=>copyTxt(document.getElementById('txtTitle').textContent.trim(),'已复制标题');
+document.getElementById('bSum').onclick=()=>copyTxt(document.getElementById('txtSum').textContent.trim(),'已复制摘要');
+document.getElementById('bPrompt').onclick=()=>copyTxt(document.getElementById('txtPrompt').textContent.trim(),'已复制豆包画面指令');
+document.getElementById('bScript').onclick=()=>{const ls=[...document.querySelectorAll('#vidScript .tblock')].map(b=>'【'+b.querySelector('.tbadge').textContent+'】\n'+b.querySelector('p').textContent);copyTxt(ls.join('\n\n'),'已复制 60 秒完整口播稿')};
+document.getElementById('tArt').onclick=()=>{document.getElementById('tArt').classList.add('active');document.getElementById('tVid').classList.remove('active');document.getElementById('vArt').classList.remove('hidden');document.getElementById('vVid').classList.add('hidden')};
+document.getElementById('tVid').onclick=()=>{document.getElementById('tVid').classList.add('active');document.getElementById('tArt').classList.remove('active');document.getElementById('vVid').classList.remove('hidden');document.getElementById('vArt').classList.add('hidden')};
+</script>
+</body>
+</html>
